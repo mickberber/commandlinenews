@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import sys
-import os
 import urllib
 import re
 from datetime import datetime
@@ -23,7 +22,6 @@ def openpage(storylinks, index):
 def main():
     arguments = sys.argv
     if len(arguments) > 1:
-        currentdir = os.path.abspath('.')
         uf = urllib.urlopen('http://news.ycombinator.com')
         htmlfile = uf.read()
         storylinks = re.findall(r'href="(.+)" class="storylink">(.+)</a><span', htmlfile)
@@ -40,8 +38,7 @@ def main():
 
         if arguments[1] == '--copy' or arguments[1] == '-cp':
             if len(arguments) > 2:
-                writefile = open(currentdir + '/' + arguments[2], 'w+')
-                writefile.write(htmlfile)
+                utils.copy_file(arguments[2], htmlfile)
                 return
 
     utils.handle_error('hn_error')

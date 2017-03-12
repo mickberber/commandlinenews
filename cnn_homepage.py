@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import sys
-import os
 import urllib
 import re
 import json
@@ -10,7 +9,6 @@ import utils
 import cnn_article_abbreviator
 
 def get_article_list():
-    currentdir = os.path.abspath('.')
     uf = urllib.urlopen('http://cnn.com')
     htmlfile = uf.read()
     articles = re.findall(r'articleList":\[(.+?)\]', htmlfile)
@@ -29,13 +27,6 @@ def headlines(article_list):
         print str(i + 1) + '. ' + article_list[i]['headline']
         i += 1
 
-def cat_article(cnn_url):
-    cnn_article_abbreviator.main('http://www.cnn.com' + cnn_url)
-
-def handle_error():
-    print 'Usage: [--headlines -h] [--read -r][headline number] [--copy -cp][filename]'
-    sys.exit(1)
-
 def main():
     arguments = sys.argv
     if len(arguments) > 1:
@@ -46,10 +37,16 @@ def main():
             return
 
         if len(arguments) > 2:
+            index = int(arguments[2])
+            cnn_url = 'http://www.cnn.com/' + article_list[index]['uri']
+
+            if arguments[1] == '--open' or arguments[1] == '-o':
+                utils.go_to_page(cnn_url)
+                return
+
             if arguments[1] == '--read' or arguments[1] == '-r':
-                index = int(arguments[2])
                 print article_list[index]['headline']
-                cat_article(article_list[index]['uri'])
+                cnn_article_abbreviator.main(cnn_url)
                 return
 
     utils.handle_error('cnn_error')

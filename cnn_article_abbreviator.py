@@ -1,13 +1,11 @@
 #!/usr/bin/python
 import sys
-import os
 import urllib
 import re
 
 import utils
 
 def main(cnn_url):
-    currentdir = os.path.abspath('.')
     uf = urllib.urlopen(cnn_url)
     htmlfile = uf.read()
     highlights = re.findall(r'storyhighlights__list">(.+?)</ul>', htmlfile)
