@@ -25,10 +25,8 @@ def headlines(article_list):
     print ' ======== CNN Headlines ========'
     print ' == ' + str(datetime.now()) + ' =='
     i = 0
-    while i < 15:
+    while i < 25:
         print str(i + 1) + '. ' + article_list[i]['headline']
-        # print article_list[i]['uri']
-        # print article_list[i]['description']
         i += 1
 
 def cat_article(cnn_url):

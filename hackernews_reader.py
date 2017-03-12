@@ -18,6 +18,7 @@ def headlines(storylinks):
 def openpage(storylinks, index):
     url = storylinks[index - 1][0]
     chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
+    print 'Opening: ' + url + 'in Chrome...'
     webbrowser.get(chrome_path).open(url)
 
 def handle_error():
