@@ -45,7 +45,7 @@ def main():
                 writefile = open(currentdir + '/' + arguments[2], 'w+')
                 writefile.write(htmlfile)
                 return
-                
+
     handle_error()
 
 
