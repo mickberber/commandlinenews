@@ -18,22 +18,13 @@ def get_article_list():
         article_list.append(json.loads(article))
     return article_list
 
-def headlines(article_list):
-    print ' ====== Command Line News ======'
-    print ' ======== CNN Headlines ========'
-    print ' == ' + str(datetime.now()) + ' =='
-    i = 0
-    while i < 25:
-        print str(i + 1) + '. ' + article_list[i]['headline']
-        i += 1
-
 def main():
     arguments = sys.argv
     if len(arguments) > 1:
         article_list = get_article_list()
 
         if arguments[1] == '--headlines' or arguments[1] =='-h':
-            headlines(article_list)
+            utils.cnn_headlines(article_list)
             return
 
         if len(arguments) > 2:

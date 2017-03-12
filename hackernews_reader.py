@@ -6,15 +6,6 @@ from datetime import datetime
 
 import utils
 
-def headlines(storylinks):
-    print '======= Command Line News ========'
-    print '==== HackerNews Headlines for ===='
-    print '=== ' + str(datetime.now()) + ' ==='
-    i = 0
-    while i < len(storylinks):
-        print str(i + 1) + '. ' + storylinks[i][1]
-        i += 1
-
 def openpage(storylinks, index):
     url = storylinks[index - 1][0]
     utils.go_to_page(url)
@@ -27,7 +18,7 @@ def main():
         storylinks = re.findall(r'href="(.+)" class="storylink">(.+)</a><span', htmlfile)
 
         if arguments[1] == '--headlines' or arguments[1] == '-h':
-            headlines(storylinks)
+            utils.hn_headlines(storylinks)
             return
 
         if arguments[1] == '--open' or arguments[1] == '-o':
