@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 import sys
 import os
 import urllib
@@ -7,6 +6,7 @@ import re
 import json
 from datetime import datetime
 
+import utils
 import cnn_article_abbreviator
 
 def get_article_list():
@@ -52,7 +52,7 @@ def main():
                 cat_article(article_list[index]['uri'])
                 return
 
-    handle_error()
+    utils.handle_error('cnn_error')
 
 if __name__ == '__main__':
     main()

@@ -4,6 +4,7 @@ import os
 import urllib
 import re
 from datetime import datetime
+
 import utils
 
 def headlines(storylinks):
@@ -19,10 +20,6 @@ def openpage(storylinks, index):
     url = storylinks[index - 1][0]
     utils.go_to_page(url)
 
-def handle_error():
-    print 'Usage: [--headlines -h] [--open -o][headline number] [--copy -cp][filename]'
-    sys.exit(1)
-
 def main():
     arguments = sys.argv
     if len(arguments) > 1:
@@ -37,7 +34,8 @@ def main():
 
         if arguments[1] == '--open' or arguments[1] == '-o':
             if len(arguments) > 2:
-                openpage(storylinks, int(arguments[2]))
+                index = int(arguments[2])
+                openpage(storylinks, index)
                 return
 
         if arguments[1] == '--copy' or arguments[1] == '-cp':
@@ -46,7 +44,7 @@ def main():
                 writefile.write(htmlfile)
                 return
 
-    handle_error()
+    utils.handle_error('hn_error')
 
 
 if __name__ == '__main__':

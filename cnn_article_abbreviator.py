@@ -1,9 +1,9 @@
 #!/usr/bin/python
-
 import sys
 import os
 import urllib
 import re
+
 import utils
 
 def main(cnn_url):
