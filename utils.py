@@ -23,9 +23,9 @@ def copy_file(dest, htmlfile):
     writefile.write(htmlfile)
 
 def cnn_headlines(article_list):
-    print ' ====== Command Line News ======'
-    print ' ======== CNN Headlines ========'
-    print ' == ' + str(datetime.now()) + ' =='
+    print '====== Command Line News ======'
+    print '======== CNN Headlines ========'
+    print '== ' + str(datetime.now()) + ' =='
     i = 0
     while i < 25:
         print str(i + 1) + '. ' + article_list[i]['headline']

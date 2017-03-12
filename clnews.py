@@ -4,6 +4,7 @@ import cnn_homepage
 import hackernews_reader
 
 def quit():
+    print ''
     print 'Thanks for reading!'
     sys.exit(1)
 
@@ -16,6 +17,9 @@ def read_more():
     elif user_input == 'n':
         quit()
     else:
+        print ''
+        print 'Command not recognized.'
+        print ''
         read_more()
 
 def main():
@@ -23,6 +27,7 @@ def main():
     print '======= Command Line News ======='
     print ''
     print 'What would you like to read?'
+    print ''
     print 'HackerNews => Usage: hn [--headlines -h] [--open -o][headline number] [--copy -cp][dest filename]'
     print 'CNN => Usage: cnn [--headlines -h] [--read -r][headline number] [--open -o][headline number]'
     print 'quit => quit'

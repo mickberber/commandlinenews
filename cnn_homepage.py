@@ -27,7 +27,7 @@ def cl_news_util(arguments):
             return
 
         if len(arguments) > 2:
-            index = int(arguments[2])
+            index = int(arguments[2]) - 1
             cnn_url = 'http://www.cnn.com/' + article_list[index]['uri']
 
             if arguments[1] == '--open' or arguments[1] == '-o':
