@@ -7,6 +7,8 @@ import re
 import json
 from datetime import datetime
 
+import cnn_article_abbreviator
+
 def get_article_list():
     currentdir = os.path.abspath('.')
     uf = urllib.urlopen('http://cnn.com')
@@ -29,7 +31,8 @@ def headlines(article_list):
         # print article_list[i]['description']
         i += 1
 
-# def cat_article(index):
+def cat_article(cnn_url):
+    cnn_article_abbreviator.main('http://www.cnn.com' + cnn_url)
 
 def handle_error():
     print 'Usage: [--headlines -h] [--read -r][headline number] [--copy -cp][filename]'
@@ -43,10 +46,12 @@ def main():
         if arguments[1] == '--headlines' or arguments[1] =='-h':
             headlines(article_list)
             return
-            
+
         if len(arguments) > 2:
             if arguments[1] == '--read' or arguments[1] == '-r':
-                # cat_article(article_list[2])
+                index = int(arguments[2])
+                print article_list[index]['headline']
+                cat_article(article_list[index]['uri'])
                 return
 
     handle_error()

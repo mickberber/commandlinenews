@@ -5,10 +5,9 @@ import os
 import urllib
 import re
 
-def main():
-    arguments = sys.argv
+def main(cnn_url):
     currentdir = os.path.abspath('.')
-    uf = urllib.urlopen(arguments[1])
+    uf = urllib.urlopen(cnn_url)
     htmlfile = uf.read()
     highlights = re.findall(r'storyhighlights__list">(.+?)</ul>', htmlfile)
     highlights = re.findall(r'normal">(.+?)</li>', highlights[0])
@@ -16,12 +15,9 @@ def main():
     print '=== Story Hightlights ==='
     for hl in highlights:
         print hl
-    print '=== === === ==='
+    print '========================='
     print content[0][-5:]
     del content[0]
     for p in content:
         print p
     return
-
-if __name__ == '__main__':
-    main()
