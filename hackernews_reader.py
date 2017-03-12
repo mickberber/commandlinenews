@@ -7,6 +7,7 @@ from datetime import datetime
 import webbrowser
 
 def headlines(storylinks):
+    print '======= Command Line News ========'
     print '==== HackerNews Headlines for ===='
     print '=== ' + str(datetime.now()) + ' ==='
     i = 0
