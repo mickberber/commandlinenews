@@ -18,6 +18,29 @@ def get_article_list():
         article_list.append(json.loads(article))
     return article_list
 
+def cl_news_util(arguments):
+    if len(arguments) > 1:
+        article_list = get_article_list()
+
+        if arguments[1] == '--headlines' or arguments[1] =='-h':
+            utils.cnn_headlines(article_list)
+            return
+
+        if len(arguments) > 2:
+            index = int(arguments[2])
+            cnn_url = 'http://www.cnn.com/' + article_list[index]['uri']
+
+            if arguments[1] == '--open' or arguments[1] == '-o':
+                utils.go_to_page(cnn_url)
+                return
+
+            if arguments[1] == '--read' or arguments[1] == '-r':
+                print article_list[index]['headline']
+                cnn_article_abbreviator.main(cnn_url)
+                return
+
+    utils.handle_error('cnn_error')
+
 def main():
     arguments = sys.argv
     if len(arguments) > 1:
