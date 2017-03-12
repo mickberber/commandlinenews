@@ -4,7 +4,7 @@ import sys
 import os
 import urllib
 import re
-import webbrowser
+import utils
 
 def main(cnn_url):
     currentdir = os.path.abspath('.')
@@ -29,7 +29,5 @@ def main(cnn_url):
         print 'This is a video article, would you like to open the page?(y/n)'
         user_input = raw_input()
         if user_input == 'y':
-            print 'Opening: ' + cnn_url + ' in Chrome...'
-            chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
-            webbrowser.get(chrome_path).open(cnn_url)
+            utils.go_to_page(cnn_url)
     return
