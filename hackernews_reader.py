@@ -33,21 +33,20 @@ def main():
 
         if arguments[1] == '--headlines' or arguments[1] == '-h':
             headlines(storylinks)
+            return
 
         if arguments[1] == '--open' or arguments[1] == '-o':
             if len(arguments) > 2:
                 openpage(storylinks, int(arguments[2]))
-            else:
-                handle_error()
+                return
 
         if arguments[1] == '--copy' or arguments[1] == '-cp':
             if len(arguments) > 2:
                 writefile = open(currentdir + '/' + arguments[2], 'w+')
                 writefile.write(htmlfile)
-            else:
-                handle_error()
-    else:
-        handle_error()
+                return
+                
+    handle_error()
 
 
 if __name__ == '__main__':
