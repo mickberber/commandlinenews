@@ -12,8 +12,7 @@ def openpage(storylinks, index):
 
 def cl_news_util(arguments):
     if len(arguments) > 1:
-        uf = urllib.urlopen('http://news.ycombinator.com')
-        htmlfile = uf.read()
+        htmlfile = utils.get_html_file('http://news.ycombinator.com')
         storylinks = re.findall(r'href="(.+)" class="storylink">(.+)</a><span', htmlfile)
 
         if arguments[1] == '--headlines' or arguments[1] == '-h':

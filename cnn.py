@@ -9,8 +9,7 @@ import utils
 import cnn_article_abbreviator
 
 def get_article_list():
-    uf = urllib.urlopen('http://cnn.com')
-    htmlfile = uf.read()
+    htmlfile = utils.get_html_file('http://cnn.com')
     articles = re.findall(r'articleList":\[(.+?)\]', htmlfile)
     articles = re.findall(r'({.+?})', articles[0])
     article_list = []

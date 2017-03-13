@@ -2,6 +2,7 @@
 import sys
 import os
 import webbrowser
+import urllib
 from datetime import datetime
 
 #handle usage errors
@@ -17,6 +18,11 @@ def go_to_page(url):
     print 'Opening: ' + url + ' in Chrome...'
     chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
     webbrowser.get(chrome_path).open(url)
+
+#Get HTML file
+def get_html_file(url):
+    uf = urllib.urlopen(url)
+    return uf.read()
 
 #Copies file to current directory
 def copy_file(dest, htmlfile):
