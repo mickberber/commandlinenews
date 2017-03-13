@@ -23,18 +23,22 @@ def copy_file(dest, htmlfile):
     writefile.write(htmlfile)
 
 def cnn_headlines(article_list):
-    print '====== Command Line News ======'
-    print '======== CNN Headlines ========'
+    print '======= Command Line News ======='
+    print '========= CNN Headlines ========='
     print '== ' + str(datetime.now()) + ' =='
+    print '================================='
     i = 0
     while i < 25:
         print str(i + 1) + '. ' + article_list[i]['headline']
         i += 1
 
 def hn_headlines(storylinks):
-    print '======= Command Line News ========'
-    print '==== HackerNews Headlines for ===='
-    print '=== ' + str(datetime.now()) + ' ==='
+    print '======== Command Line News ========='
+    print '===== HackerNews Headlines for ====='
+    print '==== ' + str(datetime.now()) + ' ====\n'
+    print '===================================='
+    print '=HackerNews atricles open in Chrome='
+    print '====================================\n'
     i = 0
     while i < len(storylinks):
         print str(i + 1) + '. ' + storylinks[i][1]

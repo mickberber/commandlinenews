@@ -4,16 +4,13 @@ import cnn_homepage
 import hackernews_reader
 
 def quit():
-    print ''
-    print 'Thanks for reading!'
+    print '\nThanks for reading!'
     sys.exit(1)
 
 def pick_cnn_article():
-    print ''
-    print 'To read an article type the headline number.'
+    print '\nTo read an article type the headline number.'
     print 'To go back to the main menu, type "main"'
-    print 'To quit type quit.'
-    print ''
+    print 'To quit type quit.\n'
     index = raw_input()
     if index == 'quit':
         quit()
@@ -23,11 +20,22 @@ def pick_cnn_article():
         cnn_homepage.cl_news_util(['cnn', '-r', index])
         read_more('cnn')
 
+def pick_hn_article():
+    print '\nTo open an article type the headline number.'
+    print 'To go back to the main menu, type "main"'
+    print 'To quit type quit.\n'
+    index = raw_input()
+    if index == 'quit':
+        quit()
+    elif index == 'main':
+        main()
+    else:
+        hackernews_reader.cl_news_util(['hn', '-o', index])
+        read_more('hn')
+
 def read_more(service):
-    print ''
-    print 'Would you like to read more from ' + service + '?(y/n)'
-    print 'Type "main" to return to the Main Menu.'
-    print ''
+    print '\nWould you like to read more from ' + service + '?(y/n)'
+    print 'Type "main" to return to the Main Menu.\n'
     user_input = raw_input()
     if user_input == 'y':
         if service == 'cnn':
@@ -43,36 +51,29 @@ def read_more(service):
     elif user_input == 'n':
         quit()
     else:
-        print ''
-        print 'Command not recognized.'
-        print ''
+        print '\nCommand not recognized.\n'
         read_more(service)
 
 def main():
-    print ''
-    print '======= Command Line News ======='
-    print ''
-    print 'What would you like to read?'
-    print ''
+    print '\n======= Command Line News =======\n'
+    print 'What would you like to read?\n'
     print 'HackerNews => type: hn'
     print 'CNN => type cnn'
     print 'quit => type: quit'
 
     service = raw_input()
     if service == 'cnn':
-        print ''
+        print '\n'
         cnn_homepage.cl_news_util([service, '-h'])
         pick_cnn_article()
     elif service == 'hn':
-        print ''
+        print '\n'
         hackernews_reader.cl_news_util([service, '-h'])
-        read_more(service)
+        pick_hn_article()
     elif service == 'quit':
         quit()
     else:
-        print ''
-        print 'Command not recognized.'
-        print ''
+        print '\nCommand not recognized.\n'
         main()
 
 if __name__ == '__main__':
