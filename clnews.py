@@ -37,7 +37,7 @@ def pick_article(service):
         hackernews.cl_news_util(['hn', '-o', command], cache['hn'])
         read_more('hn')
 
-#CNN HN Control Flow
+#Control Flow
 def read_more(service):
     print '\nWould you like to read more from ' + service + '?(y/n)'
     print 'Type "main" to return to the Main Menu.\n'
