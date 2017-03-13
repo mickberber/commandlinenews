@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import sys
-import urllib
 import re
 from datetime import datetime
 
@@ -35,8 +34,7 @@ def cl_news_util(arguments):
 def main():
     arguments = sys.argv
     if len(arguments) > 1:
-        uf = urllib.urlopen('http://news.ycombinator.com')
-        htmlfile = uf.read()
+        htmlfile = utils.get_html_file('http://news.ycombinator.com')
         storylinks = re.findall(r'href="(.+)" class="storylink">(.+)</a><span', htmlfile)
 
         if arguments[1] == '--headlines' or arguments[1] == '-h':
