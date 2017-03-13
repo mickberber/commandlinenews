@@ -27,7 +27,7 @@ def get_html_file(url):
 #Copies file to current directory
 def copy_file(dest, htmlfile):
     currentdir = os.path.abspath('.')
-    print 'Writing article to: ' + currentdir + '/' + dest
+    print 'Writing article to: ' + currentdir + dest
     writefile = open(currentdir + '/' + dest, 'w+')
     writefile.write(htmlfile)
 
