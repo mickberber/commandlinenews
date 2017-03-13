@@ -22,33 +22,20 @@ def command_prompt():
     print 'To quit type quit.\n'
 
 #Handle user selected CNN article by headline number
-def pick_cnn_article():
+def pick_article(service):
     command_prompt()
     command = raw_input()
     if command == 'quit':
         quit()
     elif command == 'main':
         main()
-    else:
+
+    if service == 'cnn':
         cnn.cl_news_util(['cnn', '-r', command], cache['cnn'])
         read_more('cnn')
-
-#Handle user selected HackerNews article by headline number
-def pick_hn_article():
-    command_prompt()
-    command = raw_input()
-    if command == 'quit':
-        quit()
-    elif command == 'main':
-        main()
-    else:
+    elif service == 'hn':
         hackernews.cl_news_util(['hn', '-o', command], cache['hn'])
         read_more('hn')
-
-cache = {
-  'cnn': False,
-  'hn': False
-}
 
 #CNN HN Control Flow
 def read_more(service):
@@ -76,17 +63,22 @@ def read_more(service):
         print '\nCommand not recognized.\n'
         read_more(service)
 
+cache = {
+  'cnn': False,
+  'hn': False
+}
+
 def main():
     cl_news_headline()
     service = raw_input()
     if service == 'cnn':
         print '\n'
         cache['cnn'] = cnn.cl_news_util([service, '-h'], cache['cnn'])
-        pick_cnn_article()
+        pick_article('cnn')
     elif service == 'hn':
         print '\n'
         cache['hn'] = hackernews.cl_news_util([service, '-h'], cache['hn'])
-        pick_hn_article()
+        pick_article('hn')
     elif service == 'quit':
         quit()
     else:
