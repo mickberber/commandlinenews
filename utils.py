@@ -4,6 +4,7 @@ import os
 import webbrowser
 from datetime import datetime
 
+#handle usage errors
 def handle_error(error_string):
     if error_string == 'cnn_error':
         print 'Usage: [--headlines -h] [--read -r][headline number] [--open -o][headline number]'
@@ -11,17 +12,22 @@ def handle_error(error_string):
         print 'Usage: [--headlines -h] [--open -o][headline number] [--copy -cp][dest filename]'
     sys.exit(1)
 
+#Open page in Chrome
 def go_to_page(url):
     print 'Opening: ' + url + ' in Chrome...'
     chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
     webbrowser.get(chrome_path).open(url)
 
+#Copies file to current directory
 def copy_file(dest, htmlfile):
     currentdir = os.path.abspath('.')
     print 'Writing article to: ' + currentdir + '/' + dest
     writefile = open(currentdir + '/' + dest, 'w+')
     writefile.write(htmlfile)
 
+#PRINT UTILITIES
+
+#CNN Print Utility
 def cnn_headlines(article_list):
     print '======= Command Line News ======='
     print '========= CNN Headlines ========='
@@ -32,6 +38,7 @@ def cnn_headlines(article_list):
         print str(i + 1) + '. ' + article_list[i]['headline']
         i += 1
 
+#HackerNews Print Utility
 def hn_headlines(storylinks):
     print '======== Command Line News ========='
     print '===== HackerNews Headlines for ====='

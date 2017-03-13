@@ -1,5 +1,5 @@
 #Command Line News
-![Alt text](./logo.png 'CLNews logo')
+![Alt text](./assets/logo.png 'CLNews logo')
 
 Currently with support for CNN & news.ycombinator.com
 
