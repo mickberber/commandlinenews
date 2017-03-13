@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"> 
+<head>
+ <meta name="apple-itunes-app" content="app-id=364677107"/>
+ <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+ <meta property="fb:pages" content="249655421622" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwEPUFdACQEAXFNUAwI="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<link rel="shortcut icon" href="http://bigstory.ap.org/sites/bigstory/files/AP_Favicon_0_0.png" type="image/png" />
+<link href="http://bigstory.ap.org/profiles/ap/themes/ap_vertical/touch-icon.png" rel="apple-touch-icon" />
+<meta name="msvalidate.01" content="97FF823CBF8983D19E2F1571F322BF93" />
+<meta name="description" content="The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news" />
+<meta name="keywords" content="breaking news,U.S. news,news,news online,world news,weather,business,sports,politics,law,technology,entertainment,education,travel,health" />
+<meta name="rights" content="2012 Associated Press" />
+<link rel="canonical" href="http://bigstory.ap.org/" />
+<link rel="shortlink" href="http://apne.ws/JpQxbJ" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://bigstory.ap.org/" />
+<meta property="og:title" content="The Big Story" />
+<meta property="og:description" content="The Associated Press delivers in-depth coverage on today&#039;s Big Story including top stories, international, politics, lifestyle, business, entertainment, and more." />
+    <title>The Big Story</title>  
+  <style type="text/css" media="all">
+@import url("http://bigstory.ap.org/modules/system/system.base.css?omre5v");
+@import url("http://bigstory.ap.org/modules/system/system.menus.css?omre5v");
+@import url("http://bigstory.ap.org/modules/system/system.messages.css?omre5v");
+@import url("http://bigstory.ap.org/modules/system/system.theme.css?omre5v");
+</style>
+<style type="text/css" media="all">
+@import url("http://bigstory.ap.org/profiles/ap/modules/custom/core/ap_boxes/css/flyout.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/modules/contrib/date/date_api/date.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/modules/contrib/date/date_popup/themes/datepicker.1.7.css?omre5v");
+@import url("http://bigstory.ap.org/modules/field/theme/field.css?omre5v");
+@import url("http://bigstory.ap.org/modules/node/node.css?omre5v");
+@import url("http://bigstory.ap.org/modules/search/search.css?omre5v");
+@import url("http://bigstory.ap.org/modules/user/user.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/modules/contrib/views/css/views.css?omre5v");
+</style>
+<style type="text/css" media="all">
+@import url("http://bigstory.ap.org/profiles/ap/modules/contrib/ctools/css/ctools.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/modules/custom/core/ap_microformats/ap_microformats.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/css/glyphicon.css?omre5v");
+</style>
+<style type="text/css" media="all">
+@import url("http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/css/fonts.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/css/foundation.min.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/css/styles-bigStory.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/css/style.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/css/magnific-popup.css?omre5v");
+</style>
+<style type="text/css" media="all">
+@import url("http://bigstory.ap.org/profiles/ap/themes/omega/alpha/css/alpha-reset.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/themes/omega/alpha/css/alpha-mobile.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/themes/omega/alpha/css/alpha-alpha.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/themes/omega/omega/css/omega-text.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/themes/omega/omega/css/omega-branding.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/themes/omega/omega/css/omega-menu.css?omre5v");
+@import url("http://bigstory.ap.org/profiles/ap/themes/omega/omega/css/omega-visuals.css?omre5v");
+</style>
+<style type="text/css" media="screen">
+@import url("http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/css/global.css?omre5v");
+</style>
+<style type="text/css" media="print">
+@import url("http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/css/print.css?omre5v");
+</style>
+
+<!--[if (lt IE 9)&(!IEMobile)]>
+<style type="text/css" media="all">
+@import url("http://bigstory.ap.org/profiles/ap/themes/omega/alpha/css/grid/alpha_default/normal/alpha-default-normal-12.css?omre5v");
+</style>
+<![endif]-->
+
+<!--[if gte IE 9]><!-->
+<style type="text/css" media="screen and (min-width: 740px) and (min-device-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)">
+@import url("http://bigstory.ap.org/profiles/ap/themes/omega/alpha/css/grid/alpha_default/narrow/alpha-default-narrow-12.css?omre5v");
+</style>
+<!--<![endif]-->
+
+<!--[if gte IE 9]><!-->
+<style type="text/css" media="screen and (min-width: 1040px) and (min-device-width: 1040px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)">
+@import url("http://bigstory.ap.org/profiles/ap/themes/omega/alpha/css/grid/alpha_default/normal/alpha-default-normal-12.css?omre5v");
+</style>
+<!--<![endif]-->
+  <script type="text/javascript" src="https://launch.newsinc.com/js/embed.js" id="_nw2e-js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="/profiles/ap/themes/bigstory_v2/assets/js/responsive_ads.js"></script>
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.google_analytics_uacct = "UA-27590430-2";
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://bigstory.ap.org/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+googletag.slots = googletag.slots || {};
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/misc/drupal.js?omre5v"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+googletag.slots["topic_box_2"] = googletag.defineSlot("/15786418/BigStory/AP/site/home", [300, 250], "dfp-ad-topic_box_2")
+  .addService(googletag.pubads());
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+googletag.slots["leaderboard"] = googletag.defineSlot("/15786418/BigStory/AP/site/home", [[728, 90], [970, 66], [970, 90], [970, 250]], "dfp-ad-leaderboard")
+  .addService(googletag.pubads());
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+googletag.slots["mobileleaderboard"] = googletag.defineSlot("/15786418/BigStory/AP/site/home", [[300, 50], [320, 50]], "dfp-ad-mobileleaderboard")
+  .addService(googletag.pubads());
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+googletag.slots["curate_box_mobile"] = googletag.defineSlot("/15786418/BigStory/AP/site/home", [300, 250], "dfp-ad-curate_box_mobile")
+  .addService(googletag.pubads());
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+googletag.slots["curate_box_desktop"] = googletag.defineSlot("/15786418/BigStory/AP/site/home/curated", [300, 250], "dfp-ad-curate_box_desktop")
+  .addService(googletag.pubads());
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+googletag.slots["topic_box_1"] = googletag.defineSlot("/15786418/BigStory/AP/site/home", [300, 250], "dfp-ad-topic_box_1")
+  .addService(googletag.pubads());
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _sf_startpt=(new Date()).getTime()
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "11304492" });(function() { var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js"; el.parentNode.insertBefore(s, el); })();
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/modules/custom/core/ap_boxes/js/jquery.hoverIntent.minified.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/modules/custom/core/ap_boxes/js/jquery.masonry.min.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/modules/custom/core/ap_boxes/js/ap_boxes.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/modules/custom/core/ap_boxes/js/ap_boxes_masonry.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/modules/custom/core/ap_boxes/js/ap_boxes_flyout.js?omre5v"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+googletag.cmd.push(function() {
+  googletag.pubads().enableAsyncRendering();
+  googletag.pubads().enableSingleRequest();
+});
+googletag.enableServices();
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//--><!]]>
+</script>
+<script type="text/javascript" src=""></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function () {
+var s = document.createElement('script');
+s.type = 'text/javascript';
+s.async = true;
+s.src = 'https://s.ntv.io/serve/load.js';
+var x = document.getElementsByTagName('script')[0];
+x.parentNode.insertBefore(s, x);
+})();
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ResponsiveAds.addDesktopAd('ad-topic_box_2','<div class="block block-dfp block-topic-box-2 block-dfp-topic-box-2 odd block-without-title" id="block-dfp-topic-box-2">  <div class="block-inner clearfix">                            <div class="content clearfix"  >    <div id="dfp-ad-topic_box_2-wrapper" class="dfp-tag-wrapper"><div class="slug">Advertisement</div><div  id="dfp-ad-topic_box_2" class="dfp-tag-wrapper">    <script type="text/javascript">    googletag.cmd.push(function() {      googletag.display("dfp-ad-topic_box_2");    });  </script></div></div>    </div>  </div></div>');
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ResponsiveAds.addMobileAd('ad-topic_box_2','<div class="block block-dfp block-topic-box-2 block-dfp-topic-box-2 odd block-without-title" id="block-dfp-topic-box-2">  <div class="block-inner clearfix">                            <div class="content clearfix"  >    <div id="dfp-ad-topic_box_2-wrapper" class="dfp-tag-wrapper"><div class="slug">Advertisement</div><div  id="dfp-ad-topic_box_2" class="dfp-tag-wrapper">    <script type="text/javascript">    googletag.cmd.push(function() {      googletag.display("dfp-ad-topic_box_2");    });  </script></div></div>    </div>  </div></div>');
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ResponsiveAds.addTabletAd('ad-topic_box_2','<div class="block block-dfp block-topic-box-2 block-dfp-topic-box-2 odd block-without-title" id="block-dfp-topic-box-2">  <div class="block-inner clearfix">                            <div class="content clearfix"  >    <div id="dfp-ad-topic_box_2-wrapper" class="dfp-tag-wrapper"><div class="slug">Advertisement</div><div  id="dfp-ad-topic_box_2" class="dfp-tag-wrapper">    <script type="text/javascript">    googletag.cmd.push(function() {      googletag.display("dfp-ad-topic_box_2");    });  </script></div></div>    </div>  </div></div>');
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/modules/custom/optional/responsive_dfp_box/js/responsive_dfp.js?omre5v"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ResponsiveAds.addMobileAd('ad-home-mobile','<div class="block block-dfp block-curate-box-mobile block-dfp-curate-box-mobile even block-without-title" id="block-dfp-curate-box-mobile">  <div class="block-inner clearfix">                            <div class="content clearfix"  >    <div id="dfp-ad-curate_box_mobile-wrapper" class="dfp-tag-wrapper"><div class="slug">Advertisement</div><div  id="dfp-ad-curate_box_mobile" class="dfp-tag-wrapper">    <script type="text/javascript">    googletag.cmd.push(function() {      googletag.display("dfp-ad-curate_box_mobile");    });  </script></div></div>    </div>  </div></div>');
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ResponsiveAds.addDesktopAd('ad-home-desktop','<div class="block block-dfp block-curate-box-desktop block-dfp-curate-box-desktop odd block-without-title" id="block-dfp-curate-box-desktop">  <div class="block-inner clearfix">                            <div class="content clearfix"  >    <div id="dfp-ad-curate_box_desktop-wrapper" class="dfp-tag-wrapper"><div class="slug">Advertisement</div><div  id="dfp-ad-curate_box_desktop" class="dfp-tag-wrapper">    <script type="text/javascript">    googletag.cmd.push(function() {      googletag.display("dfp-ad-curate_box_desktop");    });  </script></div></div>    </div>  </div></div>');
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ResponsiveAds.addTabletAd('ad-home-desktop','<div class="block block-dfp block-curate-box-desktop block-dfp-curate-box-desktop odd block-without-title" id="block-dfp-curate-box-desktop">  <div class="block-inner clearfix">                            <div class="content clearfix"  >    <div id="dfp-ad-curate_box_desktop-wrapper" class="dfp-tag-wrapper"><div class="slug">Advertisement</div><div  id="dfp-ad-curate_box_desktop" class="dfp-tag-wrapper">    <script type="text/javascript">    googletag.cmd.push(function() {      googletag.display("dfp-ad-curate_box_desktop");    });  </script></div></div>    </div>  </div></div>');
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ResponsiveAds.addTabletAd('ad-home-tablet','<div class="block block-dfp block-curated-box-tablet block-dfp-curated-box-tablet odd block-without-title" id="block-dfp-curated-box-tablet">  <div class="block-inner clearfix">                            <div class="content clearfix"  >        </div>  </div></div>');
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ResponsiveAds.addDesktopAd('ad-topic_box_1','<div class="block block-dfp block-topic-box-1 block-dfp-topic-box-1 even block-without-title" id="block-dfp-topic-box-1">  <div class="block-inner clearfix">                            <div class="content clearfix"  >    <div id="dfp-ad-topic_box_1-wrapper" class="dfp-tag-wrapper"><div class="slug">Advertisement</div><div  id="dfp-ad-topic_box_1" class="dfp-tag-wrapper">    <script type="text/javascript">    googletag.cmd.push(function() {      googletag.display("dfp-ad-topic_box_1");    });  </script></div></div>    </div>  </div></div>');
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ResponsiveAds.addMobileAd('ad-topic_box_1','<div class="block block-dfp block-topic-box-1 block-dfp-topic-box-1 even block-without-title" id="block-dfp-topic-box-1">  <div class="block-inner clearfix">                            <div class="content clearfix"  >    <div id="dfp-ad-topic_box_1-wrapper" class="dfp-tag-wrapper"><div class="slug">Advertisement</div><div  id="dfp-ad-topic_box_1" class="dfp-tag-wrapper">    <script type="text/javascript">    googletag.cmd.push(function() {      googletag.display("dfp-ad-topic_box_1");    });  </script></div></div>    </div>  </div></div>');
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ResponsiveAds.addTabletAd('ad-topic_box_1','<div class="block block-dfp block-topic-box-1 block-dfp-topic-box-1 even block-without-title" id="block-dfp-topic-box-1">  <div class="block-inner clearfix">                            <div class="content clearfix"  >    <div id="dfp-ad-topic_box_1-wrapper" class="dfp-tag-wrapper"><div class="slug">Advertisement</div><div  id="dfp-ad-topic_box_1" class="dfp-tag-wrapper">    <script type="text/javascript">    googletag.cmd.push(function() {      googletag.display("dfp-ad-topic_box_1");    });  </script></div></div>    </div>  </div></div>');
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.CKEDITOR_BASEPATH = '/profiles/ap/libraries/ckeditor/'
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/modules/contrib/google_analytics/googleanalytics.js?omre5v"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-27590430-2"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{Typekit.load();}catch(e){}
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{Typekit.load();}catch(e){}
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://use.typekit.com/uta3cck.js"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/js/mondernizr.custom.min.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/js/vendor/modernizr.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/js/jquery-scrolltofixed.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/js/custom.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/js/magnific-popup/jquery.magnific-popup.min.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/js/magnific-popup/core.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/js/magnific-popup/gallery.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/themes/bigstory_v2/assets/js/magnific-popup/image.js?omre5v"></script>
+<script type="text/javascript" src="http://bigstory.ap.org/profiles/ap/themes/omega/omega/js/omega-mediaqueries.js?omre5v"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bigstory_v2","theme_token":"oM7p5WrMr-aKlsKCdNNUnUflLEljBhtEa49rpuktz68","js":{"0":1,"1":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"2":1,"http:\/\/www.googletagservices.com\/tag\/js\/gpt.js":1,"misc\/drupal.js":1,"3":1,"4":1,"5":1,"6":1,"7":1,"8":1,"9":1,"10":1,"profiles\/ap\/modules\/custom\/core\/ap_boxes\/js\/jquery.hoverIntent.minified.js":1,"profiles\/ap\/modules\/custom\/core\/ap_boxes\/js\/jquery.masonry.min.js":1,"profiles\/ap\/modules\/custom\/core\/ap_boxes\/js\/ap_boxes.js":1,"profiles\/ap\/modules\/custom\/core\/ap_boxes\/js\/ap_boxes_masonry.js":1,"profiles\/ap\/modules\/custom\/core\/ap_boxes\/js\/ap_boxes_flyout.js":1,"11":1,"12":1,"":1,"13":1,"14":1,"15":1,"16":1,"profiles\/ap\/modules\/custom\/optional\/responsive_dfp_box\/js\/responsive_dfp.js":1,"17":1,"18":1,"19":1,"20":1,"21":1,"22":1,"23":1,"24":1,"profiles\/ap\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"25":1,"26":1,"27":1,"https:\/\/use.typekit.com\/uta3cck.js":1,"profiles\/ap\/themes\/bigstory_v2\/js\/mondernizr.custom.min.js":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/js\/vendor\/modernizr.js":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/js\/jquery-scrolltofixed.js":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/js\/custom.js":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/js\/magnific-popup\/jquery.magnific-popup.min.js":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/js\/magnific-popup\/core.js":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/js\/magnific-popup\/gallery.js":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/js\/magnific-popup\/image.js":1,"profiles\/ap\/themes\/omega\/omega\/js\/omega-mediaqueries.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"profiles\/ap\/modules\/custom\/core\/ap_boxes\/css\/flyout.css":1,"profiles\/ap\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/ap\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"profiles\/ap\/modules\/contrib\/views\/css\/views.css":1,"profiles\/ap\/modules\/contrib\/ctools\/css\/ctools.css":1,"profiles\/ap\/modules\/custom\/core\/ap_microformats\/ap_microformats.css":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/css\/glyphicon.css":1,"profiles\/ap\/themes\/bigstory_v2\/css\/fonts.css":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/css\/foundation.min.css":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/css\/styles-bigStory.css":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/css\/style.css":1,"profiles\/ap\/themes\/bigstory_v2\/assets\/css\/magnific-popup.css":1,"profiles\/ap\/themes\/omega\/alpha\/css\/alpha-reset.css":1,"profiles\/ap\/themes\/omega\/alpha\/css\/alpha-mobile.css":1,"profiles\/ap\/themes\/omega\/alpha\/css\/alpha-alpha.css":1,"profiles\/ap\/themes\/omega\/omega\/css\/omega-text.css":1,"profiles\/ap\/themes\/omega\/omega\/css\/omega-branding.css":1,"profiles\/ap\/themes\/omega\/omega\/css\/omega-menu.css":1,"profiles\/ap\/themes\/omega\/omega\/css\/omega-visuals.css":1,"profiles\/ap\/themes\/bigstory_v2\/css\/global.css":1,"profiles\/ap\/themes\/bigstory_v2\/css\/print.css":1,"ie::normal::profiles\/ap\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1,"profiles\/ap\/themes\/omega\/alpha\/css\/grid\/alpha_default\/narrow\/alpha-default-narrow-12.css":1,"profiles\/ap\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1}},"responsive_dfp_box":{"responsive_leaderboard":{"desktop":"\n\u003Cdiv  id=\u0022dfp-ad-leaderboard\u0022 class=\u0022dfp-tag-wrapper\u0022\u003E\n    \u003Cscript type=\u0022text\/javascript\u0022\u003E\n    googletag.cmd.push(function() {\n      googletag.display(\u0022dfp-ad-leaderboard\u0022);\n    });\n  \u003C\/script\u003E\n\u003C\/div\u003E\n","mobile":"\n\u003Cdiv  id=\u0022dfp-ad-mobileleaderboard\u0022 class=\u0022dfp-tag-wrapper\u0022\u003E\n    \u003Cscript type=\u0022text\/javascript\u0022\u003E\n    googletag.cmd.push(function() {\n      googletag.display(\u0022dfp-ad-mobileleaderboard\u0022);\n    });\n  \u003C\/script\u003E\n\u003C\/div\u003E\n"}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"urlIsAjaxTrusted":{"\/":true},"omega":{"layouts":{"primary":"normal","order":["narrow","normal"],"queries":{"narrow":"screen and (min-width: 740px) and (min-device-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)","normal":"screen and (min-width: 1040px) and (min-device-width: 1040px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)"}}}});
+//--><!]]>
+</script>
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lt IE 9]><link rel="stylesheet" href="/profiles/ap/themes/bigstory_v2/assets/css/fix-ie8.css"><![endif]-->
+  <!--[if lt IE 10]><link rel="stylesheet" href="/profiles/ap/themes/bigstory_v2/assets/css/fix-ie9.css"><![endif]-->
+  <!--[if lt IE 9]><script src="/profiles/ap/themes/bigstory_v2/assets/js/fix-ie8.js"></script><![endif]-->
+  <!--[if IE 9]><script src="/profiles/ap/themes/bigstory_v2/assets/js/fix-ie9.js"></script><![endif]-->
+  <!--[if lt IE 10]><script src="/profiles/ap/themes/bigstory_v2/assets/js/css3-multi-column.js"></script><![endif]-->
+  <script type="text/javascript">
+      $(function(){
+          if( $('body').hasClass("node-type-ap-article") ){
+              var script_quo = document.createElement('script')
+              script_quo.src = '/profiles/ap/themes/bigstory_v2/assets/js/package-quojs-2.3.6/quo.js'
+              document.documentElement.firstChild.appendChild(script_quo);
+          }
+      });
+  </script>
+
+<!-- Taboola script goes here 
+<script src="http://hosted.ap.org/specials/jquery-1.11.2.min.js"></script> -->
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u) {
+    e.async = 1;
+    e.src = u;
+    f.parentNode.insertBefore(e, f);
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  'https://cdn.taboola.com/libtrc/associatedpress-ap/loader.js');
+</script>
+</head>
+<body  class="html front not-logged-in page-home">
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+
+  <div class="region region-page-top" id="region-page-top">
+  <div class="region-inner region-page-top-inner">
+      </div>
+</div>  <div class="page clearfix" id="page">
+      <header id="section-header" class="section section-header">
+  <div id="zone-branding-wrapper" class="zone-wrapper zone-branding-wrapper clearfix">  
+  <div id="zone-branding" class="zone zone-branding clearfix container-12">
+    <header>
+    <nav class="top-bar" data-topbar="">
+        <ul class="title-area">
+            <li class="name">
+                <a class="logo" href="/">
+                    <!--[if gte IE 9]><!-->
+                    <img src="/profiles/ap/themes/bigstory_v2/assets/images/ap_logo_bigstory.svg" width="291" alt="">
+                    <!--<![endif]-->
+                    <!--[if lte IE 8]>
+                      <img class="fix-ie8-logo" src="/profiles/ap/themes/bigstory_v2/assets/images/ap_logo_bigstory.png" width="291" alt="">
+                    <![endif]-->
+                </a>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span><!-- menu --></span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+            <!--<nav id="nav">-->
+            <!--menu dinamico-->
+            <ul class="right medium-3 menuLinks">
+                
+                            <li class="hide-for-medium">
+            
+                            <a href="http://bigstory.ap.org/latest">
+                    Latest News                </a>
+            
+
+                        </li>
+           
+        
+                            <li class="hide-for-medium">
+            
+                            <a href="http://bigstory.ap.org/the-conversation">
+                    The Conversation                </a>
+            
+
+                        </li>
+           
+                        <li class="hide-for-small search-li dividerbigstory">
+                    <a id="idsearchform" type="button" data-options="align:left" data-dropdown="headerSearch" data-options="is_hover:false">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                    <div data-dropdown-content="" class="small content searchform drop-left open" id="headerSearch" style="display: none; position: absolute; left: -295px; top: 3px;">
+                        
+                        <form action="/" method="post" id="search-block-form" accept-charset="UTF-8">
+                                    <!--<div class="container-inline">
+                                    <div class="form-item form-type-textfield form-item-search-block-form">-->
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <div class="row collapse">
+                                    <div class="small-10 colu">
+                                        <input title="Enter the terms you wish to search for." placeholder="Search..." type="text" id="edit-search-block-form--2" name="search_block_form" value=""  maxlength="128" class="form-text">
+                                    </div>
+                                    <div  class="small-2 colu" id="edit-actions">
+                                        <input id="butonsearch" class="button postfix" type="submit" name="op" value="Go" >
+                                    </div>
+                                    <input type="hidden" name="form_id" value="search_block_form">
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </li>
+                <li class="searchForm show-for-small">
+                    <form action="/" method="post" id="search-block-form" accept-charset="UTF-8" >
+                            <!--<div class="container-inline">-->
+                        <div class="">
+                            <div class="small-12 columns">
+                                <div class="row collapse" style="float:left">
+                                    <div class="small-10 columns">
+                                        <input title="Enter the terms you wish to search for." placeholder="Search..." type="text" id="edit-search-block-form--2" name="search_block_form" value=""  maxlength="128" class="form-text"/>
+                                    </div>
+                                    <div  class="small-2 columns" id="edit-actions2">
+                                        <input id="butonsearch" class="button postfix" type="submit" name="op" value="Go" />
+                                    </div>
+                                <input type="hidden" name="form_id" value="search_block_form"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+                <li class="divider show-for-small"></li>
+                <!--<li class="ad_nav">
+                    <a href="#"><img src="/profiles/ap/themes/bigstory_v2/assets/sample/ad_88x31.png" alt=""></a>
+                </li>-->
+            </ul>
+            <!--</nav>-->
+        </section>
+    </nav>
+</header>
+<div class="block block-boxes block-boxes-responsive-dfp block-responsive-leaderboard block-boxes-responsive-leaderboard odd block-without-title" id="block-boxes-responsive-leaderboard">
+  <div class="block-inner clearfix">
+                        
+    <div class="content clearfix"  >
+    <div id='boxes-box-responsive_leaderboard' class='boxes-box'><div class="boxes-box-content"><div id="responsive_leaderboard-responsive-ad" class="responsive-ad"></div></div></div>    </div>
+  </div>
+
+</div>  </div>
+</div><!--<div>    <div id="whitelabel_header" class="clearfix">
+      </div>
+    <div class="menu-zone-inner-wrapper">
+	  <div>
+	    	  </div>
+  </div>
+</div>-->  
+  <div id="zone-header" class="zone zone-header clearfix">
+    <div class="grid-12 region region-header-first" id="region-header-first">
+  <div class="region-inner region-header-first-inner">
+    <section class="block block-boxes block-boxes-curated Chrome Test Css Value block-homepage-curated block-boxes-homepage-curated odd clearfix" id="block-boxes-homepage-curated">
+  <div class="block-inner clearfix">
+                      <h2 class="block-title">Top News</h2>
+            
+    <div class="content clearfix"   data-vr-zone='Top News'>
+    <div id='boxes-box-homepage_curated' class='boxes-box'><div class="boxes-box-content"><div class="curated-box-threecol clearfix"><div class="container-column1-column2"><div class="curated-column1"><!-- article-->
+
+
+
+
+
+<div class="article large-6 medium-6 columns container-thumb1-thumb2-height" >
+    <div class="article-layout">
+    <a href="/article/8a85adb3cdee47bc85eead093d9d526c/republicans-brace-downbeat-cbo-analysis-health-bill" title="Republicans set low expectations for health bill cost study">
+                            <div class="thumb thumb-first">
+                <img src="http://binaryapi.ap.org/1395dc7e65f7466bba130606ba48cae8/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/8a85adb3cdee47bc85eead093d9d526c/republicans-brace-downbeat-cbo-analysis-health-bill">Republicans set low expectations for health bill cost study</a></h5>                            <p class="" style="line-height: 1.3rem">WASHINGTON (AP) &#x2014; Republicans pushing a plan to dismantle Barack Obama's health care law are bracing for a Congressional Budget Office analysis widely expected to conclude that fewer Americans will have health coverage under the proposal, despite President Donald Trump's promise of "insurance for everybody."</p>
+                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T09:18:17-04:00">Mar. 13, 2017 9:18 AM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- article-->
+
+
+
+
+
+<div class="article large-6 medium-6 columns container-thumb1-thumb2-height" >
+    <div class="article-layout">
+    <a href="/article/73c2e7e8f744434fb0550593dd945aa5/lefties-techies-long-odds-sf-team-against-trump" title="Lefties, techies long at odds in SF, team up against Trump">
+                            <div class="thumb thumb-second">
+                <img src="http://binaryapi.ap.org/aebd71ec31f4402d8b6a7c6ddb727f8e/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/73c2e7e8f744434fb0550593dd945aa5/lefties-techies-long-odds-sf-team-against-trump">Lefties, techies long at odds in SF, team up against Trump</a></h5>                            <p class="" style="line-height: 1.3rem">SAN FRANCISCO (AP) &#x2014; Before Donald Trump's election, Laurence Berland viewed political protest as a sort of curiosity. He was in a good place to see it: San Francisco's Mission District, once an immigrant enclave in the country's heartland of radicalism that is increasingly populated by people like him &#x2014; successful tech workers driving up rents while enjoying a daily commute to Silicon Valley on luxury motor coaches.</p>
+                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T10:06:13-04:00">Mar. 13, 2017 10:06 AM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<section id="ad-home-mobile" class="article large-4 large-push-0 medium-4 columns ad-block text-center"></section><hr class="mobile-home"></div><div class="curated-column2"><!-- article-->
+
+
+
+
+
+<div class="article large-12" >
+    <div class="article-layout">
+    <a href="/article/79a6f9a038bb4a69a5e50d6922c9db55/ap-photos-san-franciscos-decades-long-history-protest" title="AP PHOTOS: San Francisco&#039;s decades long history of protest">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/fe6c2c5156084a8c8bc2d56ebfeffd3e/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/79a6f9a038bb4a69a5e50d6922c9db55/ap-photos-san-franciscos-decades-long-history-protest">AP PHOTOS: San Francisco&#039;s decades long history of protest</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T10:08:59-04:00">Mar. 13, 2017 10:08 AM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- article-->
+
+
+
+
+
+<div class="article large-12" >
+    <div class="article-layout">
+    <a href="/article/c7f7102708c04def83ae1086cb41cd6b/inside-washington-push-avert-plane-battery-fires-stalls" title="INSIDE WASHINGTON: Push to avert plane battery fires stalls">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/bf2ff7c6224c4bd2a684245a5d5e5522/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/c7f7102708c04def83ae1086cb41cd6b/inside-washington-push-avert-plane-battery-fires-stalls">INSIDE WASHINGTON: Push to avert plane battery fires stalls</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T10:55:58-04:00">Mar. 13, 2017 10:55 AM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- article-->
+
+
+
+
+
+<div class="article large-12" >
+    <div class="article-layout">
+    <a href="/article/5a30709cf0ed4e9d8988d0728c35fb47/conway-suggests-surveillance-trump-went-beyond-phones" title="Trump adviser says gov&#039;t has many ways to surveil people">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/6ba0cd37ec3b43d8af78d322d1a8331c/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/5a30709cf0ed4e9d8988d0728c35fb47/conway-suggests-surveillance-trump-went-beyond-phones">Trump adviser says gov&#039;t has many ways to surveil people</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T08:48:26-04:00">Mar. 13, 2017 8:48 AM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- article-->
+
+
+
+
+
+<div class="article large-12" >
+    <div class="article-layout">
+    <a href="/article/ea7ba774f6a144058f81ae3fceac720d/simmering-tensions-elections-underlie-turkish-dutch-dispute" title="A look at simmering tensions between Turkey and Netherlands">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/81577c2e5e484e1689c31cde39deeedb/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/ea7ba774f6a144058f81ae3fceac720d/simmering-tensions-elections-underlie-turkish-dutch-dispute">A look at simmering tensions between Turkey and Netherlands</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T12:29:02-04:00">Mar. 13, 2017 12:29 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+</div></div><div class="curated-column3"><section id="ad-home-desktop" class="article large-4 large-push-0 medium-4 columns ad-block text-center"></section><!-- article-->
+
+
+
+
+
+<div class="article large-12" >
+    <div class="article-layout">
+    <a href="/article/b77beef682a9439388d095027519318b/scotlands-leader-seeks-new-independence-referendum" title="Scotland seeks new independence referendum amid Brexit spat">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/d1b7fcacdc1b4eb8b07b54c315d17c4e/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/b77beef682a9439388d095027519318b/scotlands-leader-seeks-new-independence-referendum">Scotland seeks new independence referendum amid Brexit spat</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T11:11:19-04:00">Mar. 13, 2017 11:11 AM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- article-->
+
+
+
+
+
+<div class="article large-12" >
+    <div class="article-layout">
+    <a href="/article/b766a9cb07a34a5ca0eb1925c177b1a0/merkel-and-trump-opposing-styles-common-interests" title="Merkel and Trump: Opposing styles with common interests">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/7f8f02d3b2194a8e968cffccfc03703c/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/b766a9cb07a34a5ca0eb1925c177b1a0/merkel-and-trump-opposing-styles-common-interests">Merkel and Trump: Opposing styles with common interests</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T08:22:18-04:00">Mar. 13, 2017 8:22 AM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- article-->
+
+
+
+
+
+<div class="article large-12" >
+    <div class="article-layout">
+    <a href="/article/d0dbcc005afe42a7acb7252f080bd1c6/noreaster-bring-heavy-snow-strong-winds-northeast" title="Northeast set for late-winter hit of heavy snow, strong wind">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/4e28886f29c14dc5a33b5de18d4a3c32/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/d0dbcc005afe42a7acb7252f080bd1c6/noreaster-bring-heavy-snow-strong-winds-northeast">Northeast set for late-winter hit of heavy snow, strong wind</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T12:26:36-04:00">Mar. 13, 2017 12:26 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<section id="ad-home-tablet" class="article large-4 large-push-0 medium-4 columns ad-block text-center"></section></div>  </div></div></div>    </div>
+  </div>
+
+</section>  </div>
+</div>  </div>
+</header>    
+      <section id="section-content" class="section section-content">
+  <div id="zone-content-wrapper" class="zone-wrapper zone-content-wrapper clearfix">  
+  <div id="zone-content" class="zone zone-content clearfix container-12">    
+        
+            <div class="grid-12 region region-content" id="region-content">
+
+
+  <div class="region-inner region-content-inner">
+    <a id="main-content"></a>
+                 
+        <div class="primary-title">
+        <h1  id="page-title" class="title page-title">Home</h1>
+        </div>
+                <div class="tabs clearfix"></div>        <section class="block block-boxes block-boxes-list block-taxonomy-1 block-boxes-taxonomy-1 odd" id="block-boxes-taxonomy-1">
+  <div class="block-inner clearfix">
+                      <h2 class="block-title">Latest news <a class="title-viewmore" href="latest">View More</a></h2>
+            
+    <div class="content clearfix"   data-vr-zone='Latest news <a class="title-viewmore" href="latest">View More</a>'>
+    <div id='boxes-box-taxonomy_1' class='boxes-box'><div class="boxes-box-content"><div class="box-list-content gridlayout-taxonomy_1 clearfix"><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left no-thumb" >
+    <div class="article-layout">
+    <a href="/article/d88d8ef3a0b44aeb827b0880ec7ab0e5/blackface-mardi-gras-picture-stirs-debate-new-orleans" title="Blackface Mardi Gras picture stirs debate in New Orleans">
+                    
+            <h5  class="entry-title node-title title" rel="bookmark"  ><a href="/article/d88d8ef3a0b44aeb827b0880ec7ab0e5/blackface-mardi-gras-picture-stirs-debate-new-orleans">Blackface Mardi Gras picture stirs debate in New Orleans</a></h5>            
+                <a href="/article/d88d8ef3a0b44aeb827b0880ec7ab0e5/blackface-mardi-gras-picture-stirs-debate-new-orleans" title="Blackface Mardi Gras picture stirs debate in New Orleans">
+                    <p class="" style="line-height: 1.3rem">
+                    NEW ORLEANS (AP) &#x2014; A social media picture of a white woman wearing blackface makeup has sparked a debate about race and Mardi Gras in New Orleans.                    </p>
+                </a>
+            
+            </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T12:29:49-04:00">Mar. 13, 2017 12:29 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left no-thumb" >
+    <div class="article-layout">
+    <a href="/article/8ed2df4cf94449e0bb7bd4d261e489e3/omaha-man-faces-competency-exam-death-penalty-hearing" title="Omaha man faces competency exam before death penalty hearing">
+                    
+            <h5  class="entry-title node-title title" rel="bookmark"  ><a href="/article/8ed2df4cf94449e0bb7bd4d261e489e3/omaha-man-faces-competency-exam-death-penalty-hearing">Omaha man faces competency exam before death penalty hearing</a></h5>            
+                <a href="/article/8ed2df4cf94449e0bb7bd4d261e489e3/omaha-man-faces-competency-exam-death-penalty-hearing" title="Omaha man faces competency exam before death penalty hearing">
+                    <p class="" style="line-height: 1.3rem">
+                    OMAHA, Neb. (AP) &#x2014; A judge has ordered tests to determine whether a former doctor convicted of killing four people connected to an Omaha medical school is competent to face a death penalty hearing.                    </p>
+                </a>
+            
+            </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T12:29:15-04:00">Mar. 13, 2017 12:29 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/ea7ba774f6a144058f81ae3fceac720d/simmering-tensions-elections-underlie-turkish-dutch-dispute" title="A look at simmering tensions between Turkey and Netherlands">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/81577c2e5e484e1689c31cde39deeedb/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/ea7ba774f6a144058f81ae3fceac720d/simmering-tensions-elections-underlie-turkish-dutch-dispute">A look at simmering tensions between Turkey and Netherlands</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T12:29:02-04:00">Mar. 13, 2017 12:29 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left no-thumb" >
+    <div class="article-layout">
+    <a href="/article/20daaaa2fc9548b19dbdcce47f3c662e/california-police-kill-man-gas-can-who-lit-smoke" title="California police kill man with gas can in minivan">
+                    
+            <h5  class="entry-title node-title title" rel="bookmark"  ><a href="/article/20daaaa2fc9548b19dbdcce47f3c662e/california-police-kill-man-gas-can-who-lit-smoke">California police kill man with gas can in minivan</a></h5>            
+                <a href="/article/20daaaa2fc9548b19dbdcce47f3c662e/california-police-kill-man-gas-can-who-lit-smoke" title="California police kill man with gas can in minivan">
+                    <p class="" style="line-height: 1.3rem">
+                    ORANGE, Calif. (AP) &#x2014; California police shot a man dead after he barricaded himself inside a minivan with gas can and a lighter during a traffic stop before emerging with a knife, officials said Monday.                    </p>
+                </a>
+            
+            </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T12:26:49-04:00">Mar. 13, 2017 12:26 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/d0dbcc005afe42a7acb7252f080bd1c6/noreaster-bring-heavy-snow-strong-winds-northeast" title="Northeast set for late-winter hit of heavy snow, strong wind">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/4e28886f29c14dc5a33b5de18d4a3c32/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/d0dbcc005afe42a7acb7252f080bd1c6/noreaster-bring-heavy-snow-strong-winds-northeast">Northeast set for late-winter hit of heavy snow, strong wind</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T12:26:36-04:00">Mar. 13, 2017 12:26 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left no-thumb" >
+    <div class="article-layout">
+    <a href="/article/6056b129861a4918a9555fb6a2306327/arkansas-official-state-has-drugs-conduct-8-executions" title="Arkansas official: State has drugs to conduct 8 executions">
+                    
+            <h5  class="entry-title node-title title" rel="bookmark"  ><a href="/article/6056b129861a4918a9555fb6a2306327/arkansas-official-state-has-drugs-conduct-8-executions">Arkansas official: State has drugs to conduct 8 executions</a></h5>            
+                <a href="/article/6056b129861a4918a9555fb6a2306327/arkansas-official-state-has-drugs-conduct-8-executions" title="Arkansas official: State has drugs to conduct 8 executions">
+                    <p class="" style="line-height: 1.3rem">
+                    LITTLE ROCK, Ark. (AP) &#x2014; Arkansas has a new supply of a lethal injection drug that expired earlier this year, a prison spokesman said Monday, clearing the way for the state to move forward with eight executions scheduled next month.                    </p>
+                </a>
+            
+            </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T12:26:26-04:00">Mar. 13, 2017 12:26 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/56d98cf774024503a16f0a52e6208f51/experts-begin-defusing-11-tons-explosives-found-munich" title="Experts begin defusing 11 tons of explosives found in Munich">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/69babf4ae9194d2989b22b1c55448778/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/56d98cf774024503a16f0a52e6208f51/experts-begin-defusing-11-tons-explosives-found-munich">Experts begin defusing 11 tons of explosives found in Munich</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T12:26:17-04:00">Mar. 13, 2017 12:26 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left no-thumb" >
+    <div class="article-layout">
+    <a href="/article/a7c49d2a13f8436daab2a1b52cfb7267/tebow-gets-surprise-call-3rd-spring-start-mets" title="Tebow gets surprise call for 3rd spring start for Mets">
+                    
+            <h5  class="entry-title node-title title" rel="bookmark"  ><a href="/article/a7c49d2a13f8436daab2a1b52cfb7267/tebow-gets-surprise-call-3rd-spring-start-mets">Tebow gets surprise call for 3rd spring start for Mets</a></h5>            
+                <a href="/article/a7c49d2a13f8436daab2a1b52cfb7267/tebow-gets-surprise-call-3rd-spring-start-mets" title="Tebow gets surprise call for 3rd spring start for Mets">
+                    <p class="" style="line-height: 1.3rem">
+                    PORT ST. LUCIE, Fla. (AP) &#x2014; The New York Mets say Tim Tebow will be in the lineup for their spring training game against the Miami Marlins.                    </p>
+                </a>
+            
+            </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T12:26:10-04:00">Mar. 13, 2017 12:26 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left no-thumb" >
+    <div class="article-layout">
+    <a href="/article/a791664e8c9b4e2a82ace1b2fb4af24c/water-park-eyed-ex-atlantic-club-casino-atlantic-city" title="Water park eyed at ex-Atlantic Club casino in Atlantic City">
+                    
+            <h5  class="entry-title node-title title" rel="bookmark"  ><a href="/article/a791664e8c9b4e2a82ace1b2fb4af24c/water-park-eyed-ex-atlantic-club-casino-atlantic-city">Water park eyed at ex-Atlantic Club casino in Atlantic City</a></h5>            
+                <a href="/article/a791664e8c9b4e2a82ace1b2fb4af24c/water-park-eyed-ex-atlantic-club-casino-atlantic-city" title="Water park eyed at ex-Atlantic Club casino in Atlantic City">
+                    <p class="" style="line-height: 1.3rem">
+                    ATLANTIC CITY, N.J. (AP) &#x2014; A New Jersey developer who has long wanted to bring a family water park to Atlantic City plans to build one at a former casino.                    </p>
+                </a>
+            
+            </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-13T12:23:14-04:00">Mar. 13, 2017 12:23 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<section id="ad-topic_box_2" class="article large-12 medium-4 columns left"></section></div></div></div>    </div>
+  </div>
+
+</section>      </div>
+</div>  </div>
+</div><div id="zone-postscript-wrapper" class="zone-wrapper zone-postscript-wrapper clearfix">  
+  <div id="zone-postscript" class="zone zone-postscript clearfix container-12">
+    <div class="grid-6 region region-postscript-first" id="region-postscript-first">
+  <div class="region-inner region-postscript-first-inner">
+    <section class="block block-boxes block-boxes-list block-taxonomy-2 block-boxes-taxonomy-2 odd" id="block-boxes-taxonomy-2">
+  <div class="block-inner clearfix">
+                      <h2 class="block-title"> 2016 Presidential campaign <a class="title-viewmore" href="prez-campaign-more">View More</a></h2>
+            
+    <div class="content clearfix"   data-vr-zone='Bottom Left Tax Box '>
+    <div id='boxes-box-taxonomy_2' class='boxes-box'><div class="boxes-box-content"><div class="box-list-content gridlayout-taxonomy_2 clearfix"><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left no-thumb" >
+    <div class="article-layout">
+    <a href="/article/875d0a728fb740a38079d850dae0089d/game-change-reporting-team-write-about-trump-election" title="&#039;Game Change&#039; reporting team to write about Trump election">
+                    
+            <h5  class="entry-title node-title title" rel="bookmark"  ><a href="/article/875d0a728fb740a38079d850dae0089d/game-change-reporting-team-write-about-trump-election">&#039;Game Change&#039; reporting team to write about Trump election</a></h5>            
+                <a href="/article/875d0a728fb740a38079d850dae0089d/game-change-reporting-team-write-about-trump-election" title="&#039;Game Change&#039; reporting team to write about Trump election">
+                    <p class="" style="line-height: 1.3rem">
+                    NEW YORK (AP) &#x2014; The reporting team that brought us the best-selling campaign books "Game Change" and "Double Down" are set to write about the stunning election of Donald Trump.                    </p>
+                </a>
+            
+            </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-09T16:55:41-05:00">Mar. 9, 2017 4:55 PM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/26666539f6ca4e1d8455060db432d904/house-intel-hold-first-russia-hearing-later-month" title="House intel chair: Media take Trump tweets too literally">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/dbbbcf43f41740b989f88c649d265219/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/26666539f6ca4e1d8455060db432d904/house-intel-hold-first-russia-hearing-later-month">House intel chair: Media take Trump tweets too literally</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-07T20:10:28-05:00">Mar. 7, 2017 8:10 PM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/2c2e5daa36864c859ffa85ec379fb69f" title="Kremlin: Trump&#039;s wiretap claim purely a &quot;domestic issue&quot;">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/2d439479aa7348b1983d0736768c95a7/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/2c2e5daa36864c859ffa85ec379fb69f">Kremlin: Trump&#039;s wiretap claim purely a &quot;domestic issue&quot;</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-06T07:57:29-05:00">Mar. 6, 2017 7:57 AM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/3c4ffb3202f1430391a0a49703098a24/trump-accuses-obama-tapping-his-phones-invokes-watergate" title="Trump seeks Congress&#039; help on wiretap claim; FBI disputes it">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/e1edd9aeeb5b43c4a856827cf4e3dd92/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/3c4ffb3202f1430391a0a49703098a24/trump-accuses-obama-tapping-his-phones-invokes-watergate">Trump seeks Congress&#039; help on wiretap claim; FBI disputes it</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-05T20:22:51-05:00">Mar. 5, 2017 8:22 PM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/b8ec0ebd8a7e47d693b154ae1cc04cf4/russian-fm-calls-sessions-uproar-replay-mccarthyism" title="Russia says US infighting on Sessions hampers mending ties">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/7c8dd86fb4654b97b838dbe96bdf8b4e/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/b8ec0ebd8a7e47d693b154ae1cc04cf4/russian-fm-calls-sessions-uproar-replay-mccarthyism">Russia says US infighting on Sessions hampers mending ties</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-03T11:45:07-05:00">Mar. 3, 2017 11:45 AM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/b396da6f27a9405a9012dfd3c9735a91/justice-dept-sessions-spoke-russian-ambassador-2016" title="Sessions steps aside from Russia probe under pressure">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/bc9b18d618fa437daa40b4985590af6e/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/b396da6f27a9405a9012dfd3c9735a91/justice-dept-sessions-spoke-russian-ambassador-2016">Sessions steps aside from Russia probe under pressure</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-02T22:17:56-05:00">Mar. 2, 2017 10:17 PM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/9b4d5b1e73554e3c85207a9944706be5/questions-and-answers-about-perjury-sessions-statements" title="Questions and answers about perjury, Sessions&#039; statements">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/ff796be300c74e3c88dc5ca6b66c3b6c/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/9b4d5b1e73554e3c85207a9944706be5/questions-and-answers-about-perjury-sessions-statements">Questions and answers about perjury, Sessions&#039; statements</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-02T19:52:07-05:00">Mar. 2, 2017 7:52 PM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/48693846073b4e0da26fc3ffdaed157f/justice-dept-sessions-spoke-russian-ambassador-2016" title="Justice Dept: Sessions spoke with Russian ambassador in 2016">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/db8f54ac3acb40ddabb204dd13921407/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/48693846073b4e0da26fc3ffdaed157f/justice-dept-sessions-spoke-russian-ambassador-2016">Justice Dept: Sessions spoke with Russian ambassador in 2016</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-02T01:01:03-05:00">Mar. 2, 2017 1:01 AM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/23cca28e11b74f0cb369fda6fac64d67/white-house-staff-told-preserve-russia-related-materials" title="White House staff told to preserve Russia-related materials">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/6dd5522740794736a47f05eddb41e553/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/23cca28e11b74f0cb369fda6fac64d67/white-house-staff-told-preserve-russia-related-materials">White House staff told to preserve Russia-related materials</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-01T21:10:50-05:00">Mar. 1, 2017 9:10 PM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<section id="ad-topic_box_1" class="article large-12 medium-4 columns left"></section></div></div></div>    </div>
+  </div>
+
+</section>  </div>
+</div><div class="grid-6 region region-postscript-second" id="region-postscript-second">
+  <div class="region-inner region-postscript-second-inner">
+    <section class="block block-boxes block-boxes-list block-taxonomy-3 block-boxes-taxonomy-3 odd" id="block-boxes-taxonomy-3">
+  <div class="block-inner clearfix">
+                      <h2 class="block-title"> Islamic State group <a class="title-viewmore" href="islamic-state-more">View More</a></h2>
+            
+    <div class="content clearfix"   data-vr-zone='Bottom Right Tax Box '>
+    <div id='boxes-box-taxonomy_3' class='boxes-box'><div class="boxes-box-content"><div class="box-list-content gridlayout-taxonomy_3 clearfix"><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left " >
+    <div class="article-layout">
+    <a href="/article/dabcc506b385431cb1891fc2e89727f0/al-qaida-linked-group-claims-deadly-attack-syrian-capital" title="Al-Qaida-linked group claims deadly attack in Syrian capital">
+                            <div class="thumb thumb-grid">
+                <img src="http://binaryapi.ap.org/11f9d49d8fcc4d11b1a28fca680aa197/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/dabcc506b385431cb1891fc2e89727f0/al-qaida-linked-group-claims-deadly-attack-syrian-capital">Al-Qaida-linked group claims deadly attack in Syrian capital</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-12T13:30:08-04:00">Mar. 12, 2017 1:30 PM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/b42a8168a40945d2b9ff7b133d56c377/libyas-deepening-split-finds-battleground-oil-terminals" title="Libya&#039;s deepening split finds battleground at oil terminals">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/eaedae5223c04c83a81b56f16bd219c4/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/b42a8168a40945d2b9ff7b133d56c377/libyas-deepening-split-finds-battleground-oil-terminals">Libya&#039;s deepening split finds battleground at oil terminals</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-12T03:03:07-04:00">Mar. 12, 2017 3:03 AM EDT</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/a342b5c4bf2d499b84b7afd5a4ca27e9/syrias-assad-says-priority-capturing-capital-raqqa" title="Twin blasts kill 40 near religious sites in Syria&#039;s capital">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/3ab9b688a869419cb699b8dd32974829/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/a342b5c4bf2d499b84b7afd5a4ca27e9/syrias-assad-says-priority-capturing-capital-raqqa">Twin blasts kill 40 near religious sites in Syria&#039;s capital</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-11T11:47:04-05:00">Mar. 11, 2017 11:47 AM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left no-thumb" >
+    <div class="article-layout">
+    <a href="/article/05eb4782dbbe4853bc68fe94c61a4bf8/turkeys-determination-against-kurds-alienates-us-russia" title="Turkey&#039;s determination against Kurds alienates US, Russia">
+                    
+            <h5  class="entry-title node-title title" rel="bookmark"  ><a href="/article/05eb4782dbbe4853bc68fe94c61a4bf8/turkeys-determination-against-kurds-alienates-us-russia">Turkey&#039;s determination against Kurds alienates US, Russia</a></h5>            
+                <a href="/article/05eb4782dbbe4853bc68fe94c61a4bf8/turkeys-determination-against-kurds-alienates-us-russia" title="Turkey&#039;s determination against Kurds alienates US, Russia">
+                    <p class="" style="line-height: 1.3rem">
+                    BEIRUT (AP) &#x2014; Turkey achieved a milestone in its goals in Syria: It established a foothold in the heart of the country's north after driving Islamic State militants away from its borders and seizing al-Bab, one of the extremist group's major strongholds and a major supply route.                    </p>
+                </a>
+            
+            </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-11T05:27:48-05:00">Mar. 11, 2017 5:27 AM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/a1a7f2c1684f46cfbb68c7e1734b8090/turkey-71-syrian-kurdish-fighters-killed-northern-syria" title="Backed by US troops, SDF confident can capture IS &#039;capital&#039;">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/b669684dd8284b2e8aef8c3a32b89220/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/a1a7f2c1684f46cfbb68c7e1734b8090/turkey-71-syrian-kurdish-fighters-killed-northern-syria">Backed by US troops, SDF confident can capture IS &#039;capital&#039;</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-10T10:00:31-05:00">Mar. 10, 2017 10:00 AM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left" >
+    <div class="article-layout">
+    <a href="/article/syria-activists-strikes-kill-least-14-near-stronghold" title="US force in Syria to help anti-IS fighters with firepower">
+                            <div class="thumb thumb-others">
+                <img src="http://binaryapi.ap.org/445b1d160e6c4dbe8f4d367071079c0d/500x.jpg"/>
+            </div>
+            <h5  class="entry-title node-title title" rel="bookmark" ><a href="/article/syria-activists-strikes-kill-least-14-near-stronghold">US force in Syria to help anti-IS fighters with firepower</a></h5>                        </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-09T15:34:33-05:00">Mar. 9, 2017 3:34 PM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left no-thumb" >
+    <div class="article-layout">
+    <a href="/article/d7c0005ac1f1488895625fecb3339399/libyas-eastern-parliament-calls-elections-next-year" title="Libya&#039;s eastern parliament calls for elections next year">
+                    
+            <h5  class="entry-title node-title title" rel="bookmark"  ><a href="/article/d7c0005ac1f1488895625fecb3339399/libyas-eastern-parliament-calls-elections-next-year">Libya&#039;s eastern parliament calls for elections next year</a></h5>            
+                <a href="/article/d7c0005ac1f1488895625fecb3339399/libyas-eastern-parliament-calls-elections-next-year" title="Libya&#039;s eastern parliament calls for elections next year">
+                    <p class="" style="line-height: 1.3rem">
+                    BENGHAZI, Libya (AP) &#x2014; Libya's eastern-based parliament has called for elections to be held early next year, after it backed out of a United Nations-brokered peace deal with rival authorities in the capital, Tripoli. The widening split has stoked concerns that violence could escalate in the fractured country.                    </p>
+                </a>
+            
+            </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-08T10:10:44-05:00">Mar. 8, 2017 10:10 AM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left no-thumb" >
+    <div class="article-layout">
+    <a href="/article/73bafb49486740d38a47da58b6f19041/iraq-vows-target-militants-neighboring-countries" title="Iraq vows to target militants in neighboring countries">
+                    
+            <h5  class="entry-title node-title title" rel="bookmark"  ><a href="/article/73bafb49486740d38a47da58b6f19041/iraq-vows-target-militants-neighboring-countries">Iraq vows to target militants in neighboring countries</a></h5>            
+                <a href="/article/73bafb49486740d38a47da58b6f19041/iraq-vows-target-militants-neighboring-countries" title="Iraq vows to target militants in neighboring countries">
+                    <p class="" style="line-height: 1.3rem">
+                    BAGHDAD (AP) &#x2014; Iraq's prime minister says it will continue to target militants in neighboring countries, as it did last month with airstrikes against Islamic State positions in Syria.                    </p>
+                </a>
+            
+            </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-08T03:40:31-05:00">Mar. 8, 2017 3:40 AM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --><!-- PREFIX AP TBS--><!-- article-->
+
+
+
+
+
+<div class="article large-12 medium-4 columns left no-thumb" >
+    <div class="article-layout">
+    <a href="/article/libyas-eastern-parliament-quits-un-peace-deal-tripoli" title="Libya&#039;s eastern parliament quits UN peace deal with Tripoli">
+                    
+            <h5  class="entry-title node-title title" rel="bookmark"  ><a href="/article/libyas-eastern-parliament-quits-un-peace-deal-tripoli">Libya&#039;s eastern parliament quits UN peace deal with Tripoli</a></h5>            
+                <a href="/article/libyas-eastern-parliament-quits-un-peace-deal-tripoli" title="Libya&#039;s eastern parliament quits UN peace deal with Tripoli">
+                    <p class="" style="line-height: 1.3rem">
+                    BENGHAZI, Libya (AP) &#x2014; Libya's eastern parliament voted Tuesday to withdraw its support for a United Nations peace deal and Government of National Accord, stoking concerns that recent violence in the fractured country could escalate.                    </p>
+                </a>
+            
+            </a>
+        <footer>
+		  <div class="article-data clearfix">
+		    <div class="time"><span  class="updated" title="2017-03-07T11:11:29-05:00">Mar. 7, 2017 11:11 AM EST</span></div>
+		  </div>
+	  </footer>
+    </div>
+    <hr class="mobile-home">		  
+</div>
+
+
+
+
+
+<!-- SUFFIX AP TBS --></div></div></div>    </div>
+  </div>
+
+</section>  </div>
+</div>  </div>
+</div>  
+  <div id="zone-postscript-row-two" class="zone zone-postscript-row-two clearfix container-12">
+    <div class="grid-6 region region-postscript-fourth" id="region-postscript-fourth">
+  <div class="region-inner region-postscript-fourth-inner">
+    <div class="block block-block block-36 block-block-36 odd block-without-title" id="block-block-36">
+  <div class="block-inner clearfix">
+                        
+    <div class="content clearfix"  >
+    <script>
+<!--//--><![CDATA[// ><!--
+
+$(document).ready(function(){
+$( "#block-block-36" ).insertAfter( ".menuLinks" );
+});
+
+//--><!]]>
+</script><p class="audio">
+<a href="http://player.streamguys.com/apnews/sgplayer/index.php" onclick="javascript:void window.open('http://player.streamguys.com/apnews/sgplayer/index.php','1444770899860','width=848,height=254,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=800,top=0');return false;"><span style="color: white; font-size: 0.6em">AP Radio News:</span></a><br /><audio controls="controls" preload="none"><br /><source src="http://apnews.streamguys1.com/apnews?cache-buster=' + Math.random()" type="audio/mpeg"></source><br /><source src="http://apnews.streamguys1.com/apnews?cache-buster=' + Math.random()" type="audio/ogg"></source><br />
+Your browser does not support the audio element. </audio></p>
+<p></p>
+<div id="externalimage"><a href="http://player.streamguys.com/apnews/sgplayer/index.php" onclick="javascript:void window.open('http://player.streamguys.com/apnews/sgplayer/index.php','1444770899860','width=848,height=254,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=800,top=0');return false;"><img alt="" src="http://bigstory.ap.org/sites/bigstory/files/14449449681_external_link.png" /></a>
+</div>
+
+<style>
+<!--/*--><![CDATA[/* ><!--*/
+
+
+audio
+{ 
+float: right; 
+display: block;
+margin-top: -26px;
+width: 300px;
+height: 45px
+
+} 
+
+#block-block-36 
+{ 
+height: 50px; 
+width: 300px; 
+float: right;
+position: relative
+}
+
+p.audio
+{
+border-bottom-color: #333;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0 0 0 0;
+border-image-repeat: stretch stretch;
+border-image-slice: 100% 100% 100% 100%;
+border-image-source: none;
+border-image-width: 1 1 1 1;
+border-left-color: #333;
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: #333;
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: #333;
+border-top-style: none;
+border-top-width: 0px;
+box-sizing: border-box;
+color: #333;
+cursor: auto;
+font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+font-feature-settings: normal;
+font-kerning: auto;
+font-language-override: normal;
+font-size: 16px;
+font-size-adjust: none;
+font-stretch: normal;
+font-style: normal;
+font-synthesis: weight style;
+font-variant: normal;
+font-variant-alternates: normal;
+font-variant-caps: normal;
+font-variant-east-asian: normal;
+font-variant-ligatures: normal;
+font-variant-numeric: normal;
+font-variant-position: normal;
+font-weight: 400;
+line-height: 45px;
+margin-bottom: 20px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: -17px;
+outline-color: #333;
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+text-rendering: optimizelegibility;
+vertical-align: baseline;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none
+
+}
+
+
+#externalimage
+{
+    position: absolute;
+    top: 9px;
+    width: 28px;
+    right: 302px;
+}
+
+
+ @media only screen and (max-device-width: 480px) {
+   /* define mobile specific styles come here */
+#block-block-36 
+{ 
+height: 70px; 
+width: 300px; 
+float: right
+}
+
+audio
+{ 
+float: left;
+display: block;
+margin-top: -20px;
+width: 250px;
+height: 45px
+
+} 
+
+#externalimage
+{
+ position: absolute;
+right: 5px;
+width: auto;
+height: auto
+}
+
+
+ }
+
+
+
+
+/*--><!]]>*/
+</style>    </div>
+  </div>
+
+</div>  </div>
+</div>  </div>
+</section>    
+  
+      <footer id="section-footer" class="section section-footer">
+  <div id="zone-footer-wrapper" class="zone-wrapper zone-footer-wrapper clearfix">  
+  <div id="zone-footer" class="zone zone-footer clearfix container-12">
+    <footer>
+  <div id="siteFooter">
+    <div class="row">
+        <div class="medium-4 columns">
+            <h5>Get the AP News app</h5>
+<a href="https://itunes.apple.com/us/app/ap-news/id364677107?mt=8"><img src="http://bigstory.ap.org/sites/bigstory/files/Mobile-App-Download-New_0.png"></a>
+        </div>
+        <div class="medium-4 columns">
+            <h5>AP Sites</h5>
+            <ul class="">
+                <li><a href="http://collegefootball.ap.org" >College Football</a></li>
+                <li><a href="http://pro32.ap.org" >Football</a></li>
+                <li><a href="http://collegebasketball.ap.org" >College Basketball</a></li>
+                <li><a href="http://racing.ap.org" >Auto Racing</a></li>
+               <!-- <li><a href="http://summergames.ap.org" >Summer Games</a></li> -->
+            </ul>
+        </div>
+        <div class="medium-4 columns">
+            <h5>Follow AP</h5>
+            <ul class="">
+                <li><a href="https://www.facebook.com/pages/Associated-Press/107751995914945">Facebook</a></li>
+                <li><a href="https://twitter.com/AP">Twitter</a></li>
+                <li><a href="https://plus.google.com/+AP/">Google+</a></li>
+                <li><a href="https://www.linkedin.com/company/associated-press">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <hr>
+        <div class="medium-12 columns"> 
+            AP News | 
+           &copy; 2017 Associated Press  | 
+            <a href="/content/privacy-policy">Privacy Policy</a>  |  
+            <a href="/content/terms-use">Terms of Use</a>  | 
+            <a href="http://www.ap.org/books">AP Books</a>  |  
+            <a href="http://www.apimages.com/">AP Images</a>  |  
+            <a href="http://www.ap.org/">ap.org</a>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+#dfp-ad-leaderboard{
+text-align: center;
+}
+
+#dfp-ad-mobileleaderboard{
+text-align: center;
+}
+
+#articleComments h4{
+  display:none;
+}
+
+#button_comments{
+display:none;
+}
+
+#commentsAnchor{
+   display:none;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+$("#block-dfp-curate-box-desktop").addClass("gemini-ad-ef96f291-b42f-4f0e-a436-7790cb6efc65");
+});
+</script></footer>  </div>
+</div></footer>  </div>  <div class="region region-page-bottom" id="region-page-bottom">
+  <div class="region-inner region-page-bottom-inner">
+    <noscript><img src="http://b.scorecardresearch.com/p?c1=2&c2=11304492&cv=2.0&cj=1" /></noscript>  </div>
+</div><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _sf_async_config={uid:11689,domain:""};(function() {function loadChartbeat() { window._sf_endpt=(new Date()).getTime(); var e = document.createElement('script'); e.setAttribute('language', 'javascript'); e.setAttribute('type', 'text/javascript'); e.setAttribute('src', (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") + "js/chartbeat.js"); document.body.appendChild(e); }var oldonload = window.onload;window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };})();
+//--><!]]>
+</script>
+  <script type="text/javascript" src="https://platform.tumblr.com/v1/share.js"></script>
+</body>
+</html>

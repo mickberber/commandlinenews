@@ -1,10 +1,19 @@
 #!/usr/bin/python
+import sys
+import os
 
 import utils
 
+def cnn_tests():
+    return
+
+def hn_tests():
+    return
+
 def main():
-    htmlfile = utils.get_html_file('http://news.ycombinator.com')
-    utils.copy_file('/test/hn.html', htmlfile)
+    print 'Initializing testing...\n'
+    cnn_tests()
+    hn_tests()
     return
 
 if __name__ == '__main__':
