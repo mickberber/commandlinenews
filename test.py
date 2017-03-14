@@ -11,12 +11,11 @@ def cnn_tests():
     return
 
 def hn_tests():
-    return
+    return 'test', 12
 
 def main():
-    print 'Initializing testing...\n'
-    cnn_tests()
-    hn_tests()
+    result = hn_tests()
+    print result
     return
 
 if __name__ == '__main__':
