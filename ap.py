@@ -23,13 +23,17 @@ class APHTMLParser(HTMLParser):
                                 'url': url
                             }
 
-def get_ap_url(articlelist, index):
+def get_ap_article(articlelist, index):
     for article in articlelist:
-        i = 0
-        while i < len(articlelist):
-            if articlelist[article]['index'] == i:
-                return articlelist[article]['url']
-            i += 1
+        if articlelist[article]['index'] == int(index) - 1:
+            return articlelist[article]
+
+def print_article_header(title, content):
+    print '\n'
+    print title
+    print '===========================\n'
+    print content
+    print '\n'
 
 def cl_news_util(args, cache):
     if not cache:
@@ -49,12 +53,16 @@ def cl_news_util(args, cache):
 
             if args[1] == '--open' or args[1] == '-o':
                 index = args[2]
-                url = get_ap_url(articlelist, index)
-                utils.go_to_page(url)
+                article = get_ap_article(articlelist, index)
+                utils.go_to_page(article['url'])
                 return articlelist
 
-
             if args[1] == '--read' or args[1] == '-r':
+                index = args[2]
+                article = get_ap_article(articlelist, index)
+                htmlfile = utils.get_html_file(article['url'])
+                content = re.search(r'<meta name="description" content="(.+?)" />', htmlfile)
+                print_article_header(article['title'], content.group(1))
                 return articlelist
 
 
@@ -62,11 +70,10 @@ def cl_news_util(args, cache):
 
 
 def main():
-    currentdir = os.path.abspath('.')
-    f = open(currentdir + '/test/ap.html', 'rU')
-    parser = APHTMLParser()
-    parser.feed(f.read())
-    return parser.articlelist
+    a = 'http://bigstory.ap.org/article/f7645d59944d47228f2eb195a35a19a4/'
+    htmlfile = utils.get_html_file(a + 'get-without-planned-parenthood-one-texas-effort-stumbles')
+    content = re.search(r'<meta name="description" content="(.+?)" />', htmlfile)
+    print content.group(1)
 
 if __name__ == '__main__':
     main()
