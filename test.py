@@ -11,11 +11,9 @@ def cnn_tests():
     return
 
 def hn_tests():
-    return 'test', 12
+    return
 
 def main():
-    result = hn_tests()
-    print result
     return
 
 if __name__ == '__main__':

@@ -8,9 +8,9 @@
 
 ###Setting Aliases:
 - Bash:
-  - for bash open: `~/.bashrc`
+  - for bash open: `.bashrc`
   - add `alias cln='PATH_TO_REPOSITORY'`
-  - run `source ~/.bashrc`
+  - run `source .bashrc`
   - http://www.hostingadvice.com/how-to/set-command-aliases-linuxubuntudebian/
 - Oh My Zsh:
   - for zsh open: `.zshrc`
@@ -31,3 +31,4 @@
 
 ###Features to add:
 - update, git clone/fetch/rebase updates
+- Browser config
