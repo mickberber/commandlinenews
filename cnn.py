@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import sys
+import os
 import re
 import json
 from datetime import datetime
@@ -36,6 +37,7 @@ def cl_news_util(args, cache):
                 return article_list
 
             if args[1] == '--read' or args[1] == '-r':
+                os.system('clear')
                 print article_list[index]['headline']
                 cnn_article_abbreviator.main(cnn_url)
                 return article_list

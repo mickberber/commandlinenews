@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import sys
+import os
 import cnn
 import hackernews
 import ap
@@ -11,12 +12,13 @@ def quit():
 
 #Print Utils
 def cl_news_headline():
+    os.system('clear')
     print '\n======= Command Line News =======\n'
-    print 'What would you like to read?\n'
+    print 'What would you like to read?\n\n'
     print 'CNN => type cnn'
     print 'Associated Press => type ap'
-    print 'HackerNews => type: hn\n'
-    print 'quit => type: quit'
+    print 'HackerNews => type: hn\n\n'
+    print 'quit => type: quit\n\n'
 
 def command_prompt():
     print '\nTo read an article enter the headline number.'
@@ -32,7 +34,7 @@ def pick_article(service):
         quit()
     elif command == 'main':
         main()
-        
+
     try:
         int(command)
     except:
