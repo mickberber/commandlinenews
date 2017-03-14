@@ -1,8 +1,11 @@
 #Command Line News
 ![Alt text](./assets/logo.png 'CLNews logo')
 
-##Set Up:
+#Zip file is downloadable at:
+- http://commandlinenews.herokuapp.com
 
+OR
+##Set Up with Git:
 ###Clone the repository:
 ` git clone https://github.com/mickberber/pystuff.git `
 
