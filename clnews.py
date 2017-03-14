@@ -19,7 +19,7 @@ def cl_news_headline():
     print 'quit => type: quit'
 
 def command_prompt():
-    print '\nTo read an article type the headline number.'
+    print '\nTo read an article enter the headline number.'
     print 'To go back to the main menu, type "main"'
     print 'To quit type quit.\n'
 
@@ -39,7 +39,7 @@ def pick_article(service):
         hackernews.cl_news_util(['hn', '-o', command], cache['hn'])
         read_more('hn')
     elif service == 'ap':
-        ap.cl_news_util([service, '-h'], cache['ap'])
+        ap.cl_news_util(['ap', '-o', command], cache['ap'])
         read_more('ap')
 
 #Control Flow

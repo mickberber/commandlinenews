@@ -23,6 +23,14 @@ class APHTMLParser(HTMLParser):
                                 'url': url
                             }
 
+def get_ap_url(articlelist, index):
+    for article in articlelist:
+        i = 0
+        while i < len(articlelist):
+            if articlelist[article]['index'] == i:
+                return articlelist[article]['url']
+            i += 1
+
 def cl_news_util(args, cache):
     if not cache:
         htmlfile = utils.get_html_file('http://bigstory.ap.org/')
@@ -40,6 +48,9 @@ def cl_news_util(args, cache):
         if len(args) > 2:
 
             if args[1] == '--open' or args[1] == '-o':
+                index = args[2]
+                url = get_ap_url(articlelist, index)
+                utils.go_to_page(url)
                 return articlelist
 
 

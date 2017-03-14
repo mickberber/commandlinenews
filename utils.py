@@ -59,7 +59,7 @@ def hn_headlines(storylinks):
         print str(i + 1) + '. ' + storylinks[i][1]
         i += 1
 
-#HackerNews Print Utility
+#Associated Press Print Utility
 def ap_headlines(articlelist):
     print '======== Command Line News ========='
     print '========= AP Headlines for ========='
