@@ -1,19 +1,33 @@
 #Command Line News
 ![Alt text](./assets/logo.png 'CLNews logo')
 
+##Set Up:
+
+###Clone the repository:
+` git clone https://github.com/mickberber/pystuff.git `
+
+###Setting Aliases:
+- Bash:
+  - for bash open: `~/.bashrc`
+  - add `alias cln='PATH_TO_REPOSITORY'`
+  - run `source ~/.bashrc`
+  - http://www.hostingadvice.com/how-to/set-command-aliases-linuxubuntudebian/
+- Oh My Zsh:
+  - for zsh open: `.zshrc`
+  - add `alias cln='PATH_TO_REPOSITORY'` to .zshrc
+  - run `source .zshrc`
+  - https://stackoverflow.com/questions/14286844/zsh-not-recognizing-my-aliases
+
 ###Currently with support for:
 - CNN
 - news.ycombinator.com
 - Associated Press
 
-###To add:
+###News Services to add:
 - reuters
 - the new york times
 - the washington post
 - the guardian
 
-###Setting Aliases:
-- Oh My Zsh:
-  - https://stackoverflow.com/questions/14286844/zsh-not-recognizing-my-aliases
-- Bash:
-  - http://www.hostingadvice.com/how-to/set-command-aliases-linuxubuntudebian/
+###Features to add:
+- update, git clone/fetch/rebase updates
