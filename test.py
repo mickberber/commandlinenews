@@ -4,6 +4,9 @@ import os
 
 import utils
 
+from HTMLParser import HTMLParser
+
+
 def cnn_tests():
     return
 

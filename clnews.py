@@ -2,6 +2,7 @@
 import sys
 import cnn
 import hackernews
+import ap
 
 #Handle user quitting
 def quit():
@@ -12,45 +13,36 @@ def quit():
 def cl_news_headline():
     print '\n======= Command Line News =======\n'
     print 'What would you like to read?\n'
-    print 'HackerNews => type: hn'
-    print 'CNN => type cnn\n'
+    print 'CNN => type cnn'
+    print 'Associated Press => type ap'
+    print 'HackerNews => type: hn\n'
     print 'quit => type: quit'
 
 def command_prompt():
-    print '\nTo read an article type the headline number.'
+    print '\nTo read an article enter the headline number.'
     print 'To go back to the main menu, type "main"'
     print 'To quit type quit.\n'
 
 #Handle user selected CNN article by headline number
-def pick_cnn_article():
+def pick_article(service):
     command_prompt()
     command = raw_input()
     if command == 'quit':
         quit()
     elif command == 'main':
         main()
-    else:
+
+    if service == 'cnn':
         cnn.cl_news_util(['cnn', '-r', command], cache['cnn'])
         read_more('cnn')
-
-#Handle user selected HackerNews article by headline number
-def pick_hn_article():
-    command_prompt()
-    command = raw_input()
-    if command == 'quit':
-        quit()
-    elif command == 'main':
-        main()
-    else:
+    elif service == 'hn':
         hackernews.cl_news_util(['hn', '-o', command], cache['hn'])
         read_more('hn')
+    elif service == 'ap':
+        ap.cl_news_util(['ap', '-o', command], cache['ap'])
+        read_more('ap')
 
-cache = {
-  'cnn': False,
-  'hn': False
-}
-
-#CNN HN Control Flow
+#Control Flow
 def read_more(service):
     print '\nWould you like to read more from ' + service + '?(y/n)'
     print 'Type "main" to return to the Main Menu.\n'
@@ -66,6 +58,10 @@ def read_more(service):
             print '\n'
             hackernews.cl_news_util([service, '-h'], cache['hn'])
             read_more(service)
+        elif service == 'ap':
+            print '\n'
+            ap.cl_news_util([service, '-h'], cache['ap'])
+            read_more(service)
     #go back to main menu
     elif user_input == 'main':
         main()
@@ -76,17 +72,27 @@ def read_more(service):
         print '\nCommand not recognized.\n'
         read_more(service)
 
+cache = {
+  'cnn': False,
+  'hn': False,
+  'ap': False
+}
+
 def main():
     cl_news_headline()
     service = raw_input()
     if service == 'cnn':
         print '\n'
         cache['cnn'] = cnn.cl_news_util([service, '-h'], cache['cnn'])
-        pick_cnn_article()
+        pick_article('cnn')
     elif service == 'hn':
         print '\n'
         cache['hn'] = hackernews.cl_news_util([service, '-h'], cache['hn'])
-        pick_hn_article()
+        pick_article('hn')
+    elif service == 'ap':
+        print '\n'
+        cache['ap'] = ap.cl_news_util([service, '-h'], cache['ap'])
+        pick_article('ap')
     elif service == 'quit':
         quit()
     else:

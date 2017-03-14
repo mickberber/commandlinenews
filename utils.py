@@ -11,6 +11,8 @@ def handle_error(error_string):
         print 'Usage: [--headlines -h] [--read -r][headline number] [--open -o][headline number]'
     if error_string == 'hn_error':
         print 'Usage: [--headlines -h] [--open -o][headline number] [--copy -cp][dest filename]'
+    if error_string == 'ap_error':
+        print 'Usage: [--headlines -h] [--read -r][headline number] [--open -o][headline number]'
     sys.exit(1)
 
 #Open page in Chrome
@@ -55,4 +57,17 @@ def hn_headlines(storylinks):
     i = 0
     while i < len(storylinks):
         print str(i + 1) + '. ' + storylinks[i][1]
+        i += 1
+
+#Associated Press Print Utility
+def ap_headlines(articlelist):
+    print '======== Command Line News ========='
+    print '========= AP Headlines for ========='
+    print '==== ' + str(datetime.now()) + ' ===='
+    print '===================================='
+    i = 0
+    while i < len(articlelist):
+        for article in articlelist:
+            if articlelist[article]['index'] == i:
+                print str(i + 1) + '. ' + articlelist[article]['title']
         i += 1
