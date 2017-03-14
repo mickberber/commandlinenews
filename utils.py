@@ -37,10 +37,19 @@ def copy_file(dest, htmlfile):
 
 #CNN Print Utility
 def cnn_headlines(article_list):
-    print '======= Command Line News ======='
-    print '========= CNN Headlines ========='
-    print '== ' + str(datetime.now()) + ' =='
-    print '================================='
+    print '=========== Command Line News ===========\n'
+    print '   ______   _____     _________      ___     '
+    print '  /    __| |     \   |   ||     \   |   |    '
+    print ' / / /     | |  \ \  | | || |  \ \  | | |    '
+    print '| | |      | |   \ \ | | || |   \ \ | | |    '
+    print '| | |      | | |\ \ \| | || | |\ \ \| | |    '
+    print ' \ \ \_____| | | \ \ \ | || | | \ \ \ | |    '
+    print '  \____________|  \______||___|  \______|    '
+    print '           The most trusted name in news.'
+    print '\n========================================='
+    print '============== CNN Headlines ============'
+    print '====== ' + str(datetime.now()) + ' ======='
+    print '========================================='
     i = 0
     while i < 25:
         print str(i + 1) + '. ' + article_list[i]['headline']
@@ -48,7 +57,16 @@ def cnn_headlines(article_list):
 
 #HackerNews Print Utility
 def hn_headlines(storylinks):
-    print '======== Command Line News ========='
+    print '======== Command Line News =========\n'
+    print '===========yy========yy============='
+    print '===========yy========yy============='
+    print '============yy======yy=============='
+    print '=============yy====yy==============='
+    print '===============yyyyy================'
+    print '=================yy================='
+    print '================yy==combinator======'
+    print '===============yy==================='
+    print '=============yy=====================\n'
     print '===== HackerNews Headlines for ====='
     print '==== ' + str(datetime.now()) + ' ====\n'
     print '===================================='
@@ -61,10 +79,19 @@ def hn_headlines(storylinks):
 
 #Associated Press Print Utility
 def ap_headlines(articlelist):
-    print '======== Command Line News ========='
-    print '========= AP Headlines for ========='
-    print '==== ' + str(datetime.now()) + ' ===='
-    print '===================================='
+    print '======= Command Line News ========\n'
+    print '==THE====AAA========PPPPPPP======='
+    print '========AA=AA=======PP====PP======'
+    print '=======AA===AA======PP====PP======'
+    print '======AAAAAAAAA=====PPPPPPP======='
+    print '=====AA=======AA====PP============'
+    print '====AA=========AA===PP============'
+    print '=== __________________________ ==='
+    print '===|                          |==='
+    print '===|__________________________|===\n\n'
+    print '======== AP Headlines for ========'
+    print '=== ' + str(datetime.now()) + ' ==='
+    print '=================================='
     i = 0
     while i < len(articlelist):
         for article in articlelist:

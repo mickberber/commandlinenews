@@ -13,12 +13,21 @@ def quit():
 #Print Utils
 def cl_news_headline():
     os.system('clear')
-    print '\n======= Command Line News =======\n'
-    print 'What would you like to read?\n\n'
-    print 'CNN => type cnn'
-    print 'Associated Press => type ap'
-    print 'HackerNews => type: hn\n\n'
-    print 'quit => type: quit\n\n'
+    print '\n================= Command Line News ================\n'
+    print '   CCCCCCCCCCCC    LL L           NN N       N N'
+    print '   CC CCCCCCCCC    LL L           NN NN      N N'
+    print '   CC C            LL L           NN N N     N N'
+    print '   CC C            LL L           NN NN N    N N'
+    print '   CC C            LL L           NN N N N   N N'
+    print '   CC C            LL L           NN N  N N  N N'
+    print '   CC C            LL L           NN N   N N N N'
+    print '   CC CCCCCCCCCC   LL LLLLLLLLL   NN N    N NN N'
+    print '   CCCCCCCCCCCCC   LLLLLLLLLLLL   NN N     N N N\n'
+    print '\n\nWhat would you like to read?\n\n'
+    print '  CNN => type cnn'
+    print '  Associated Press => type ap'
+    print '  HackerNews => type: hn\n\n'
+    print '  quit => type: quit\n\n'
 
 def command_prompt():
     print '\nTo read an article enter the headline number.'
