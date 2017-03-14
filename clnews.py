@@ -27,10 +27,16 @@ def command_prompt():
 def pick_article(service):
     command_prompt()
     command = raw_input()
+
     if command == 'quit':
         quit()
     elif command == 'main':
         main()
+        
+    try:
+        int(command)
+    except:
+        pick_article(service)
 
     if service == 'cnn':
         cnn.cl_news_util(['cnn', '-r', command], cache['cnn'])
@@ -41,6 +47,7 @@ def pick_article(service):
     elif service == 'ap':
         ap.cl_news_util(['ap', '-r', command], cache['ap'])
         read_more('ap')
+
 
 #Control Flow
 def read_more(service):

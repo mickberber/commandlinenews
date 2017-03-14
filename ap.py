@@ -30,7 +30,6 @@ def get_ap_article(articlelist, index):
 
 def print_article_header(title, content):
     print '\n'
-    print '==========================='
     print title
     print '===========================\n'
     print content
