@@ -1,44 +1,61 @@
 #!/usr/bin/python
 import sys
 import os
+import re
 from HTMLParser import HTMLParser
 
 import utils
 
 class APHTMLParser(HTMLParser):
-    boolean = False
-    articlelist = []
+    articlelist = {}
     def handle_starttag(self, tag, attrs):
-        if len(attrs) and len(attrs[0]) > 1:
-            if attrs[0][0] == 'class' and attrs[0][1] == 'article-layout':
-                APHTMLParser.boolean = True
+        if tag == 'a' and len(attrs) == 2:
+            if len(attrs[0]) == 2 and len(attrs[1]) == 2:
+                if attrs[0][0] == 'href' and attrs[1][0] == 'title':
+                    key = re.findall(r'/article/(\w+)/', attrs[0][1])
+                    title = attrs[1][1]
+                    url = 'http://bigstory.ap.org' + attrs[0][1]
+                    if len(key) == 1:
+                        if key[0] not in APHTMLParser.articlelist:
+                            APHTMLParser.articlelist[key[0]] = {
+                                'index': len(APHTMLParser.articlelist),
+                                'title': title,
+                                'url': url
+                            }
 
-        if tag == 'a' and len(attrs):
-            if attrs[0][0] == 'href' and APHTMLParser.boolean == True:
-                print attrs[0][1]
+def cl_news_util(args, cache):
+    if not cache:
+        htmlfile = utils.get_html_file('http://bigstory.ap.org/')
+        parser = APHTMLParser()
+        parser.feed(htmlfile)
+        articlelist = parser.articlelist
+    else:
+        articlelist = cache
 
-    def handle_endtag(self, tag):
-        if APHTMLParser.boolean and tag == 'div':
-          APHTMLParser.boolean = False
+    if len(args) > 1:
+        if args[1] == '--headlines' or args[1] =='-h':
+            utils.ap_headlines(articlelist)
+            return articlelist
 
-    def handle_data(self, data):
-        if APHTMLParser.boolean:
-            data = data.replace('\n', '')
-            data = data.replace('\t', '')
-            data = data.split(' ')
-            strstore = []
-            for index in data:
-                if index != '':
-                    strstore.append(index)
-            if len(strstore):
-                APHTMLParser.articlelist.append(' '.join(strstore))
+        if len(args) > 2:
+
+            if args[1] == '--open' or args[1] == '-o':
+                return articlelist
+
+
+            if args[1] == '--read' or args[1] == '-r':
+                return articlelist
+
+
+    utils.handle_error('ap_error')
+
 
 def main():
     currentdir = os.path.abspath('.')
     f = open(currentdir + '/test/ap.html', 'rU')
     parser = APHTMLParser()
     parser.feed(f.read())
-    print parser.articlelist
+    return parser.articlelist
 
 if __name__ == '__main__':
     main()
