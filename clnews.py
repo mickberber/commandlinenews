@@ -39,7 +39,7 @@ def pick_article(service):
         hackernews.cl_news_util(['hn', '-o', command], cache['hn'])
         read_more('hn')
     elif service == 'ap':
-        ap.cl_news_util(['ap', '-o', command], cache['ap'])
+        ap.cl_news_util(['ap', '-r', command], cache['ap'])
         read_more('ap')
 
 #Control Flow
@@ -51,17 +51,18 @@ def read_more(service):
         #read more from cnn
         if service == 'cnn':
             print '\n'
-            cnn.cl_news_util([service, '-h'], cache['cnn'])
-            read_more(service)
+            cnn.cl_news_util(['cnn', '-h'], cache['cnn'])
+            pick_article('cnn')
         #read more from hackernews
         elif service == 'hn':
             print '\n'
-            hackernews.cl_news_util([service, '-h'], cache['hn'])
-            read_more(service)
+            hackernews.cl_news_util(['hn', '-h'], cache['hn'])
+            pick_article('hn')
+        #read more from ap
         elif service == 'ap':
             print '\n'
-            ap.cl_news_util([service, '-h'], cache['ap'])
-            read_more(service)
+            ap.cl_news_util(['ap', '-h'], cache['ap'])
+            pick_article('ap')
     #go back to main menu
     elif user_input == 'main':
         main()
