@@ -8,22 +8,22 @@ import guardian
 
 #Handle user quitting
 def quit():
-    print '\n================ Thanks for reading! ==============='
-    print '================= Command Line News ================\n'
+    print '\n================= Thanks for reading! ================='
+    print '================== Command Line News ==================\n'
     sys.exit(1)
 
 #Print Utils
 def cl_news_headline():
     os.system('clear')
-    print '\n================= Command Line News ================\n'
+    print '\n================== Command Line News ==================\n'
     print '   CCCCCCCCCCCC    LLLLL           NNNNNN       NNNN'
-    print '   CC         C    LL  L           NN    N      N  N'
+    print '   CC              LL  L           NN    N      N  N'
     print '   CC  CCCCCCCC    LL  L           NN     N     N  N'
     print '   CC  C           LL  L           NN  NN  N    N  N'
     print '   CC  C           LL  L           NN  N N  N   N  N'
     print '   CC  C           LL  L           NN  N  N  N  N  N'
     print '   CC  CCCCCCCC    LL  LLLLLLLL    NN  N   N  N N  N'
-    print '   CC         C    LL         L    NN  N    N  NN  N'
+    print '   CC              LL              NN  N    N  NN  N'
     print '   CCCCCCCCCCCC    LLLLLLLLLLLL    NN  N     N  N  N\n'
     print '\n\nWhat would you like to read?\n\n'
     print '  CNN => type: cnn\n'
