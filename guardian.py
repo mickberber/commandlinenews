@@ -4,6 +4,19 @@ from HTMLParser import HTMLParser
 
 import utils
 
+class GUARDIANARTICLEParser(HTMLParser):
+    collectdata = False
+    def handle_starttag(self, tag, attrs):
+        if tag == 'p':
+            GUARDIANARTICLEParser.collectdata = True
+
+    def handle_data(self, data):
+        if GUARDIANARTICLEParser.collectdata:
+            if data != '\n':
+                print data
+            GUARDIANARTICLEParser.collectdata = False
+
+
 class GUARDIANHTMLParser(HTMLParser):
     articlelist = {}
     collectdata = False
@@ -37,6 +50,11 @@ class GUARDIANHTMLParser(HTMLParser):
             GUARDIANHTMLParser.collectdata = False
         return
 
+def get_gu_article(articlelist, index):
+    for article in articlelist:
+        if articlelist[article]['index'] == int(index) - 1:
+            return articlelist[article]
+
 def cl_news_util(args, cache):
     if not cache:
         htmlfile = utils.get_html_file('http://www.theguardian.com/us')
@@ -61,16 +79,23 @@ def cl_news_util(args, cache):
 
             if args[1] == '--read' or args[1] == '-r':
                 index = args[2]
-                article = get_ap_article(articlelist, index)
+                article = get_gu_article(articlelist, index)
                 htmlfile = utils.get_html_file(article['url'])
-                content = re.search(r'<meta name="description" content="(.+?)" />', htmlfile)
-                print_article_header(article['title'], content.group(1))
+                abbrevurl = article['url'][28:]
+                print '\n' + article['title'] + ' -- ' + abbrevurl
+                print '==================\n'
+                parser = GUARDIANARTICLEParser()
+                parser.feed(htmlfile)
                 return articlelist
 
     utils.handle_error('ap_error')
 
 def main():
-    cl_news_util(['gu', '-h'], False)
+    # cl_news_util(['gu', '-h'], False)
+    htmlfile = utils.get_html_file('https://www.theguardian.com/us-news/2017/mar/14/mosque-obama-visited-trump-travel-ban-muslim')
+    parser = GUARDIANARTICLEParser()
+    parser.feed(htmlfile)
+    print parser.collectdata
 
 
 if __name__ == '__main__':
