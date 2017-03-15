@@ -5,15 +5,35 @@ from HTMLParser import HTMLParser
 import utils
 
 class GUARDIANHTMLParser(HTMLParser):
+    articlelist = {}
+    collectdata = False
+    articledata = None
     def handle_starttag(self, tag, attrs):
-      if tag == 'a':
-          try:
-              if attrs[2][0] == 'data-link-name' and attrs[2][1] == 'article':
-                  print tag, attrs
-          except:
-              print None
+        try:
+            if tag == 'a' and attrs[2][1] == 'article':
+                if attrs[1][0] == 'class' and attrs[1][1] == 'fc-item__link':
+                    GUARDIANHTMLParser.articledata = attrs
+                    GUARDIANHTMLParser.collectdata = True
+        except:
+            return
 
+    def handle_data(self, data):
+        if GUARDIANHTMLParser.collectdata and data != ' ' and data != '\n' and GUARDIANHTMLParser.articledata:
+            title = data
+            index = len(GUARDIANHTMLParser.articlelist)
+            url = GUARDIANHTMLParser.articledata[0][1]
+            GUARDIANHTMLParser.articlelist[url] = {
+              'title': title,
+              'index': index,
+              'url': url
+            }
+            GUARDIANHTMLParser.articledata = None
+        return
 
+    def handle_endtag(self, tag):
+        if GUARDIANHTMLParser.collectdata and tag == 'a':
+            GUARDIANHTMLParser.collectdata = False
+        return
 
 def cl_news_util(args, cache):
     if not cache:
@@ -54,6 +74,9 @@ def main():
     htmlfile = f.read()
     parser = GUARDIANHTMLParser()
     parser.feed(htmlfile)
+    for article in parser.articlelist:
+        article = parser.articlelist[article]
+        print article.values()
 
 
 if __name__ == '__main__':
