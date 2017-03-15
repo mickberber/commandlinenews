@@ -20,9 +20,10 @@
 - Run `cln` from anywhere in your terminal
 
 ### Currently with support for:
-- CNN
-- news.ycombinator.com
-- Associated Press
+- CNN (http://www.cnn.com)
+- The Guardian (http://www.theguardian.com/us)
+- Associated Press (http://bigstory.ap.org)
+- Hacker News (http://news.ycombinator.com)
 
 ### Needed:
 - Improved Error Handling
@@ -31,7 +32,6 @@
 - reuters
 - the new york times
 - the washington post
-- the guardian
 
 ### Features to add:
 - remote update, git clone/fetch/rebase updates
