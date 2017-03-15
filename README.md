@@ -21,9 +21,13 @@
 
 ### Currently with support for:
 - CNN (http://www.cnn.com)
+![Alt text](./assets/cnn.png 'CNN logo')
 - The Guardian (http://www.theguardian.com/us)
+![Alt text](./assets/The_Guardian.png 'The Guardian Logo')
 - Associated Press (http://bigstory.ap.org)
+![Alt text](./assets/ap.png 'CNN logo')
 - Hacker News (http://news.ycombinator.com)
+![Alt text](./assets/hacker-news.jpg 'CNN logo')
 
 ### Needed:
 - Improved Error Handling
