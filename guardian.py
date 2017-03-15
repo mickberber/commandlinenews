@@ -22,12 +22,14 @@ class GUARDIANHTMLParser(HTMLParser):
             title = data
             index = len(GUARDIANHTMLParser.articlelist)
             url = GUARDIANHTMLParser.articledata[0][1]
-            GUARDIANHTMLParser.articlelist[url] = {
-              'title': title,
-              'index': index,
-              'url': url
-            }
-            GUARDIANHTMLParser.articledata = None
+            if url not in GUARDIANHTMLParser.articlelist:
+                GUARDIANHTMLParser.articlelist[url] = {
+                  'title': title,
+                  'index': index,
+                  'url': url
+                }
+                GUARDIANHTMLParser.articledata = None
+
         return
 
     def handle_endtag(self, tag):
@@ -38,7 +40,7 @@ class GUARDIANHTMLParser(HTMLParser):
 def cl_news_util(args, cache):
     if not cache:
         htmlfile = utils.get_html_file('http://www.theguardian.com/us')
-        parser = APHTMLParser()
+        parser = GUARDIANHTMLParser()
         parser.feed(htmlfile)
         articlelist = parser.articlelist
     else:
@@ -46,7 +48,7 @@ def cl_news_util(args, cache):
 
     if len(args) > 1:
         if args[1] == '--headlines' or args[1] =='-h':
-            utils.ap_headlines(articlelist)
+            utils.gu_headlines(articlelist)
             return articlelist
 
         if len(args) > 2:
@@ -65,18 +67,10 @@ def cl_news_util(args, cache):
                 print_article_header(article['title'], content.group(1))
                 return articlelist
 
-
     utils.handle_error('ap_error')
 
 def main():
-    currentdir = os.path.abspath('.')
-    f = open(currentdir + '/test/guardian.html', 'rU')
-    htmlfile = f.read()
-    parser = GUARDIANHTMLParser()
-    parser.feed(htmlfile)
-    for article in parser.articlelist:
-        article = parser.articlelist[article]
-        print article.values()
+    cl_news_util(['gu', '-h'], False)
 
 
 if __name__ == '__main__':

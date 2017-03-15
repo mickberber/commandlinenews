@@ -62,7 +62,7 @@ def pick_article(service):
         ap.cl_news_util(['ap', '-r', command], cache['ap'])
         read_more('ap')
     elif service == 'gu':
-        guardian.cl_news_headline(['gu, -r, command'], cahce['gu'])
+        guardian.cl_news_headline(['gu', '-r', command], cahce['gu'])
         read_more('gu')
 
 
@@ -128,6 +128,7 @@ def main():
     elif service == 'gu':
         print '\n'
         cache['gu'] == guardian.cl_news_util([service, '-h'], cache['gu'])
+        pick_article('gu')
     elif service == 'quit':
         quit()
     else:

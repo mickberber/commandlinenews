@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import sys
 import os
+import re
 import webbrowser
 import urllib
 from datetime import datetime
@@ -100,4 +101,21 @@ def ap_headlines(articlelist):
         for article in articlelist:
             if articlelist[article]['index'] == i:
                 print str(i + 1) + '. ' + articlelist[article]['title']
+        i += 1
+
+def gu_headlines(articlelist):
+    print '===== The Guardian Headlines ====='
+    print '=== ' + str(datetime.now()) + ' ==='
+    print '=================================='
+    i = 0
+    while i < 25:
+        for article in articlelist:
+            if articlelist[article]['index'] == i:
+                abbrevurl = articlelist[article]['url'][28:]
+                # urldata = re.search(r'(.+?)/(.+?)/(.+?)/(.+?)/(.+)', abbrevurl)
+                # section = urldata.group(1).split('-')
+                # blurb = urldata.group(5).split('-')
+                # details = section + blurb
+                # print details
+                print str(i + 1) + '. ' + articlelist[article]['title'] + ' -- ' + abbrevurl
         i += 1
