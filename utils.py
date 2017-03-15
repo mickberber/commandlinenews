@@ -41,14 +41,14 @@ def copy_file(dest, htmlfile):
 #CNN Print Utility
 def cnn_headlines(article_list):
     print '=========== Command Line News ===========\n'
-    print '   ______   _____     _________      ___     '
+    print '    _____   _____     _________      ___     '
     print '  /    __| |     \   |   ||     \   |   |    '
     print ' / / /     | |  \ \  | | || |  \ \  | | |    '
     print '| | |      | | \ \ \ | | || | \ \ \ | | |    '
     print '| | |      | | |\ \ \| | || | |\ \ \| | |    '
     print ' \ \ \_____| | | \ \ \ | || | | \ \ \ | |    '
     print '  \____________|  \______||___|  \______|    '
-    print '           The most trusted name in news.'
+    print '           The most trusted name in news.    '
     print '\n========================================='
     print '============== CNN Headlines ============'
     print '====== ' + str(datetime.now()) + ' ======='
