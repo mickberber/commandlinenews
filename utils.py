@@ -13,6 +13,8 @@ def handle_error(error_string):
         print 'Usage: [--headlines -h] [--open -o][headline number] [--copy -cp][dest filename]'
     if error_string == 'ap_error':
         print 'Usage: [--headlines -h] [--read -r][headline number] [--open -o][headline number]'
+    if error_string == 'guardian_error':
+        print 'Usage: [--headlines -h] [--read -r][headline number] [--open -o][headline number]'
     sys.exit(1)
 
 #Open page in Chrome

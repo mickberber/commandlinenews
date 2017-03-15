@@ -4,10 +4,12 @@ import os
 import cnn
 import hackernews
 import ap
+import guardian
 
 #Handle user quitting
 def quit():
-    print '\nThanks for reading!'
+    print '\n================ Thanks for reading! ==============='
+    print '================= Command Line News ================\n'
     sys.exit(1)
 
 #Print Utils
@@ -24,8 +26,9 @@ def cl_news_headline():
     print '   CC CCCCCCCCCC   LL LLLLLLLLL   NN N    N NN N'
     print '   CCCCCCCCCCCCC   LLLLLLLLLLLL   NN N     N N N\n'
     print '\n\nWhat would you like to read?\n\n'
-    print '  CNN => type cnn'
-    print '  Associated Press => type ap'
+    print '  CNN => type: cnn'
+    print '  Associated Press => type: ap'
+    print '  The Guardian => type: gu'
     print '  HackerNews => type: hn\n\n'
     print '  quit => type: quit\n\n'
 
@@ -58,6 +61,9 @@ def pick_article(service):
     elif service == 'ap':
         ap.cl_news_util(['ap', '-r', command], cache['ap'])
         read_more('ap')
+    elif service == 'gu':
+        guardian.cl_news_headline(['gu, -r, command'], cahce['gu'])
+        read_more('gu')
 
 
 #Control Flow
@@ -81,6 +87,12 @@ def read_more(service):
             print '\n'
             ap.cl_news_util(['ap', '-h'], cache['ap'])
             pick_article('ap')
+        #read more from the guradian
+        elif service == 'gu':
+            print '\n'
+            guardian.cl_news_util(['gu', '-h'], cache['gu'])
+            pick_article('gu')
+
     #go back to main menu
     elif user_input == 'main':
         main()
@@ -94,7 +106,8 @@ def read_more(service):
 cache = {
   'cnn': False,
   'hn': False,
-  'ap': False
+  'ap': False,
+  'gu': False
 }
 
 def main():
@@ -112,6 +125,9 @@ def main():
         print '\n'
         cache['ap'] = ap.cl_news_util([service, '-h'], cache['ap'])
         pick_article('ap')
+    elif service == 'gu':
+        print '\n'
+        cache['gu'] == guardian.cl_news_util([service, '-h'], cache['gu'])
     elif service == 'quit':
         quit()
     else:

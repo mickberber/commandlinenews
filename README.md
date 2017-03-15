@@ -2,7 +2,7 @@
 ![Alt text](./assets/logo.png 'CLNews logo')
 
 
-##Set up:
+## Set up:
 - Download a zip file or clone with git:
   - Download zip here:http://commandlinenews.herokuapp.com
   - or run => ` git clone https://github.com/mickberber/pystuff.git `
@@ -24,12 +24,15 @@
 - news.ycombinator.com
 - Associated Press
 
-###News Services to add:
+### Needed:
+- Improved Error Handling
+
+### News Services to add:
 - reuters
 - the new york times
 - the washington post
 - the guardian
 
-###Features to add:
-- update, git clone/fetch/rebase updates
+### Features to add:
+- remote update, git clone/fetch/rebase updates
 - Browser config
