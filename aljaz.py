@@ -1,13 +1,38 @@
 #!/usr/bin/python
 import sys
 import os
+import re
 
 import utils
 
 from HTMLParser import HTMLParser
 
 class AJHTMLParser(HTMLParser):
-    def handle_starttag():
+    collectdata = False
+    articlelist = {}
+    articledata = None
+    def handle_starttag(self, tag, attrs):
+        try:
+            if tag == 'a' and attrs[0][0] == 'onclick':
+                AJHTMLParser.articledata = attrs
+                AJHTMLParser.collectdata = True
+            return
+        except:
+            return
+
+    def handle_data(self, data):
+        if AJHTMLParser.collectdata and data != '\n' and data != ' ':
+            AJHTMLParser.collectdata = False
+            title = data
+            index = len(AJHTMLParser.articlelist)
+            url = AJHTMLParser.articledata[1][1]
+            if url not in AJHTMLParser.articlelist:
+                AJHTMLParser.articlelist[url] = {
+                  'title': title,
+                  'index': index,
+                  'url': url
+                }
+                AJHTMLParser.articledata = None
         return
 
 class AJARTICLEParser(HTMLParser):
@@ -21,6 +46,7 @@ def get_aj_article(articlelist, index):
 def cl_news_util(args, cache):
     if not cache:
         htmlfile = utils.get_html_file('http://www.aljazeera.com/')
+        htmlfile = htmlfile.decode('utf-8')
         parser = AJHTMLParser()
         parser.feed(htmlfile)
         articlelist = parser.articlelist
@@ -56,7 +82,11 @@ def cl_news_util(args, cache):
 def main():
     currentdir = os.path.abspath('.')
     f = open(currentdir + '/test/aljaz.html', 'rU')
-    print f.read()
+    htmlfile = f.read()
+    htmlfile = htmlfile.decode('utf-8')
+    parser = AJHTMLParser()
+    parser.feed(htmlfile)
+    print parser.articlelist
 
 if __name__ == '__main__':
     main()
