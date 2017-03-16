@@ -186,6 +186,15 @@ def wp_headlines(articlelist):
 
 # Al Jazeera Headlines
 def aj_headlines(articlelist):
+    print '======= Command Line News ========\n'
+    print '=================================='
+    print '=========AAA===========JJJJJJ====='
+    print '========AA=AA==============JJ====='
+    print '=======AA===AA=============JJ====='
+    print '======AAAAAAAAA=====JJ=====JJ====='
+    print '=====AA=======AA====JJ=====JJ====='
+    print '====AA=========AA====JJJJJJJ======'
+    print '==================================\n\n'
     print '====== Al Jazeera Headlines ======'
     print '=== ' + str(datetime.now()) + ' ==='
     print '=================================='
