@@ -67,10 +67,10 @@ def read_more(service):
             guardian.cl_news_util(['gu', '-h'], cache['gu'])
             pick_article('gu')
         #read more from al jazeera
-    elif service == 'aljaz':
-            print '\n'
-            aljaz.cl_news_util(['aljaz', '-h'], cache['aljaz'])
-            pick_article('aljaz')
+        elif service == 'aljaz':
+                print '\n'
+                aljaz.cl_news_util(['aljaz', '-h'], cache['aljaz'])
+                pick_article('aljaz')
 
     #go back to main menu
     elif user_input == 'main':

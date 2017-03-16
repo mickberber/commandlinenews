@@ -36,12 +36,22 @@ class AJHTMLParser(HTMLParser):
         return
 
 class AJARTICLEParser(HTMLParser):
-    def handle_starttag():
-        return
+    collectdata = False
+    def handle_starttag(self, tag, attrs):
+        if tag == 'p':
+            AJARTICLEParser.collectdata = True
+
+    def handle_data(self, data):
+        if AJARTICLEParser.collectdata:
+            if data != '\n':
+                print data
+            AJARTICLEParser.collectdata = False
 
 
 def get_aj_article(articlelist, index):
-    return
+    for article in articlelist:
+        if articlelist[article]['index'] == int(index) - 1:
+            return articlelist[article]
 
 def cl_news_util(args, cache):
     if not cache:
@@ -69,7 +79,8 @@ def cl_news_util(args, cache):
             if args[1] == '--read' or args[1] == '-r':
                 index = args[2]
                 article = get_aj_article(articlelist, index)
-                htmlfile = utils.get_html_file(article['url'])
+                htmlfile = utils.get_html_file('http://www.aljazeera.com/' + article['url'])
+                htmlfile = htmlfile.decode('utf-8')
                 parser = AJARTICLEParser()
                 parser.feed(htmlfile)
                 return articlelist
