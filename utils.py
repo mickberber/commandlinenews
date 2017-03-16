@@ -6,6 +6,13 @@ import webbrowser
 import urllib
 from datetime import datetime
 
+
+#Handle user quitting
+def quit():
+    print '\n================= Thanks for reading! ================='
+    print '================== Command Line News ==================\n'
+    sys.exit(1)
+
 #handle usage errors
 def handle_error(error_string):
     if error_string == 'cnn_error':
@@ -37,6 +44,32 @@ def copy_file(dest, htmlfile):
     writefile.write(htmlfile)
 
 #PRINT UTILITIES
+
+#Print CLN Headline
+def cl_news_headline():
+    os.system('clear')
+    print '\n================== Command Line News ==================\n'
+    print '   CCCCCCCCCCCC    LLLLL           NNNNNN       NNNN'
+    print '   CC              LL  L           NN    N      N  N'
+    print '   CC  CCCCCCCC    LL  L           NN     N     N  N'
+    print '   CC  C           LL  L           NN  NN  N    N  N'
+    print '   CC  C           LL  L           NN  N N  N   N  N'
+    print '   CC  C           LL  L           NN  N  N  N  N  N'
+    print '   CC  CCCCCCCC    LL  LLLLLLLL    NN  N   N  N N  N'
+    print '   CC              LL              NN  N    N  NN  N'
+    print '   CCCCCCCCCCCC    LLLLLLLLLLLL    NN  N     N  N  N\n'
+    print '\n\nWhat would you like to read?\n\n'
+    print '  CNN => type: cnn\n'
+    print '  Associated Press => type: ap\n'
+    print '  The Guardian => type: gu\n'
+    print '  HackerNews => type: hn\n\n'
+    print '  quit => type: quit\n\n'
+
+#CLN prompt Print Util
+def command_prompt():
+    print '\nTo read an article enter the headline number.'
+    print 'To go back to the main menu, type "main"'
+    print 'To quit type quit.\n'
 
 #CNN Print Utility
 def cnn_headlines(article_list):
@@ -103,6 +136,7 @@ def ap_headlines(articlelist):
                 print str(i + 1) + '. ' + articlelist[article]['title']
         i += 1
 
+# The Guardian Headlines
 def gu_headlines(articlelist):
     print '===== The Guardian Headlines ====='
     print '=== ' + str(datetime.now()) + ' ==='
@@ -119,3 +153,19 @@ def gu_headlines(articlelist):
                 # print details
                 print str(i + 1) + '. ' + articlelist[article]['title'] + ' -- ' + abbrevurl
         i += 1
+
+# NYTIMES Headlines
+def nyt_headlines(articlelist):
+    return
+
+# Reuters Headlines
+def reuters_headlines(articlelist):
+    return
+
+# Washington Post Headlines
+def wp_headlines(articlelist):
+    return
+
+# Al Jazeera Headlines
+def aj_headlines(articlelist):
+    return

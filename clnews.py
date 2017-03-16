@@ -5,45 +5,15 @@ import cnn
 import hackernews
 import ap
 import guardian
-
-#Handle user quitting
-def quit():
-    print '\n================= Thanks for reading! ================='
-    print '================== Command Line News ==================\n'
-    sys.exit(1)
-
-#Print Utils
-def cl_news_headline():
-    os.system('clear')
-    print '\n================== Command Line News ==================\n'
-    print '   CCCCCCCCCCCC    LLLLL           NNNNNN       NNNN'
-    print '   CC              LL  L           NN    N      N  N'
-    print '   CC  CCCCCCCC    LL  L           NN     N     N  N'
-    print '   CC  C           LL  L           NN  NN  N    N  N'
-    print '   CC  C           LL  L           NN  N N  N   N  N'
-    print '   CC  C           LL  L           NN  N  N  N  N  N'
-    print '   CC  CCCCCCCC    LL  LLLLLLLL    NN  N   N  N N  N'
-    print '   CC              LL              NN  N    N  NN  N'
-    print '   CCCCCCCCCCCC    LLLLLLLLLLLL    NN  N     N  N  N\n'
-    print '\n\nWhat would you like to read?\n\n'
-    print '  CNN => type: cnn\n'
-    print '  Associated Press => type: ap\n'
-    print '  The Guardian => type: gu\n'
-    print '  HackerNews => type: hn\n\n'
-    print '  quit => type: quit\n\n'
-
-def command_prompt():
-    print '\nTo read an article enter the headline number.'
-    print 'To go back to the main menu, type "main"'
-    print 'To quit type quit.\n'
+import utils
 
 #Handle user selected CNN article by headline number
 def pick_article(service):
-    command_prompt()
+    utils.command_prompt()
     command = raw_input()
 
     if command == 'quit':
-        quit()
+        utils.quit()
     elif command == 'main':
         main()
 
@@ -98,7 +68,7 @@ def read_more(service):
         main()
     #handle quit
     elif user_input == 'n':
-        quit()
+        utils.quit()
     else:
         print '\nCommand not recognized.\n'
         read_more(service)
@@ -111,7 +81,7 @@ cache = {
 }
 
 def main():
-    cl_news_headline()
+    utils.cl_news_headline()
     service = raw_input()
     if service == 'cnn':
         print '\n'
@@ -130,7 +100,7 @@ def main():
         cache['gu'] = guardian.cl_news_util([service, '-h'], cache['gu'])
         pick_article('gu')
     elif service == 'quit':
-        quit()
+        utils.quit()
     else:
         print '\nCommand not recognized.\n'
         main()

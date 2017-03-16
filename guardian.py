@@ -73,7 +73,7 @@ def cl_news_util(args, cache):
 
             if args[1] == '--open' or args[1] == '-o':
                 index = args[2]
-                article = get_ap_article(articlelist, index)
+                article = get_gu_article(articlelist, index)
                 utils.go_to_page(article['url'])
                 return articlelist
 
