@@ -62,6 +62,7 @@ def cl_news_headline():
     print '  CNN => type: cnn\n'
     print '  Associated Press => type: ap\n'
     print '  The Guardian => type: gu\n'
+    print '  Al Jazeera => type: aljaz\n'
     print '  HackerNews => type: hn\n\n'
     print '  quit => type: quit\n\n'
 
@@ -168,4 +169,12 @@ def wp_headlines(articlelist):
 
 # Al Jazeera Headlines
 def aj_headlines(articlelist):
-    return
+    print '====== Al Jazeera Headlines ======'
+    print '=== ' + str(datetime.now()) + ' ==='
+    print '=================================='
+    i = 0
+    while i < len(articlelist):
+        for article in articlelist:
+            if articlelist[article]['index'] == i:
+                print str(i + 1) + '. ' + articlelist[article]['title']
+        i += 1
