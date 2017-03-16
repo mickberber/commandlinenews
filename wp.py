@@ -7,10 +7,13 @@ import utils
 from HTMLParser import HTMLParser
 
 class WPHTMLParser(HTMLParser):
-    return
+    def handle_starttag():
+        return
 
 class WPARTICLEParser(HTMLParser):
-
+    def handle_starttag():
+        return
+        
 def get_wp_article(articlelist, index):
     return
 
@@ -50,7 +53,9 @@ def cl_news_util(args, cache):
     utils.handle_error('wp_error')
 
 def main():
-
+    currentdir = os.path.abspath('.')
+    f = open(currentdir + '/test/wp.html', 'rU')
+    print f.read()
     return
 
 if __name__ == '__main__':

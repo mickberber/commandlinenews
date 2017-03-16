@@ -7,9 +7,13 @@ import utils
 from HTMLParser import HTMLParser
 
 class AJHTMLParser(HTMLParser):
-    return
+    def handle_starttag():
+        return
 
 class AJARTICLEParser(HTMLParser):
+    def handle_starttag():
+        return
+
 
 def get_aj_article(articlelist, index):
     return
@@ -50,7 +54,9 @@ def cl_news_util(args, cache):
     utils.handle_error('aj_error')
 
 def main():
-    return
+    currentdir = os.path.abspath('.')
+    f = open(currentdir + '/test/aljaz.html', 'rU')
+    print f.read()
 
 if __name__ == '__main__':
     main()

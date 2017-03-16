@@ -7,10 +7,13 @@ import utils
 from HTMLParser import HTMLParser
 
 class NYTIMESHTMLParser(HTMLParser):
-    return
+    def handle_starttag():
+        return
 
 class NYTIMESARTICLEParser(HTMLParser):
-
+    def handle_starttag():
+        return
+        
 def get_nyt_article(articlelist, index):
     return
 
@@ -50,7 +53,9 @@ def cl_news_util(args, cache):
     utils.handle_error('nyt_error')
 
 def main():
-
+    currentdir = os.path.abspath('.')
+    f = open(currentdir + '/test/nyt.html', 'rU')
+    print f.read()
     return
 
 if __name__ == '__main__':
