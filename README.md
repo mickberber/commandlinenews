@@ -28,6 +28,9 @@
 
 ### Needed:
 - Improved Error Handling
+- cnn html parsing refactor
+- condense main app logic
+- file restructuring
 
 ### News Services to add:
 - Reuters
