@@ -16,7 +16,7 @@ def get_aj_article(articlelist, index):
 
 def cl_news_util(args, cache):
     if not cache:
-        htmlfile = utils.get_html_file('https://www.nytimes.com')
+        htmlfile = utils.get_html_file('http://www.aljazeera.com/')
         parser = AJHTMLParser()
         parser.feed(htmlfile)
         articlelist = parser.articlelist
