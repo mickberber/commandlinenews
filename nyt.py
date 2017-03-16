@@ -7,13 +7,26 @@ import utils
 from HTMLParser import HTMLParser
 
 class NYTIMESHTMLParser(HTMLParser):
-    def handle_starttag():
+    collectdata = False
+    def handle_starttag(self, tag, attrs):
+        if tag == 'article':
+            NYTIMESHTMLParser.collectdata = True
+        return
+
+    def handle_data(self, data):
+        if NYTIMESHTMLParser.collectdata:
+            print data
+        return
+
+    def handle_endtag(self, tag):
+        if tag == 'article':
+            NYTIMESHTMLParser.collectdata = False
         return
 
 class NYTIMESARTICLEParser(HTMLParser):
     def handle_starttag():
         return
-        
+
 def get_nyt_article(articlelist, index):
     return
 
@@ -55,7 +68,16 @@ def cl_news_util(args, cache):
 def main():
     currentdir = os.path.abspath('.')
     f = open(currentdir + '/test/nyt.html', 'rU')
-    print f.read()
+    parser = NYTIMESHTMLParser()
+    parser.feed(f.read())
+
+
+    # FOR ARTICLES
+    # url = 'https://www.nytimes.com/2017/03/15/us/politics/trump-travel-ban.html'
+    # htmlfile = get_html_file('https://www.nytimes.com/2017/03/15/us/politics/trump-travel-ban.html')
+    # htmlfile = urllib2.build_opener(urllib2.HTTPCookieProcessor).open(url)
+    # htmlfile = htmlfile.read()
+    # utils.copy_file('test/nyt_article.html', htmlfile)
     return
 
 if __name__ == '__main__':
