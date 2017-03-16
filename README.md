@@ -44,3 +44,4 @@
 ![Alt text](./assets/The_Guardian.png 'The Guardian Logo')
 ![Alt text](./assets/ap.png 'AP logo')
 ![Alt text](./assets/hacker-news.jpg 'HN logo')
+![Alt text](./assets/aljaz.jpg 'Al jaz logo')
