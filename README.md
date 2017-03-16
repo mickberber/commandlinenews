@@ -30,9 +30,11 @@
 - Improved Error Handling
 
 ### News Services to add:
-- reuters
-- the new york times
-- the washington post
+- Reuters
+- The New York Times
+- The Washington Post
+- BBC
+- Command Line News Twitter Account
 
 ### Features to add:
 - remote update, git clone/fetch/rebase updates

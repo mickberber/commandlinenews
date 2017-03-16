@@ -10,7 +10,14 @@ from datetime import datetime
 #Handle user quitting
 def quit():
     print '\n================= Thanks for reading! ================='
-    print '================== Command Line News ==================\n'
+    print '          ____ ____ ____ ____ ____ ____ ____ '
+    print '         ||c |||o |||m |||m |||a |||n |||d ||'
+    print '         ||__|||__|||__|||__|||__|||__|||__||'
+    print '         |/__\|/__\|/__\|/__\|/__\|/__\|/__\|'
+    print '   ____ ____ ____ ____ _________ ____ ____ ____ ____ '
+    print '  ||l |||i |||n |||e |||       |||n |||e |||w |||s ||'
+    print '  ||__|||__|||__|||__|||_______|||__|||__|||__|||__||'
+    print '  |/__\|/__\|/__\|/__\|/_______\|/__\|/__\|/__\|/__\|'
     sys.exit(1)
 
 #handle usage errors
@@ -58,11 +65,17 @@ def cl_news_headline():
     print '   CC  CCCCCCCC    LL  LLLLLLLL    NN  N   N  N N  N'
     print '   CC              LL              NN  N    N  NN  N'
     print '   CCCCCCCCCCCC    LLLLLLLLLLLL    NN  N     N  N  N\n'
+
     print '\n\nWhat would you like to read?\n\n'
+    print '  Command Line News Twitter Feed => type: twits\n'
     print '  CNN => type: cnn\n'
+    print '  The Washington Post => type: wp\n'
+    print '  The New York Times => type: nyt\n'
     print '  Associated Press => type: ap\n'
-    print '  The Guardian => type: gu\n'
+    print '  The BBC => type: bbc\n'
     print '  Al Jazeera => type: aljaz\n'
+    print '  Reuters => type: re\n'
+    print '  The Guardian => type: gu\n'
     print '  HackerNews => type: hn\n\n'
     print '  quit => type: quit\n\n'
 
