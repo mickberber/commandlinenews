@@ -71,7 +71,7 @@ def cl_news_headline():
     # print '  Command Line News Twitter Feed => type: twits\n'
     print '  CNN => type: cnn\n'
     # print '  The Washington Post => type: wp\n'
-    # print '  The New York Times => type: nyt\n'
+    print '  The New York Times => type: nyt\n'
     print '  Associated Press => type: ap\n'
     # print '  The BBC => type: bbc\n'
     print '  Al Jazeera => type: aljaz\n'
@@ -217,4 +217,26 @@ def aj_headlines(articlelist):
         for article in articlelist:
             if articlelist[article]['index'] == i:
                 print str(i + 1) + '. ' + articlelist[article]['title']
+        i += 1
+
+# Al Jazeera Headlines
+def nyt_headlines(articlelist):
+    print '======= Command Line News ========\n'
+    print '=================================='
+    # print '=========AAA===========JJJJJJ====='
+    # print '========AA=AA==============JJ====='
+    # print '=======AA===AA=============JJ====='
+    # print '======AAAAAAAAA=====JJ=====JJ====='
+    # print '=====AA=======AA====JJ=====JJ====='
+    # print '====AA=========AA====JJJJJJJ======'
+    print '==================================\n\n'
+    print '====== NYT Headlines ======'
+    print '=== ' + str(datetime.now()) + ' ==='
+    print '=================================='
+    i = 0
+    while i < len(articlelist):
+        try:
+            print str(i + 1) + '. ' + articlelist[i]['title']
+        except:
+            print ''
         i += 1

@@ -6,6 +6,7 @@ import hackernews
 import ap
 import guardian
 import aljaz
+import nyt
 import utils
 
 #Handle user selected CNN article by headline number
@@ -38,7 +39,9 @@ def pick_article(service):
     elif service == 'aljaz':
         aljaz.cl_news_util(['aljaz', '-r', command], cache['aljaz'])
         read_more('aljaz')
-
+    elif service == 'nyt':
+        nyt.cl_news_util(['nyt', '-r', command], cache['nyt'])
+        read_more('nyt')
 
 #Control Flow
 def read_more(service):
@@ -71,6 +74,11 @@ def read_more(service):
                 print '\n'
                 aljaz.cl_news_util(['aljaz', '-h'], cache['aljaz'])
                 pick_article('aljaz')
+        #read more from nyt
+        elif service == 'nyt':
+                print '\n'
+                nyt.cl_news_util(['nyt', '-h'], cache['nyt'])
+                pick_article('nyt')
 
     #go back to main menu
     elif user_input == 'main':
@@ -87,7 +95,8 @@ cache = {
   'hn': False,
   'ap': False,
   'gu': False,
-  'aljaz': False
+  'aljaz': False,
+  'nyt': False
 }
 
 def main():
@@ -113,6 +122,10 @@ def main():
         print '\n'
         cache['aljaz'] = aljaz.cl_news_util([service, '-h'], cache['aljaz'])
         pick_article('aljaz')
+    elif service == 'nyt':
+        print '\n'
+        cache['nyt'] = nyt.cl_news_util([service, '-h'], cache['nyt'])
+        pick_article('nyt')
 
     elif service == 'quit':
         utils.quit()

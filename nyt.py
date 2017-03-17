@@ -10,7 +10,7 @@ class NYTIMESHTMLParser(HTMLParser):
     index = 0
     collectdata = False
     articledata = None
-    articles = []
+    articlelist = []
     def handle_starttag(self, tag, attrs):
         if NYTIMESHTMLParser.index == 24:
             return
@@ -44,7 +44,7 @@ class NYTIMESHTMLParser(HTMLParser):
         if NYTIMESHTMLParser.index == 24:
             return
         if tag == 'article':
-            NYTIMESHTMLParser.articles.append(NYTIMESHTMLParser.articledata)
+            NYTIMESHTMLParser.articlelist.append(NYTIMESHTMLParser.articledata)
             NYTIMESHTMLParser.articledata = None
             NYTIMESHTMLParser.collectdata = False
         return
@@ -96,7 +96,7 @@ def main():
     f = open(currentdir + '/test/nyt.html', 'rU')
     parser = NYTIMESHTMLParser()
     parser.feed(f.read())
-    print parser.articles
+    print parser.articlelist
 
 
     # FOR ARTICLES
