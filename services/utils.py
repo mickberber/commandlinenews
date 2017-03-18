@@ -86,6 +86,11 @@ def command_prompt():
     print 'To go back to the main menu, type "main"'
     print 'To quit type quit.\n'
 
+def read_more(service):
+    print '\nTo read more from ' + service + ' type: "y".'
+    print 'Type "main" to return to the Main Menu.'
+    print 'To quit type "quit".\n'
+
 #CNN Print Utility
 def cnn_headlines(article_list):
     print '=========== Command Line News ===========\n'
