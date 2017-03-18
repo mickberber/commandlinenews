@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import sys
 import os
+import urllib2
 
 import utils
 
@@ -50,7 +51,28 @@ class NYTIMESHTMLParser(HTMLParser):
         return
 
 class NYTIMESARTICLEParser(HTMLParser):
-    def handle_starttag():
+    printdata = False
+    nomoreprint = False
+    def handle_starttag(self, tag, attrs):
+        if NYTIMESARTICLEParser.nomoreprint:
+            return
+        try:
+            if tag == 'p':
+                NYTIMESARTICLEParser.printdata = True
+        except:
+            return
+
+    def handle_data(self, data):
+        if NYTIMESARTICLEParser.printdata:
+            if data == 'Order Reprints':
+                NYTIMESARTICLEParser.nomoreprint = True
+                return
+            if data != 'Advertisement':
+                print data
+
+    def handle_endtag(self, tag):
+        if tag == 'p':
+            NYTIMESARTICLEParser.printdata = False
         return
 
 def get_nyt_article(articlelist, index):
@@ -79,32 +101,34 @@ def cl_news_util(args, cache):
                 return articlelist
 
             if args[1] == '--read' or args[1] == '-r':
-                index = args[2]
-                article = get_nyt_article(articlelist, index)
-                htmlfile = utils.get_html_file(article['url'])
-                abbrevurl = article['url'][28:]
-                print '\n' + article['title'] + ' -- ' + abbrevurl
-                print '==================\n'
+                index = int(args[2]) - 1
+                url = articlelist[index]['url']
+                htmlfile = urllib2.build_opener(urllib2.HTTPCookieProcessor).open(url)
+                htmlfile = htmlfile.read()
                 parser = NYTIMESARTICLEParser()
+                print '=========nyt=========\n'
+                print articlelist[index]['title'] + '\n'
+                print '=====================\n'
                 parser.feed(htmlfile)
                 return articlelist
 
     utils.handle_error('nyt_error')
 
 def main():
-    currentdir = os.path.abspath('.')
-    f = open(currentdir + '/test/nyt.html', 'rU')
-    parser = NYTIMESHTMLParser()
-    parser.feed(f.read())
-    print parser.articlelist
+    # currentdir = os.path.abspath('.')
+    # f = open(currentdir + '/test/nyt.html', 'rU')
+    # parser = NYTIMESHTMLParser()
+    # parser.feed(f.read())
+    # print parser.articlelist
 
 
     # FOR ARTICLES
-    # url = 'https://www.nytimes.com/2017/03/15/us/politics/trump-travel-ban.html'
+    url = 'https://www.nytimes.com/2017/03/15/us/politics/trump-travel-ban.html'
     # htmlfile = get_html_file('https://www.nytimes.com/2017/03/15/us/politics/trump-travel-ban.html')
-    # htmlfile = urllib2.build_opener(urllib2.HTTPCookieProcessor).open(url)
-    # htmlfile = htmlfile.read()
-    # utils.copy_file('test/nyt_article.html', htmlfile)
+    htmlfile = urllib2.build_opener(urllib2.HTTPCookieProcessor).open(url)
+    htmlfile = htmlfile.read()
+    parser = NYTIMESARTICLEParser()
+    parser.feed(htmlfile)
     return
 
 if __name__ == '__main__':
