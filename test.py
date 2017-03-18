@@ -106,22 +106,22 @@ def main():
     print '\n'
     if service == 'cnn':
         cache['cnn'] = cnn.cl_news_util([service, '-h'], cache['cnn'])
-        main('cnn')
+        pick_article('cnn')
     elif service == 'hn':
         cache['hn'] = hackernews.cl_news_util([service, '-h'], cache['hn'])
-        main('hn')
+        pick_article('hn')
     elif service == 'ap':
         cache['ap'] = ap.cl_news_util([service, '-h'], cache['ap'])
-        main('ap')
+        pick_article('ap')
     elif service == 'gu':
         cache['gu'] = guardian.cl_news_util([service, '-h'], cache['gu'])
-        main('gu')
+        pick_article('gu')
     elif service == 'aljaz':
         cache['aljaz'] = aljaz.cl_news_util([service, '-h'], cache['aljaz'])
-        main('aljaz')
+        pick_article('aljaz')
     elif service == 'nyt':
         cache['nyt'] = nyt.cl_news_util([service, '-h'], cache['nyt'])
-        main('nyt')
+        pick_article('nyt')
 
     elif service == 'quit':
         utils.quit()

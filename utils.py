@@ -186,32 +186,57 @@ def gu_headlines(articlelist):
                 print str(i + 1) + '. ' + articlelist[article]['title'] + ' -- ' + abbrevurl
         i += 1
 
-# NYTIMES Headlines
-def nyt_headlines(articlelist):
-    return
-
 # Reuters Headlines
 def reuters_headlines(articlelist):
     return
 
 # Washington Post Headlines
-def wp_headlines(articlelist):
+def wp_headlines():
+    print r" ___"
+    print r"-   ---___- ,,"
+    print r"   (' ||    ||"
+    print r"  ((  ||    ||/\\  _-_"
+    print r" ((   ||    || || || \\"
+    print r"  (( //     || || ||/"
+    print r"    -____-   \\ |/ \\,/"
+    print r"               _/"
+    print r""
+    print r" _                                                          "
+    print r"- - /, /,              ,,                     ,              "
+    print r"  )/ )/ )    _         ||     '         _    ||              "
+    print r"  )__)__)   < \,  _-_, ||/\\ \\ \\/\\  / \\ =||=  /'\\ \\/\\ "
+    print r" ~)__)__)   /-|| ||_.  || || || || || || ||  ||  || || || || "
+    print r"  )  )  )  (( ||  ~ || || || || || || || ||  ||  || || || || "
+    print r"  /-_/-_/   \/\\  ,-_- \\ |/ \\ \\ \\ \\_-|  \\, \\,/  \\ \\ "
+    print r"                         _/            /  \                  "
+    print r"                                      '----`                 "
+    print r""
+    print r"-__ /\\                ,  "
+    print r"  ||  \\              ||  "
+    print r" /||__||  /'\\  _-_, =||= "
+    print r" \||__|| || || ||_.   ||  "
+    print r"  ||  |, || ||  ~ ||  ||  "
+    print r"_-||-_/  \\,/  ,-_-   \\, "
+    print r"  ||                      "
+    return
+
+# Vice Headlines
+def vice_headlines(articlelist):
     return
 
 # Al Jazeera Headlines
 def aj_headlines(articlelist):
-    print '======= Command Line News ========\n'
-    print '=================================='
-    print '=========AAA===========JJJJJJ====='
-    print '========AA=AA==============JJ====='
-    print '=======AA===AA=============JJ====='
-    print '======AAAAAAAAA=====JJ=====JJ====='
-    print '=====AA=======AA====JJ=====JJ====='
-    print '====AA=========AA====JJJJJJJ======'
-    print '==================================\n\n'
-    print '====== Al Jazeera Headlines ======'
-    print '=== ' + str(datetime.now()) + ' ==='
-    print '=================================='
+    print '============= Command Line News =================\n'
+    print '================================================='
+    print "                                                 "
+    print ",---.|            |                              "
+    print "|---||            |,---.,---,,---.,---.,---.,---."
+    print "|   ||            |,---| .-' |---'|---'|    ,---|"
+    print "`   '`---'    `---'`---^'---'`---'`---'`    `---^"
+    print '=================================================\n\n'
+    print '============= Al Jazeera Headlines =============='
+    print '========== ' + str(datetime.now()) + ' =========='
+    print '================================================='
     i = 0
     while i < len(articlelist):
         for article in articlelist:
@@ -219,20 +244,20 @@ def aj_headlines(articlelist):
                 print str(i + 1) + '. ' + articlelist[article]['title']
         i += 1
 
-# Al Jazeera Headlines
+# NYTIMES Headlines
 def nyt_headlines(articlelist):
-    print '======= Command Line News ========\n'
-    print '=================================='
-    # print '=========AAA===========JJJJJJ====='
-    # print '========AA=AA==============JJ====='
-    # print '=======AA===AA=============JJ====='
-    # print '======AAAAAAAAA=====JJ=====JJ====='
-    # print '=====AA=======AA====JJ=====JJ====='
-    # print '====AA=========AA====JJJJJJJ======'
-    print '==================================\n\n'
-    print '====== NYT Headlines ======'
-    print '=== ' + str(datetime.now()) + ' ==='
-    print '=================================='
+    print '========================= Command Line News ========================\n'
+    print '==The==============================================================='
+    print '\n   __     __)           __     __)              ______)             '
+    print '  (, /|  /             (, )   /        /)      (, /   ,             '
+    print '    / | /   _ _   _      /   /  _____ (/_        /     ___    _  _  '
+    print ' ) /  |/  _(/_(_(/      (___/_ (_)/ (_/(__    ) /   _(_// (__(/_/_)_'
+    print '(_/                    )   /                 (_/                    '
+    print '                      (__ /                                         \n'
+    print '====================================================================\n\n'
+    print '========================= NYT Headlines ============================'
+    print '==================== ' + str(datetime.now()) + ' ===================='
+    print '====================================================================\n\n'
     i = 0
     while i < len(articlelist):
         try:
@@ -240,3 +265,10 @@ def nyt_headlines(articlelist):
         except:
             print ''
         i += 1
+
+def main():
+    wp_headlines()
+    return
+
+if __name__ == '__main__':
+    main()
