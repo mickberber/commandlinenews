@@ -7,30 +7,29 @@ import utils
 from HTMLParser import HTMLParser
 
 class NYTIMESHTMLParser(HTMLParser):
-    index = 0
     collectdata = False
     articledata = None
     articlelist = []
     def handle_starttag(self, tag, attrs):
-        if NYTIMESHTMLParser.index == 24:
+        if len(NYTIMESHTMLParser.articlelist) == 24:
             return
         if tag == 'article':
             NYTIMESHTMLParser.collectdata = True
-            NYTIMESHTMLParser.index += 1
+            return
         if NYTIMESHTMLParser.collectdata:
             try:
                 if attrs[0][0] == 'href' and attrs[0][1][-17:] != 'commentsContainer':
                     NYTIMESHTMLParser.articledata = {
                       'title': '',
                       'url': attrs[0][1],
-                      'index': NYTIMESHTMLParser.index
+                      'index': NYTIMESHTMLParser.articlelist
                     }
             except:
                 return
         return
 
     def handle_data(self, data):
-        if NYTIMESHTMLParser.index == 24:
+        if len(NYTIMESHTMLParser.articlelist) == 24:
             return
         if NYTIMESHTMLParser.collectdata and NYTIMESHTMLParser.articledata and data != 'Comments':
             data = data.strip()
@@ -41,12 +40,13 @@ class NYTIMESHTMLParser(HTMLParser):
         return
 
     def handle_endtag(self, tag):
-        if NYTIMESHTMLParser.index == 24:
+        if len(NYTIMESHTMLParser.articlelist) == 24:
             return
         if tag == 'article':
-            NYTIMESHTMLParser.articlelist.append(NYTIMESHTMLParser.articledata)
-            NYTIMESHTMLParser.articledata = None
-            NYTIMESHTMLParser.collectdata = False
+            if NYTIMESHTMLParser.articledata:
+                NYTIMESHTMLParser.articlelist.append(NYTIMESHTMLParser.articledata)
+                NYTIMESHTMLParser.articledata = None
+                NYTIMESHTMLParser.collectdata = False
         return
 
 class NYTIMESARTICLEParser(HTMLParser):
