@@ -75,9 +75,6 @@ class NYTIMESARTICLEParser(HTMLParser):
             NYTIMESARTICLEParser.printdata = False
         return
 
-def get_nyt_article(articlelist, index):
-    return
-
 def cl_news_util(args, cache):
     if not cache:
         htmlfile = utils.get_html_file('https://www.nytimes.com')
@@ -93,42 +90,33 @@ def cl_news_util(args, cache):
             return articlelist
 
         if len(args) > 2:
-
-            if args[1] == '--open' or args[1] == '-o':
-                index = args[2]
-                article = get_nyt_article(articlelist, index)
-                utils.go_to_page(article['url'])
-                return articlelist
+            # NOT CURRENTLY USED
+            # if args[1] == '--open' or args[1] == '-o':
+            #     index = args[2]
+            #     article = get_nyt_article(articlelist, index)
+            #     utils.go_to_page(article['url'])
+            #     return articlelist
 
             if args[1] == '--read' or args[1] == '-r':
-                index = int(args[2]) - 1
-                url = articlelist[index]['url']
-                htmlfile = urllib2.build_opener(urllib2.HTTPCookieProcessor).open(url)
-                htmlfile = htmlfile.read()
-                parser = NYTIMESARTICLEParser()
-                print '=========nyt=========\n'
-                print articlelist[index]['title'] + '\n'
-                print '=====================\n'
-                parser.feed(htmlfile)
-                return articlelist
+                try:
+                    index = int(args[2]) - 1
+                    url = articlelist[index]['url']
+                    article = articlelist[index]
+                    # This url call is specific to NYT
+                    htmlfile = urllib2.build_opener(urllib2.HTTPCookieProcessor).open(url)
+                    htmlfile = htmlfile.read()
+                    parser = NYTIMESARTICLEParser()
+                    print '=========nyt=========\n'
+                    print article['title'] + '\n'
+                    print '=====================\n'
+                    parser.feed(htmlfile)
+                    return articlelist
+                except:
+                    return
 
     utils.handle_error('nyt_error')
 
 def main():
-    # currentdir = os.path.abspath('.')
-    # f = open(currentdir + '/test/nyt.html', 'rU')
-    # parser = NYTIMESHTMLParser()
-    # parser.feed(f.read())
-    # print parser.articlelist
-
-
-    # FOR ARTICLES
-    url = 'https://www.nytimes.com/2017/03/15/us/politics/trump-travel-ban.html'
-    # htmlfile = get_html_file('https://www.nytimes.com/2017/03/15/us/politics/trump-travel-ban.html')
-    htmlfile = urllib2.build_opener(urllib2.HTTPCookieProcessor).open(url)
-    htmlfile = htmlfile.read()
-    parser = NYTIMESARTICLEParser()
-    parser.feed(htmlfile)
     return
 
 if __name__ == '__main__':
