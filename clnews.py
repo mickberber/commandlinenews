@@ -9,7 +9,7 @@ import aljaz
 import nyt
 import utils
 
-#Handle user selected CNN article by headline number
+# Handle user selected CNN article by headline number
 def pick_article(service):
     utils.command_prompt()
     command = raw_input()
@@ -28,6 +28,7 @@ def pick_article(service):
         cnn.cl_news_util(['cnn', '-r', command], cache['cnn'])
         read_more('cnn')
     elif service == 'hn':
+        # Hacker News is the only read action that opens the page
         hackernews.cl_news_util(['hn', '-o', command], cache['hn'])
         read_more('hn')
     elif service == 'ap':
@@ -43,47 +44,47 @@ def pick_article(service):
         nyt.cl_news_util(['nyt', '-r', command], cache['nyt'])
         read_more('nyt')
 
-#Control Flow
+# Control Flow
 def read_more(service):
     print '\nWould you like to read more from ' + service + '?(y/n)'
     print 'Type "main" to return to the Main Menu.\n'
     user_input = raw_input()
     if user_input == 'y':
-        #read more from cnn
+        # read more from cnn
         if service == 'cnn':
             print '\n'
             cnn.cl_news_util(['cnn', '-h'], cache['cnn'])
             pick_article('cnn')
-        #read more from hackernews
+        # read more from hackernews
         elif service == 'hn':
             print '\n'
             hackernews.cl_news_util(['hn', '-h'], cache['hn'])
             pick_article('hn')
-        #read more from ap
+        # read more from ap
         elif service == 'ap':
             print '\n'
             ap.cl_news_util(['ap', '-h'], cache['ap'])
             pick_article('ap')
-        #read more from the guradian
+        # read more from the guradian
         elif service == 'gu':
             print '\n'
             guardian.cl_news_util(['gu', '-h'], cache['gu'])
             pick_article('gu')
-        #read more from al jazeera
+        # read more from al jazeera
         elif service == 'aljaz':
                 print '\n'
                 aljaz.cl_news_util(['aljaz', '-h'], cache['aljaz'])
                 pick_article('aljaz')
-        #read more from nyt
+        # read more from nyt
         elif service == 'nyt':
                 print '\n'
                 nyt.cl_news_util(['nyt', '-h'], cache['nyt'])
                 pick_article('nyt')
 
-    #go back to main menu
+    # go back to main menu
     elif user_input == 'main':
         main()
-    #handle quit
+    # handle quit
     elif user_input == 'n':
         utils.quit()
     else:
