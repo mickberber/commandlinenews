@@ -38,11 +38,14 @@
 - Reuters
 - The Washington Post
 - BBC
+- Vice
 - Command Line News Twitter Account
 
 ### Features to add:
-- remote update, git clone/fetch/rebase updates
-- Browser config
+- Remote update
+- Config file
+- Testing
+- Adding Services Documentation
 
 ![Alt text](./assets/cnn.png 'CNN logo')
 ![Alt text](./assets/NYTLogo.jpg 'NYT logo')
