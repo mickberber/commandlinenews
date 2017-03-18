@@ -25,6 +25,7 @@
 - The New York Times (http://www.nytimes.com)
 - The Guardian (http://www.theguardian.com/us)
 - Associated Press (http://bigstory.ap.org)
+- Al Jazeera (http://www.aljazeera.com)
 - Hacker News (http://news.ycombinator.com)
 
 ### Needed:
