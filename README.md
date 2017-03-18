@@ -1,7 +1,5 @@
 # Command Line News
-![Alt text](./assets/logo.png 'CLNews logo')
-![Alt text](https://www.python.org/static/community_logos/python-powered-w.svg 'Python Logo')
-
+![Alt text](./assets/cln_output.png 'CLNews logo')
 
 ## Set up:
 - Download a zip file or clone with git:

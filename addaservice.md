@@ -1,4 +1,4 @@
-#Adding a News Service
+# Adding a News Service
 If there's a news service you'd like to add to your version of CLN, adding a service can be pretty easy.
 In order to show headlines, and print articles we need to parse the homepage and an example article from the service you want to use.
 Below is an example guide on how to parse these pages and include them in the rest of the app.
@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
 ```
 - for testing and running the `main` function, make your file executable from the terminal:
- - `chmod + ./<filename>.py`
+ - `chmod +x ./<filename>.py`
 ---
 # Homepages
 - When parsing the homepage of your desired service, you will want to parse the html for article links and headlines. Generally these are found in 'a' or article tags. Finding these is easy with handle_starttag and handle_data. Refer to other service files for examples, and when creating your list of articles, you may use a list or a dict, but to make it easy when integrating with the rest of the app, return found data from the article parser in this format:
