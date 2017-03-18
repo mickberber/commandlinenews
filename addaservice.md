@@ -86,6 +86,9 @@ if __name__ == '__main__':
   'url': url
 }
 ```
+- Urls are usually found in tag attrs
+- Titles are usually found by using the `handle_data` functions
+- Indexes should be created with length of the `articlelist`
 - Make sure to create a headline print utility in `utils.py`
 ---
 # Articles
