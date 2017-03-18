@@ -22,6 +22,7 @@
 
 ### Currently with support for:
 - CNN (http://www.cnn.com)
+- The New York Times (http://www.nytimes.com)
 - The Guardian (http://www.theguardian.com/us)
 - Associated Press (http://bigstory.ap.org)
 - Hacker News (http://news.ycombinator.com)
@@ -34,7 +35,6 @@
 
 ### News Services to add:
 - Reuters
-- The New York Times
 - The Washington Post
 - BBC
 - Command Line News Twitter Account
