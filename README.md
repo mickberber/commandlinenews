@@ -44,6 +44,7 @@
 - Browser config
 
 ![Alt text](./assets/cnn.png 'CNN logo')
+![Alt text](./assets/NYTLogo.jpg 'NYT logo')
 ![Alt text](./assets/The_Guardian.png 'The Guardian Logo')
 ![Alt text](./assets/ap.png 'AP logo')
 ![Alt text](./assets/hacker-news.jpg 'HN logo')

@@ -102,28 +102,23 @@ cache = {
 def main():
     utils.cl_news_headline()
     service = raw_input()
+    print '\n'
     if service == 'cnn':
-        print '\n'
         cache['cnn'] = cnn.cl_news_util([service, '-h'], cache['cnn'])
         pick_article('cnn')
     elif service == 'hn':
-        print '\n'
         cache['hn'] = hackernews.cl_news_util([service, '-h'], cache['hn'])
         pick_article('hn')
     elif service == 'ap':
-        print '\n'
         cache['ap'] = ap.cl_news_util([service, '-h'], cache['ap'])
         pick_article('ap')
     elif service == 'gu':
-        print '\n'
         cache['gu'] = guardian.cl_news_util([service, '-h'], cache['gu'])
         pick_article('gu')
     elif service == 'aljaz':
-        print '\n'
         cache['aljaz'] = aljaz.cl_news_util([service, '-h'], cache['aljaz'])
         pick_article('aljaz')
     elif service == 'nyt':
-        print '\n'
         cache['nyt'] = nyt.cl_news_util([service, '-h'], cache['nyt'])
         pick_article('nyt')
 
