@@ -154,21 +154,21 @@ def ap_headlines(articlelist):
 # The Guardian Headlines
 def gu_headlines(articlelist):
     print '======= Command Line News ========\n'
-    print '==============gggggggg===ggggg===='
-    print '===========gggg======ggg=ggggg===='
-    print '=========gggg==========ggggg======'
-    print '=========gggg============ggg======'
-    print '=========gggg============ggg======'
-    print '=========gggg===========ggg======='
-    print '===========ggggggggggggggg========'
-    print '=============ggggggggggg=========='
-    print '==========ggggg==================='
-    print '===========ggggggggggg============'
-    print '==============gggggggggggg========'
-    print '=======gggggg===========gggg======'
-    print '=========ggg============gggg======'
-    print '==========gggggggggggggggg========'
-    print '=============gggggggggg==========='
+    print '              gggggggg   ggggg    '
+    print '           gggg       gg ggggg    '
+    print '         gggg          ggggg      '
+    print '         gggg            ggg      '
+    print '         gggg            ggg      '
+    print '         gggg           ggg       '
+    print '           ggggggggggggggg        '
+    print '             ggggggggggg          '
+    print '          ggggg                   '
+    print '           ggggggggggg            '
+    print '              gggggggggggg        '
+    print '       gggggg           gggg      '
+    print '         ggg            gggg      '
+    print '          gggggggggggggggg        '
+    print '             gggggggggg           '
     print '==================================\n\n'
     print '===== The Guardian Headlines ====='
     print '=== ' + str(datetime.now()) + ' ==='
@@ -291,7 +291,6 @@ def nyt_headlines(articlelist):
         i += 1
 
 def main():
-    bbc_headlines()
     return
 
 if __name__ == '__main__':

@@ -1,8 +1,6 @@
 #!/usr/bin/python
 import sys
 import os
-# Append services path to enable imports
-sys.path.append(os.path.abspath('.') + '/services')
 import cnn
 import hackernews
 import ap
