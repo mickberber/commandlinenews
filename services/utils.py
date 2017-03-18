@@ -86,6 +86,11 @@ def command_prompt():
     print 'To go back to the main menu, type "main"'
     print 'To quit type quit.\n'
 
+def read_more(service):
+    print '\nTo read more from ' + service + ' type: "y".'
+    print 'Type "main" to return to the Main Menu.'
+    print 'To quit type "quit".\n'
+
 #CNN Print Utility
 def cnn_headlines(article_list):
     print '=========== Command Line News ===========\n'
@@ -154,21 +159,21 @@ def ap_headlines(articlelist):
 # The Guardian Headlines
 def gu_headlines(articlelist):
     print '======= Command Line News ========\n'
-    print '==============gggggggg===ggggg===='
-    print '===========gggg======ggg=ggggg===='
-    print '=========gggg==========ggggg======'
-    print '=========gggg============ggg======'
-    print '=========gggg============ggg======'
-    print '=========gggg===========ggg======='
-    print '===========ggggggggggggggg========'
-    print '=============ggggggggggg=========='
-    print '==========ggggg==================='
-    print '===========ggggggggggg============'
-    print '==============gggggggggggg========'
-    print '=======gggggg===========gggg======'
-    print '=========ggg============gggg======'
-    print '==========gggggggggggggggg========'
-    print '=============gggggggggg==========='
+    print '              gggggggg   ggggg    '
+    print '           gggg       gg ggggg    '
+    print '         gggg          ggggg      '
+    print '         gggg            ggg      '
+    print '         gggg            ggg      '
+    print '         gggg           ggg       '
+    print '           ggggggggggggggg        '
+    print '             ggggggggggg          '
+    print '          ggggg                   '
+    print '           ggggggggggg            '
+    print '              gggggggggggg        '
+    print '       gggggg           gggg      '
+    print '         ggg            gggg      '
+    print '          gggggggggggggggg        '
+    print '             gggggggggg           '
     print '==================================\n\n'
     print '===== The Guardian Headlines ====='
     print '=== ' + str(datetime.now()) + ' ==='
@@ -186,32 +191,81 @@ def gu_headlines(articlelist):
                 print str(i + 1) + '. ' + articlelist[article]['title'] + ' -- ' + abbrevurl
         i += 1
 
-# NYTIMES Headlines
-def nyt_headlines(articlelist):
-    return
-
 # Reuters Headlines
 def reuters_headlines(articlelist):
+    print r"'||'''|,                   ||                        "
+    print r" ||   ||                   ||                        "
+    print r" ||...|' .|''|, '||  ||` ''||''  .|''|, '||''| ('''' "
+    print r" || \\   ||..||  ||  ||    ||    ||..||  ||     `'') "
+    print r".||  \\. `|...   `|..'|.   `|..' `|...  .||.   `...' "
     return
 
 # Washington Post Headlines
 def wp_headlines(articlelist):
+    print r" ___"
+    print r"-   ---___- ,,"
+    print r"   (' ||    ||"
+    print r"  ((  ||    ||/\\  _-_"
+    print r" ((   ||    || || || \\"
+    print r"  (( //     || || ||/"
+    print r"   -____-   \\ |/ \\,/"
+    print r"              _/"
+    print r""
+    print r" _                                                          "
+    print r"- - /, /,              ,,                     ,              "
+    print r"  )/ )/ )    _         ||     '         _    ||              "
+    print r"  )__)__)   < \,  _-_, ||/\\ \\ \\/\\  / \\ =||=  /'\\ \\/\\ "
+    print r" ~)__)__)   /-|| ||_.  || || || || || || ||  ||  || || || || "
+    print r"  )  )  )  (( ||  ~ || || || || || || || ||  ||  || || || || "
+    print r"  /-_/-_/   \/\\  ,-_- \\ |/ \\ \\ \\ \\_-|  \\, \\,/  \\ \\ "
+    print r"                         _/            /  \                  "
+    print r"                                      '----`                 "
+    print r""
+    print r"-__ /\\                ,  "
+    print r"  ||  \\              ||  "
+    print r" /||__||  /'\\  _-_, =||= "
+    print r" \||__|| || || ||_.   ||  "
+    print r"  ||  |, || ||  ~ ||  ||  "
+    print r"_-||-_/  \\,/  ,-_-   \\, "
+    print r"  ||                      "
+    return
+
+# Vice Headlines
+def vice_headlines(articlelist):
+    print " _   _ _            _   _                   "
+    print "| | | (_)          | \ | |                  "
+    print "| | | |_  ___ ___  |  \| | _____      _____ "
+    print "| | | | |/ __/ _ \ | . ` |/ _ \ \ /\ / / __|"
+    print "\ \_/ / | (_|  __/ | |\  |  __/\ V  V /\__ \\"
+    print " \___/|_|\___\___| \_| \_/\___| \_/\_/ |___/"
+    return
+
+# BBC Headlines
+def bbc_headlines(articlelist):
+    print "88888888ba  88888888ba    ,ad8888ba,   "
+    print "88       8b 88       8b  d8'      `8b  "
+    print "88      ,8P 88      ,8P d8'            "
+    print "88aaaaaa8P' 88aaaaaa8P' 88             "
+    print "88      8b, 88      8b, 88             "
+    print "88      `8b 88      `8b Y8,            "
+    print "88      a8P 88      a8P  Y8a.    .a8P  "
+    print "88888888P   88888888P     ` Y8888Y'   "
+    print "================NEWS==================="
     return
 
 # Al Jazeera Headlines
 def aj_headlines(articlelist):
-    print '======= Command Line News ========\n'
-    print '=================================='
-    print '=========AAA===========JJJJJJ====='
-    print '========AA=AA==============JJ====='
-    print '=======AA===AA=============JJ====='
-    print '======AAAAAAAAA=====JJ=====JJ====='
-    print '=====AA=======AA====JJ=====JJ====='
-    print '====AA=========AA====JJJJJJJ======'
-    print '==================================\n\n'
-    print '====== Al Jazeera Headlines ======'
-    print '=== ' + str(datetime.now()) + ' ==='
-    print '=================================='
+    print '============= Command Line News =================\n'
+    print '================================================='
+    print "                                                 "
+    print ",---.|            |                              "
+    print "|---||            |,---.,---,,---.,---.,---.,---."
+    print "|   ||            |,---| .-' |---'|---'|    ,---|"
+    print "`   '`---'    `---'`---^'---'`---'`---'`    `---^"
+    print '=================================================\n\n'
+    print '============= Al Jazeera Headlines =============='
+    print '========== ' + str(datetime.now()) + ' =========='
+    print '================================================='
     i = 0
     while i < len(articlelist):
         for article in articlelist:
@@ -219,20 +273,20 @@ def aj_headlines(articlelist):
                 print str(i + 1) + '. ' + articlelist[article]['title']
         i += 1
 
-# Al Jazeera Headlines
+# NYTIMES Headlines
 def nyt_headlines(articlelist):
-    print '======= Command Line News ========\n'
-    print '=================================='
-    # print '=========AAA===========JJJJJJ====='
-    # print '========AA=AA==============JJ====='
-    # print '=======AA===AA=============JJ====='
-    # print '======AAAAAAAAA=====JJ=====JJ====='
-    # print '=====AA=======AA====JJ=====JJ====='
-    # print '====AA=========AA====JJJJJJJ======'
-    print '==================================\n\n'
-    print '====== NYT Headlines ======'
-    print '=== ' + str(datetime.now()) + ' ==='
-    print '=================================='
+    print '========================= Command Line News ========================\n'
+    print '==The==============================================================='
+    print '\n   __     __)           __     __)              ______)             '
+    print '  (, /|  /             (, )   /        /)      (, /   ,             '
+    print '    / | /   _ _   _      /   /  _____ (/_        /     ___    _  _  '
+    print ' ) /  |/  _(/_(_(/      (___/_ (_)/ (_/(__    ) /   _(_// (__(/_/_)_'
+    print '(_/                    )   /                 (_/                    '
+    print '                      (__ /                                         \n'
+    print '====================================================================\n\n'
+    print '========================= NYT Headlines ============================'
+    print '==================== ' + str(datetime.now()) + ' ===================='
+    print '====================================================================\n\n'
     i = 0
     while i < len(articlelist):
         try:
@@ -240,3 +294,9 @@ def nyt_headlines(articlelist):
         except:
             print ''
         i += 1
+
+def main():
+    return
+
+if __name__ == '__main__':
+    main()

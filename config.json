@@ -1,3 +1,9 @@
 {
-  "this": "is totes json"
+  "name": "Command Line News",
+  "version": "1.0.0-beta.6",
+  "description": "A command line news utility written in Python",
+  "main": "cln.py",
+  "author": "Michael Berber",
+  "license": "ISC",
+  "information": "https://github.com/mickberber/commandlinenews"
 }

@@ -1,7 +1,5 @@
 # Command Line News
-![Alt text](./assets/logo.png 'CLNews logo')
-![Alt text](https://www.python.org/static/community_logos/python-powered-w.svg 'Python Logo')
-
+![Alt text](./assets/cln_output.png 'CLNews logo')
 
 ## Set up:
 - Download a zip file or clone with git:
@@ -19,6 +17,15 @@
     - run `source .zshrc`
     - https://stackoverflow.com/questions/14286844/zsh-not-recognizing-my-aliases
 - Run `cln` from anywhere in your terminal
+
+## Reporting Bugs
+[See bugreport.md](./bugreport.md)
+
+## Contributing
+- Fixing Bugs
+  - [See bugreport.md](./bugreport.md)
+- Adding a service
+  - [See addaservice.md](./addaservice.md)
 
 ### Currently with support for:
 - CNN (http://www.cnn.com)
@@ -38,11 +45,14 @@
 - Reuters
 - The Washington Post
 - BBC
+- Vice
 - Command Line News Twitter Account
 
 ### Features to add:
-- remote update, git clone/fetch/rebase updates
-- Browser config
+- Remote update
+- Config file
+- Testing
+- Adding Services Documentation
 
 ![Alt text](./assets/cnn.png 'CNN logo')
 ![Alt text](./assets/NYTLogo.jpg 'NYT logo')
