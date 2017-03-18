@@ -187,19 +187,24 @@ def gu_headlines(articlelist):
         i += 1
 
 # Reuters Headlines
-def reuters_headlines(articlelist):
+def reuters_headlines():
+    print r"'||'''|,                   ||                        "
+    print r" ||   ||                   ||                        "
+    print r" ||...|' .|''|, '||  ||` ''||''  .|''|, '||''| ('''' "
+    print r" || \\   ||..||  ||  ||    ||    ||..||  ||     `'') "
+    print r".||  \\. `|...   `|..'|.   `|..' `|...  .||.   `...' "
     return
 
 # Washington Post Headlines
-def wp_headlines():
+def wp_headlines(articlelist):
     print r" ___"
     print r"-   ---___- ,,"
     print r"   (' ||    ||"
     print r"  ((  ||    ||/\\  _-_"
     print r" ((   ||    || || || \\"
     print r"  (( //     || || ||/"
-    print r"    -____-   \\ |/ \\,/"
-    print r"               _/"
+    print r"   -____-   \\ |/ \\,/"
+    print r"              _/"
     print r""
     print r" _                                                          "
     print r"- - /, /,              ,,                     ,              "
@@ -222,6 +227,10 @@ def wp_headlines():
 
 # Vice Headlines
 def vice_headlines(articlelist):
+    return
+
+# BBC Headlines
+def bbc(articlelist):
     return
 
 # Al Jazeera Headlines
@@ -267,7 +276,7 @@ def nyt_headlines(articlelist):
         i += 1
 
 def main():
-    wp_headlines()
+    reuters_headlines()
     return
 
 if __name__ == '__main__':
