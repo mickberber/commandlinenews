@@ -187,7 +187,7 @@ def gu_headlines(articlelist):
         i += 1
 
 # Reuters Headlines
-def reuters_headlines():
+def reuters_headlines(articlelist):
     print r"'||'''|,                   ||                        "
     print r" ||   ||                   ||                        "
     print r" ||...|' .|''|, '||  ||` ''||''  .|''|, '||''| ('''' "
@@ -227,10 +227,25 @@ def wp_headlines(articlelist):
 
 # Vice Headlines
 def vice_headlines(articlelist):
+    print " _   _ _            _   _                   "
+    print "| | | (_)          | \ | |                  "
+    print "| | | |_  ___ ___  |  \| | _____      _____ "
+    print "| | | | |/ __/ _ \ | . ` |/ _ \ \ /\ / / __|"
+    print "\ \_/ / | (_|  __/ | |\  |  __/\ V  V /\__ \\"
+    print " \___/|_|\___\___| \_| \_/\___| \_/\_/ |___/"
     return
 
 # BBC Headlines
-def bbc(articlelist):
+def bbc_headlines(articlelist):
+    print "88888888ba  88888888ba    ,ad8888ba,   "
+    print "88       8b 88       8b  d8'      `8b  "
+    print "88      ,8P 88      ,8P d8'            "
+    print "88aaaaaa8P' 88aaaaaa8P' 88             "
+    print "88      8b, 88      8b, 88             "
+    print "88      `8b 88      `8b Y8,            "
+    print "88      a8P 88      a8P  Y8a.    .a8P  "
+    print "88888888P   88888888P     ` Y8888Y'   "
+    print "================NEWS==================="
     return
 
 # Al Jazeera Headlines
@@ -276,7 +291,7 @@ def nyt_headlines(articlelist):
         i += 1
 
 def main():
-    reuters_headlines()
+    bbc_headlines()
     return
 
 if __name__ == '__main__':
