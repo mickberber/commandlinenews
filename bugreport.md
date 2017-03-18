@@ -1,4 +1,29 @@
-This file will be updated with known issues:
+# This file will be updated with known bugs:
+
+## How to Report Bugs:
+- Bug Number: (create an bug number [bug number = Total Bugs Found + 1])
+- Version
+- Description
+ - Suspected cause(if any info known)
+```
+Terminal Output Here
+```
+## Making a pull request:
+- Move fixed bug to Archive
+- Adjust `Total Bugs Found`
+- Adjust `Total Bugs Fixed`
+- Adjust `Current Bugs`
+- Explanations of:
+  - files altered and why
+  - code changes/additions/subtractions
+
+## Total Bugs Found: 3
+## Total Bugs Fixed: 0
+## Current Bugs: 3
+
+# Known Bugs:
+- Bug Number: 2
+- "1.0.0-beta.6"
 - Aljazeea reads only one article, and then only prints headlines.
  - Maybe something with the ARTICLEParser class?
  - example output
@@ -17,6 +42,8 @@ Type "main" to return to the Main Menu.
 To quit type "quit".
 ```
 
+- Bug Number: 1
+- "1.0.0-beta.6"
 - cnn_article_parser breaks on certain articles.
 ```
 To read an article enter the headline number.
@@ -107,6 +134,9 @@ Traceback (most recent call last):
     print description[0]
 IndexError: list index out of range
 ```
+
+- Bug Number: 0
+- "1.0.0-beta.6"
 - Guardian article praser breaks on some articles.
  - example output
 ```
@@ -131,3 +161,6 @@ Traceback (most recent call last):
     return _compile(pattern, flags).sub(repl, string, count)
 UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 44: ordinal not in range(128)
 ```
+
+
+# Archive

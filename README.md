@@ -20,6 +20,15 @@
     - https://stackoverflow.com/questions/14286844/zsh-not-recognizing-my-aliases
 - Run `cln` from anywhere in your terminal
 
+## Reporting Bugs
+[See bugreport.md](./bugreport.md)
+
+## Contributing
+- Fixing Bugs
+  - [See bugreport.md](./bugreport.md)
+- Adding a service
+  - [See addaservice.md](./addaservice.md)
+
 ### Currently with support for:
 - CNN (http://www.cnn.com)
 - The New York Times (http://www.nytimes.com)
