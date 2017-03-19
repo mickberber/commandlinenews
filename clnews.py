@@ -3,7 +3,7 @@ import sys
 import os
 
 # Append services path to enable imports
-sys.path.append('<PATH TO REPOSITORY>')
+sys.path.append('/Users/michaelberber/sideProjects/commandlinenews/services')
 import cnn
 import hackernews
 import ap
