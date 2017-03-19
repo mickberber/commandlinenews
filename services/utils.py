@@ -108,7 +108,10 @@ def cnn_headlines(article_list):
     print '========================================='
     i = 0
     while i < 25:
-        print str(i + 1) + '. ' + article_list[i]['headline']
+        try:
+            print str(i + 1) + '. ' + article_list[i]['headline']
+        except:
+            print ''
         i += 1
 
 #HackerNews Print Utility

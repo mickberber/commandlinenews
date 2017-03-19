@@ -10,6 +10,7 @@ import ap
 import guardian
 import aljaz
 import nyt
+import weather
 import utils
 
 # Handle user selected CNN article by headline number
@@ -86,11 +87,13 @@ cache = {
   'ap': False,
   'gu': False,
   'aljaz': False,
-  'nyt': False
+  'nyt': False,
+  'temp': False
 }
 
 def main():
     utils.cl_news_headline()
+    cache['temp'] = weather.cl_news_util(cache['temp'])
     service = raw_input()
     print '\n'
 

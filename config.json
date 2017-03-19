@@ -5,5 +5,7 @@
   "main": "cln.py",
   "author": "Michael Berber",
   "license": "ISC",
-  "information": "https://github.com/mickberber/commandlinenews"
+  "information": "https://github.com/mickberber/commandlinenews",
+  "city": "San_Francisco",
+  "state": "CA"
 }

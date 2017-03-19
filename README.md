@@ -46,10 +46,12 @@
 - The Washington Post
 - BBC
 - Vice
-- Command Line News Twitter Account
 
 ### Features to add:
 - Remote update
 - Config file
 - Testing
 - Adding Services Documentation
+
+Link to web app code:
+https://github.com/mickberber/commandlinenews_page
