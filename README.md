@@ -16,6 +16,8 @@
     - add `alias cln='<PATH_TO_REPOSITORY>/clnews.py'` to .zshrc
     - run `source .zshrc`
     - https://stackoverflow.com/questions/14286844/zsh-not-recognizing-my-aliases
+- Edit line 6 in `clnews.py`:
+  - `sys.path.append('<PATH_TO_REPOSITORY>/services')`
 - Run `cln` from anywhere in your terminal
 
 ## Reporting Bugs
