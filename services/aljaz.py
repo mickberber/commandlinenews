@@ -55,6 +55,10 @@ class AJARTICLEParser(HTMLParser):
                 print data
             AJARTICLEParser.collectdata = False
 
+    def handle_endtag(self, tag):
+        if tag == 'body':
+            AJARTICLEParser.printnomore = False
+
 
 def get_aj_article(articlelist, index):
     for article in articlelist:

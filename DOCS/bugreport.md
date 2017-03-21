@@ -18,30 +18,10 @@ Terminal Output Here
   - code changes/additions/subtractions
 
 ## Total Bugs Found: 3
-## Total Bugs Fixed: 1
-## Current Bugs: 2
+## Total Bugs Fixed: 2
+## Current Bugs: 1
 
 # Known Bugs:
-- Bug Number: 2
-- "1.0.0-beta.6"
-- Aljazeea reads only one article, and then only prints headlines.
- - Maybe something with the ARTICLEParser class?
- - example output
-```
-To read an article enter the headline number.
-To go back to the main menu, type "main"
-To quit type quit.
-
-1
-
-Tillerson in China to discuss N Korea nuclear programme
-=====================
-
-To read more from aljaz type: "y".
-Type "main" to return to the Main Menu.
-To quit type "quit".
-```
-
 - Bug Number: 1
 - "1.0.0-beta.6"
 - cnn_article_parser breaks on certain articles.
@@ -138,6 +118,25 @@ IndexError: list index out of range
 
 # Archive
 
+- Bug Number: 2
+- "1.0.0-beta.6"
+- Aljazeea reads only one article, and then only prints headlines.
+ - Maybe something with the ARTICLEParser class?
+ - example output
+```
+To read an article enter the headline number.
+To go back to the main menu, type "main"
+To quit type quit.
+
+1
+
+Tillerson in China to discuss N Korea nuclear programme
+=====================
+
+To read more from aljaz type: "y".
+Type "main" to return to the Main Menu.
+To quit type "quit".
+```
 
 - Bug Number: 0
 - "1.0.0-beta.6"

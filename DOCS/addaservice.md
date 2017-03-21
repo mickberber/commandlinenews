@@ -4,7 +4,7 @@ In order to show headlines, and print articles we need to parse the homepage and
 Below is an example guide on how to parse these pages and include them in the rest of the app.
 
 ## Getting started:
-- Copy `service_stub.py` or copy the following code:
+- Copy `/DOCS/service_stub.py` or copy the following code:
 ```
 #!/usr/bin/python
 import sys
@@ -96,7 +96,7 @@ if __name__ == '__main__':
   - Currently we are not storing article in cache, so you can just print text as you find it.
   - Article text is often found in p tags.
   - Most services use the same format for every article, btu some don't. Try a few different articles to try to handle different instances.
-  - [For reference see: ./services/cnn_article_parser.py](./services/cnn_article_parser.py)
+  - [For reference see: ./services/cnn_article_parser.py](./../services/cnn_article_parser.py)
 ---
 # Integrating into ./clnews.py
 - `./clnews.py` is made up of 3 functions, we will add 2 lines to each and that's it!

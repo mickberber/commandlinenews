@@ -11,6 +11,7 @@ import ap
 import guardian
 import aljaz
 import nyt
+import wp
 import utils
 
 # Handle user selected CNN article by headline number
@@ -41,6 +42,8 @@ def pick_article(service):
         aljaz.cl_news_util(['aljaz', '-r', command], cache['aljaz'])
     elif service == 'nyt':
         nyt.cl_news_util(['nyt', '-r', command], cache['nyt'])
+    elif service == 'wp':
+        wp.cl_news_util(['wp', '-r', command], cache['wp'])
 
     read_more(service)
 
@@ -74,6 +77,9 @@ def read_more(service):
         # read more from nyt
         elif service == 'nyt':
                 nyt.cl_news_util(['nyt', '-h'], cache['nyt'])
+        # read more from wp
+        elif service == 'wp':
+                wp.cl_news_util(['wp', '-h'], cache['wp'])
 
         pick_article(service)
 
@@ -87,7 +93,8 @@ cache = {
   'ap': False,
   'gu': False,
   'aljaz': False,
-  'nyt': False
+  'nyt': False,
+  'wp': False
 }
 
 def main():
@@ -107,6 +114,8 @@ def main():
         cache['aljaz'] = aljaz.cl_news_util([service, '-h'], cache['aljaz'])
     elif service == 'nyt':
         cache['nyt'] = nyt.cl_news_util([service, '-h'], cache['nyt'])
+    elif service == 'wp':
+        cache['wp'] = wp.cl_news_util([service, '-h'], cache['wp'])
     elif service == 'quit':
         utils.quit()
     else:
