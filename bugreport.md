@@ -18,8 +18,8 @@ Terminal Output Here
   - code changes/additions/subtractions
 
 ## Total Bugs Found: 3
-## Total Bugs Fixed: 0
-## Current Bugs: 3
+## Total Bugs Fixed: 1
+## Current Bugs: 2
 
 # Known Bugs:
 - Bug Number: 2
@@ -135,6 +135,10 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
+
+# Archive
+
+
 - Bug Number: 0
 - "1.0.0-beta.6"
 - Guardian article praser breaks on some articles.
@@ -161,6 +165,3 @@ Traceback (most recent call last):
     return _compile(pattern, flags).sub(repl, string, count)
 UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 44: ordinal not in range(128)
 ```
-
-
-# Archive
