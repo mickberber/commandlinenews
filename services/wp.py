@@ -8,22 +8,39 @@ from HTMLParser import HTMLParser
 
 class WPHTMLParser(HTMLParser):
     printsection = False
+    grabdata = False
+    articledata = None
+    articlelist = []
     def handle_starttag(self, tag, attrs):
         if tag == 'section':
             try:
                 if attrs[0][1] == 'main-content':
                     WPHTMLParser.printsection = True
-                    print tag, attrs
+            except:
+                return
+
+        if WPHTMLParser.printsection and tag == 'a':
+            try:
+                WPHTMLParser.articledata = {
+                    'url': attrs[1][1],
+                    'title': '',
+                    'index': len(WPHTMLParser.articlelist)
+                }
+                WPHTMLParser.grabdata = True
             except:
                 return
         return
 
     def handle_data(self, data):
-        if WPHTMLParser.printsection:
-            print data
+        if WPHTMLParser.printsection and WPHTMLParser.grabdata:
+            WPHTMLParser.articledata['title'] += data
         return
 
     def handle_endtag(self, tag):
+        if tag == 'a' and WPHTMLParser.grabdata:
+            WPHTMLParser.articlelist.append(WPHTMLParser.articledata)
+            WPHTMLParser.articledata = None
+            WPHTMLParser.grabdata = False
         if tag == 'section':
             WPHTMLParser.printsection = False
         return
@@ -38,6 +55,7 @@ def get_wp_article(articlelist, index):
 def cl_news_util(args, cache):
     if not cache:
         htmlfile = utils.get_html_file('https://www.washingtonpost.com')
+        htmlfile = htmlfile.decode('utf-8')
         parser = WPHTMLParser()
         parser.feed(htmlfile)
         articlelist = parser.articlelist
@@ -76,6 +94,8 @@ def main():
     f = f.read()
     parser = WPHTMLParser()
     parser.feed(f.decode('utf-8'))
+    for article in parser.articlelist:
+        print str(article['index'] + 1) + '. ' + article['title']
     return
 
 if __name__ == '__main__':

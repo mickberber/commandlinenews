@@ -70,7 +70,7 @@ def cl_news_headline():
     print '\n\nWhat would you like to read?\n\n'
     # print '  Command Line News Twitter Feed => type: twits\n'
     print '  CNN => type: cnn\n'
-    # print '  The Washington Post => type: wp\n'
+    print '  The Washington Post => type: wp\n'
     print '  The New York Times => type: nyt\n'
     print '  Associated Press => type: ap\n'
     # print '  The BBC => type: bbc\n'
@@ -202,6 +202,7 @@ def reuters_headlines(articlelist):
 
 # Washington Post Headlines
 def wp_headlines(articlelist):
+    print '======= Command Line News ========\n'
     print r" ___"
     print r"-   ---___- ,,"
     print r"   (' ||    ||"
@@ -228,6 +229,14 @@ def wp_headlines(articlelist):
     print r"  ||  |, || ||  ~ ||  ||  "
     print r"_-||-_/  \\,/  ,-_-   \\, "
     print r"  ||                      "
+    print '===== The Washington Post Headlines ====='
+    print '=== ' + str(datetime.now()) + ' ==='
+    print '==================================\n\n'
+    for article in articlelist:
+        try:
+            print str(article['index'] + 1) + '. ' + article['title']
+        except:
+            print ''
     return
 
 # Vice Headlines
