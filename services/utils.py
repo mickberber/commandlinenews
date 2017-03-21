@@ -193,11 +193,15 @@ def gu_headlines(articlelist):
 
 # Reuters Headlines
 def reuters_headlines(articlelist):
+    print '======= Command Line News ========\n'
     print r"'||'''|,                   ||                        "
     print r" ||   ||                   ||                        "
     print r" ||...|' .|''|, '||  ||` ''||''  .|''|, '||''| ('''' "
     print r" || \\   ||..||  ||  ||    ||    ||..||  ||     `'') "
     print r".||  \\. `|...   `|..'|.   `|..' `|...  .||.   `...' "
+    print '===== Rueters Headlines ====='
+    print '=== ' + str(datetime.now()) + ' ==='
+    print '==================================\n\n'
     return
 
 # Washington Post Headlines
@@ -241,16 +245,21 @@ def wp_headlines(articlelist):
 
 # Vice Headlines
 def vice_headlines(articlelist):
+    print '======= Command Line News ========\n'
     print " _   _ _            _   _                   "
     print "| | | (_)          | \ | |                  "
     print "| | | |_  ___ ___  |  \| | _____      _____ "
     print "| | | | |/ __/ _ \ | . ` |/ _ \ \ /\ / / __|"
     print "\ \_/ / | (_|  __/ | |\  |  __/\ V  V /\__ \\"
     print " \___/|_|\___\___| \_| \_/\___| \_/\_/ |___/"
+    print '===== Vice News Headlines ====='
+    print '=== ' + str(datetime.now()) + ' ==='
+    print '==================================\n\n'
     return
 
 # BBC Headlines
 def bbc_headlines(articlelist):
+    print '======= Command Line News ========\n'
     print "88888888ba  88888888ba    ,ad8888ba,   "
     print "88       8b 88       8b  d8'      `8b  "
     print "88      ,8P 88      ,8P d8'            "
@@ -260,6 +269,9 @@ def bbc_headlines(articlelist):
     print "88      a8P 88      a8P  Y8a.    .a8P  "
     print "88888888P   88888888P     ` Y8888Y'   "
     print "================NEWS==================="
+    print '===== BBC News Headlines ====='
+    print '=== ' + str(datetime.now()) + ' ==='
+    print '==================================\n\n'
     return
 
 # Al Jazeera Headlines
