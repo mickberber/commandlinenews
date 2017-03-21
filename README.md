@@ -44,13 +44,11 @@
 - Improved Error Handling
 - cnn html parsing refactor
 - condense main app logic
-- file restructuring
 
 ### News Services to add:
 - Reuters
 - BBC
 - Vice
-- Command Line News Twitter Account
 
 ### Features to add:
 - Remote update
