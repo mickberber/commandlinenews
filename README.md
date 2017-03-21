@@ -7,17 +7,19 @@
   - or run => ` git clone https://github.com/mickberber/pystuff.git `
 - Set Alias in your config file:
   - Bash:
-    - open: `.bashrc`
-    - add `alias cln='<PATH_TO_REPOSITORY>/clnews.py'`
-    - run `source .bashrc`
+    - `$ .bashrc`
+    - `$ alias cln='<PATH_TO_REPOSITORY>/clnews.py'`
+    - `$ source .bashrc`
     - http://www.hostingadvice.com/how-to/set-command-aliases-linuxubuntudebian/
   - Oh My Zsh:
-    - open: `.zshrc`
-    - add `alias cln='<PATH_TO_REPOSITORY>/clnews.py'` to .zshrc
-    - run `source .zshrc`
+    - `$ .zshrc`
+    - `$ alias cln='<PATH_TO_REPOSITORY>/clnews.py'` to .zshrc
+    - `$ source .zshrc`
     - https://stackoverflow.com/questions/14286844/zsh-not-recognizing-my-aliases
-- Edit line 6 in `clnews.py`:
-  - `sys.path.append('<PATH_TO_REPOSITORY>/services')`
+- Create `keys.py` and add path:
+  - `$ touch keys.py`
+  - Inside of keys.py, add a PATH variable equal to the path to your repository:
+    - ex. PATH='PATH_TO_REPOSITORY'
 - Run `cln` from anywhere in your terminal
 
 ## Reporting Bugs
@@ -32,6 +34,7 @@
 ### Currently with support for:
 - CNN (http://www.cnn.com)
 - The New York Times (http://www.nytimes.com)
+- The Washington Post (http://www.washingtonpost.com)
 - The Guardian (http://www.theguardian.com/us)
 - Associated Press (http://bigstory.ap.org)
 - Al Jazeera (http://www.aljazeera.com)
@@ -45,13 +48,10 @@
 
 ### News Services to add:
 - Reuters
-- The Washington Post
 - BBC
 - Vice
 - Command Line News Twitter Account
 
 ### Features to add:
 - Remote update
-- Config file
 - Testing
-- Adding Services Documentation
