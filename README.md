@@ -7,14 +7,14 @@
   - or run => ` git clone https://github.com/mickberber/pystuff.git `
 - Set Alias in your config file:
   - Bash:
-    - `$ .bashrc`
-    - `$ alias cln='<PATH_TO_REPOSITORY>/clnews.py'`
-    - `$ source .bashrc`
+    - open => `.bashrc`
+    - add to bashrc => `alias cln='<PATH_TO_REPOSITORY>/clnews.py'`
+    - run => `$ source .bashrc`
     - http://www.hostingadvice.com/how-to/set-command-aliases-linuxubuntudebian/
   - Oh My Zsh:
-    - `$ .zshrc`
-    - `$ alias cln='<PATH_TO_REPOSITORY>/clnews.py'` to .zshrc
-    - `$ source .zshrc`
+    - open => `.zshrc`
+    - add to zshrc => `alias cln='<PATH_TO_REPOSITORY>/clnews.py'` to .zshrc
+    - run => `$ source .zshrc`
     - https://stackoverflow.com/questions/14286844/zsh-not-recognizing-my-aliases
 - Create `keys.py` and add path:
   - `$ touch keys.py`
