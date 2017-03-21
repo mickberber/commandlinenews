@@ -21,13 +21,13 @@
 - Run `cln` from anywhere in your terminal
 
 ## Reporting Bugs
-[See bugreport.md](./bugreport.md)
+[See bugreport.md](./DOCS/bugreport.md)
 
 ## Contributing
 - Fixing Bugs
-  - [See bugreport.md](./bugreport.md)
+  - [See bugreport.md](./DOCS/bugreport.md)
 - Adding a service
-  - [See addaservice.md](./addaservice.md)
+  - [See addaservice.md](./DOCS/addaservice.md)
 
 ### Currently with support for:
 - CNN (http://www.cnn.com)

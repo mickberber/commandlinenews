@@ -7,13 +7,31 @@ import utils
 from HTMLParser import HTMLParser
 
 class WPHTMLParser(HTMLParser):
-    def handle_starttag():
+    printsection = False
+    def handle_starttag(self, tag, attrs):
+        if tag == 'section':
+            try:
+                if attrs[0][1] == 'main-content':
+                    WPHTMLParser.printsection = True
+                    print tag, attrs
+            except:
+                return
+        return
+
+    def handle_data(self, data):
+        if WPHTMLParser.printsection:
+            print data
+        return
+
+    def handle_endtag(self, tag):
+        if tag == 'section':
+            WPHTMLParser.printsection = False
         return
 
 class WPARTICLEParser(HTMLParser):
     def handle_starttag():
         return
-        
+
 def get_wp_article(articlelist, index):
     return
 
@@ -55,7 +73,9 @@ def cl_news_util(args, cache):
 def main():
     currentdir = os.path.abspath('.')
     f = open(currentdir + '/test/wp.html', 'rU')
-    print f.read()
+    f = f.read()
+    parser = WPHTMLParser()
+    parser.feed(f.decode('utf-8'))
     return
 
 if __name__ == '__main__':
