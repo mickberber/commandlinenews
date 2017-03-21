@@ -9,6 +9,8 @@ def main(cnn_url):
     uf = urllib.urlopen(cnn_url)
     htmlfile = uf.read()
     highlights = re.findall(r'storyhighlights__list">(.+?)</ul>', htmlfile)
+    description = re.findall(r'media__video-description--inline">(.+?)</div>', htmlfile)
+    paras = re.findall(r'class="zn-body__paragraph">(.+?)</', htmlfile)
     if len(highlights):
         highlights = re.findall(r'normal">(.+?)</li>', highlights[0])
         print '=== Story Hightlights ==='
@@ -20,12 +22,15 @@ def main(cnn_url):
         del content[0]
         for p in content:
             print p
-    else:
-        description = re.findall(r'media__video-description--inline">(.+?)</div>', htmlfile)
+    elif len(description):
         print description[0]
         print '========================='
         print 'This is a video article, would you like to open the page?(y/n)'
         user_input = raw_input()
         if user_input == 'y':
             utils.go_to_page(cnn_url)
+    elif len(paras):
+        print '========================='
+        for p in paras:
+            print p
     return
