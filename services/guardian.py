@@ -17,6 +17,7 @@ class GUARDIANARTICLEParser(HTMLParser):
             GUARDIANARTICLEParser.collectdata = False
 
 
+
 class GUARDIANHTMLParser(HTMLParser):
     articlelist = {}
     collectdata = False
@@ -84,6 +85,7 @@ def cl_news_util(args, cache):
                 abbrevurl = article['url'][28:]
                 print '\n' + article['title'] + ' -- ' + abbrevurl
                 print '==================\n'
+                htmlfile = htmlfile.decode('utf-8')
                 parser = GUARDIANARTICLEParser()
                 parser.feed(htmlfile)
                 return articlelist
