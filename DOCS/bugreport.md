@@ -17,11 +17,37 @@ Terminal Output Here
   - files altered and why
   - code changes/additions/subtractions
 
-## Total Bugs Found: 3
+## Total Bugs Found: 4
 ## Total Bugs Fixed: 3
-## Current Bugs: 0
+## Current Bugs: 1
 
 # Known Bugs:
+- Bug Number: 3
+- "1.0.0-beta.6"
+- Washington Post breaks when trying to open an article
+```
+7
+Traceback (most recent call last):
+  File "/Users/michaelberber/sideProjects/commandlinenews/clnews.py", line 128, in <module>
+    main()
+  File "/Users/michaelberber/sideProjects/commandlinenews/clnews.py", line 125, in main
+    pick_article(service)
+  File "/Users/michaelberber/sideProjects/commandlinenews/clnews.py", line 46, in pick_article
+    wp.cl_news_util(['wp', '-r', command], cache['wp'])
+  File "/Users/michaelberber/sideProjects/commandlinenews/services/wp.py", line 89, in cl_news_util
+    htmlfile = utils.get_html_file(article['url'])
+  File "/Users/michaelberber/sideProjects/commandlinenews/services/utils.py", line 44, in get_html_file
+    uf = urllib.urlopen(url)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 87, in urlopen
+    return opener.open(url)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 213, in open
+    return getattr(self, name)(url)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 469, in open_file
+    return self.open_local_file(url)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 483, in open_local_file
+    raise IOError(e.errno, e.strerror, e.filename)
+IOError: [Errno 2] No such file or directory: 'related'
+```
 
 # Archive
 
