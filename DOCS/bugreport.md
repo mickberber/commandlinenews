@@ -22,6 +22,23 @@ Terminal Output Here
 ## Current Bugs: 2
 
 # Known Bugs:
+- Bug Number: 7
+- "1.0.0-beta.6"
+- Wp articles include what look like multi-line lists
+```
+The government is demanding to know who this Trump critic is. Twitter is suing to keep it a secret.
+==================
+
+(Eric Thayer/Reuters)
+Twitter filed a lawsuit Thursday against the U.S. Department of Homeland Security, asking the court to prevent the department from taking steps to unmask the user behind an account critical of the Trump administration.
+The tech company said that allowing DHS access to that information would produce a “grave chilling effect on the speech of that account,” as well as other accounts critical of the U.S. government. The case sets up a potential showdown over free speech between Silicon Valley and Washington.
+According to
+Twitter's court filings
+, Homeland Security is “unlawfully abusing a limited-purpose investigatory tool” to find out who is behind the @ALT_USCIS account. Its Twitter feed has publicly criticized the administration's immigration policies, particularly the actions of the U.S. Citizenship and Immigration Services (USCIS) division of Homeland Security.
+ [
+One thing Trump has stopped doing on Twitter since inauguration
+]
+```
 - Bug Number: 6
 - "1.0.0-beta.6"
 - Ap articles include "&#039;" instead of " ' "
