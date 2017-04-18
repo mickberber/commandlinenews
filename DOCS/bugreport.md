@@ -21,7 +21,30 @@ Terminal Output Here
 ## Total Bugs Fixed: 3
 ## Current Bugs: 2
 
-# Known Bugs:
+# Known Bugs
+- Bug Number: 8
+- "1.0.0-beta.6"
+- Cnn articles leaving in some html start tags/refactor cnn service needed
+```
+<strong>UK election stunner: What just happened?</strong>
+=========================
+<cite class="el-editorial-source">London (CNN)
+But what does it mean for the rest of the globe?
+<h3>What just happened?
+Here's the rundown.
+In an <a href="http://edition.cnn.com/2017/04/18/europe/uk-snap-election-theresa-may/index.html?adkey=bn">unexpected statement delivered at Downing Street
+British governments generally last for five years, and the Conservative Party's administration -- then led by May's predecessor David Cameron -- was elected in 2015. The next election was not due to take place until May 2020.
+<h3>Why is it happening?
+May, who took over when Cameron resigned in the wake of Britain's decision to leave the European Union, wants to seek a stronger mandate in Brexit talks.
+The UK government formally <a href="http://edition.cnn.com/2017/03/29/europe/article-50-brexit-theresa-may-eu/">served divorce papers on the European Union last month
+But her party only has a slim majority in Parliament, and opposition parties have attempted to throw rocks in her path towards Brexit.
+She also faces divisions in her own party over Brexit tactics -- although perhaps not surprisingly, May didn't mention those on Tuesday.
+"There should be unity here in Westminster, but instead there is division. The country is coming together, but Westminster is not," she said. "We need a general election and we need one now."
+<h3>Why is this such a shock?
+May has said previously that she would not call an early election, notably, on camera in <a href="https://blogs.spectator.co.uk/2016/06/name-theresa-may-im-best-person-prime-minister/#" target="_blank">June
+
+```
+
 - Bug Number: 7
 - "1.0.0-beta.6"
 - Wp articles include what look like multi-line lists
